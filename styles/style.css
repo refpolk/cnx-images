@@ -1,0 +1,83 @@
+body {
+	background-color: #222222;
+	color: #F7F7F7;
+	font-family: Verdana;
+}
+
+.error {
+	color: #b94a48;
+	background-color: #f2dede;
+	border-color: #eed3d7;
+}
+
+.warning {
+	color: #c09853;
+	background-color: #fcf8e3;
+	border-color: #fbeed5;
+}
+
+.message {
+	color: #468847;
+	background-color: #dff0d8;
+	border-color: #d6e9c6;
+}
+
+.messages p {
+	padding: 8px 35px 8px 14px;
+	border: 1px solid #fbeed5;
+	border-radius: 4px;
+}
+
+.container {
+	margin-left: auto;
+	margin-right: auto;
+	width: 80%;
+}
+
+span.mandatory {
+	color: red;
+}
+
+a:link, a:visited {
+	color: yellow;
+	font-weight: Bold;
+}
+	
+a:hover {
+	color: white;
+	background-color: #9C0000;
+}
+
+/*
+div.added {
+	font-weight: Bold;
+	color: #888888;
+}
+
+div.error {
+	font-weight: Bold;
+	color: #3333333;
+}
+
+div.delete {
+	font-weight: Bold;
+	color: #FF0000;
+}
+
+div.edited {
+	font-weight: Bold;
+	color: #008000;
+}
+
+#tableheader {
+	background-color: #920000;
+	color: white;
+	font-weight: Bold;
+}
+
+#fieldheader {
+	background-color: #450000;
+	color: white;
+	font-weight: Bold;
+}
+*/
