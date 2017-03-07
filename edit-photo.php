@@ -190,7 +190,7 @@ $title = ($update ? 'Update' : 'Add') . ' Photo';
 					</td>
 				</tr>
 				<tr>
-					<td colspan="4"><input type="submit" name="submit" value="<?php echo ($update ? 'Update' : 'Add')?> Photo" /></td>
+					<td colspan="4"><input type="submit" name="submit" value="<?php echo ($update ? 'Update' : 'Save')?> Photo" /></td>
 				</tr>
 			</table>
 		</form>

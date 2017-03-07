@@ -120,7 +120,14 @@ $title = 'Search Photos';
 						Authors: <?php echo $photo->Authors; ?>
 					</td>
 					<td>
-						<img height="100" src="<?php echo $filelocation . $photo->Filename; ?>" alt="<?php echo $photo->Title; ?>" />
+						<?php if ($photo->Filename != '' && file_exists($filelocation . $photo->Filename)) { ?>
+						<a class="zoom" title="Zoom" href="#">
+							<img src="<?php echo $filelocation . $photo->Filename; ?>" height="100" alt="<?php echo $photo->Title;?>"/>
+						</a>
+						<div class="dialog" title="<?php echo $photo->Title;?>">
+						  <p><img src="<?php echo $filelocation . $photo->Filename; ?>" height="500" alt="<?php echo $photo->Title;?>"/></p>
+						</div>
+						<?php } ?>						
 					</td>
 				</tr>
 				<?php } ?>

@@ -193,7 +193,7 @@ $title = ($update ? 'Update' : 'Add') . ' Image';
 					<td><input type="text" size="100" maxlength="150" name="url" value="<?php echo $image->URL;?>"></td>
 				</tr>
 				<tr>
-					<td><input type="submit" name="submit" value="<?php echo ($update ? 'Update' : 'Add')?> Image"></td>
+					<td><input type="submit" name="submit" value="<?php echo ($update ? 'Update' : 'Save')?> Image"></td>
 					<td></td>
 				</tr>
 			</table>
