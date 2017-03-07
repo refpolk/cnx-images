@@ -32,7 +32,7 @@
 		     		   	<th>ID</th>
 		     		  	<th>Title</th>
 						<th>Filename</th>
-						<th>Authors</th>
+						<th>Author</th>
 		  			</tr>
 		 	   	</thead>
 		 	  	<tfoot>
@@ -41,7 +41,7 @@
 		     		   	<td><?php echo $photo->ID; ?></td>
 		     		   	<td><a href="/edit-photo.php?id=<?php echo $photo->ID; ?>"><?php echo $photo->Title; ?></a></td>
 						<td><?php echo $photo->Filename; ?></td>
-						<td><?php echo $photo->Authors; ?></td>
+						<td><?php echo $photo->Author; ?></td>
 		  			</tr>
 					<?php } ?>
 		 		</tbody>

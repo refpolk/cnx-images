@@ -20,8 +20,8 @@ if (isset($_GET['q'])) {
 			$query_where = implode( '%\' AND Title LIKE \'%', $searchField );
 			$query_Title = 'Title LIKE \'%' . $query_where . '%\'';
 
-			$query_where = implode( '%\' AND Authors LIKE \'%', $searchField );
-			$query_Author = ' OR Authors LIKE \'%' . $query_where . '%\'';
+			$query_where = implode( '%\' AND Author LIKE \'%', $searchField );
+			$query_Author = ' OR Author LIKE \'%' . $query_where . '%\'';
 
 			$query_where = implode( '%\' AND Caption LIKE \'%', $searchField );
 			$query_Caption = ' OR Caption LIKE \'%' . $query_where . '%\'';
@@ -34,7 +34,7 @@ if (isset($_GET['q'])) {
 		elseif ( $option == 'exact' )
 		{
 			$query_Title = 'Title = \'' . $query. '\'';
-			$query_Author= ' OR Authors = \'' . $query. '\'';
+			$query_Author= ' OR Author = \'' . $query. '\'';
 			$query_Caption= ' OR Caption = \'' . $query. '\'';
 			$query_Filename= ' OR Filename = \'' . $query. '\'';
 
@@ -47,7 +47,7 @@ if (isset($_GET['q'])) {
 			$query_where = implode( '\|', $searchField );
 
 			$query_Title = 'Title REGEXP \'' . $query_where . '\'';
-			$query_Author = ' OR Authors REGEXP \'' . $query_where . '\'';
+			$query_Author = ' OR Author REGEXP \'' . $query_where . '\'';
 			$query_Caption = ' OR Caption REGEXP \'' . $query_where . '\'';
 			$query_Filename = ' OR Filename REGEXP \'' . $query_where . '\'';
 
@@ -87,7 +87,7 @@ $title = 'Search Photos';
 			<table style="width=100%">
 				<tr>	
 					<td>
-						<input type="text" size="115" maxlength="115" name="q" value="<?php echo $query ?>" placeholder="Title / Authors / Caption / Filename" />
+						<input type="text" size="115" maxlength="115" name="q" value="<?php echo $query ?>" placeholder="Title / Author / Caption / Filename" />
 						<input type="submit" value="Search Photos" />
 					</td>
 				</tr>
@@ -117,7 +117,7 @@ $title = 'Search Photos';
 						ID: <?php echo $photo->ID; ?><br />
 						Title: <a href="/edit-photo.php?id=<?php echo $photo->ID; ?>"><?php echo $photo->Title; ?></a><br />
 						Filename: <?php echo $photo->Filename; ?><br />
-						Authors: <?php echo $photo->Authors; ?>
+						Author: <?php echo $photo->Author; ?>
 					</td>
 					<td>
 						<?php if ($photo->Filename != '' && file_exists($filelocation . $photo->Filename)) { ?>

@@ -5,11 +5,11 @@ require 'includes/settings.photos.inc.php';
 function photo_exists($pdo, $photo) {
 		
 	if ($photo->ID != '') {
-		$statement = $pdo->prepare("SELECT * FROM Photos WHERE Title=? AND Authors=? AND Filename=? AND URL=? AND ID<>?;");
-		$statement->execute(array($photo->Title, $photo->Authors, $photo->Filename, $photo->URL, $photo->ID));
+		$statement = $pdo->prepare("SELECT * FROM Photos WHERE Title=? AND Author=? AND Filename=? AND URL=? AND ID<>?;");
+		$statement->execute(array($photo->Title, $photo->Author, $photo->Filename, $photo->URL, $photo->ID));
 	} else {		
-		$statement = $pdo->prepare("SELECT * FROM Photos WHERE Title=? AND Authors=? AND Filename=? AND URL=?;");
-		$statement->execute(array($photo->Title, $photo->Authors, $photo->Filename, $photo->URL));
+		$statement = $pdo->prepare("SELECT * FROM Photos WHERE Title=? AND Author=? AND Filename=? AND URL=?;");
+		$statement->execute(array($photo->Title, $photo->Author, $photo->Filename, $photo->URL));
 	}	
 	
 	return ($statement->rowCount() > 0);
@@ -26,7 +26,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 		'URL' => $_POST['url'],
 		'Year' => $_POST['year'],
 		'Date' => $_POST['date'],
-		'Authors' => $_POST['authors'],
+		'Author' => $_POST['authors'],
 		'Place' => $_POST['place'],
 		'Caption' => $_POST['caption'],
 		'Negscan' => $_POST['negscan'],
@@ -50,9 +50,9 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 				
 			} else {
 			
-				$statement = $pdo->prepare("UPDATE Photos SET Photonum=?, OldPhotonum=?, Title=?, Filename=?, URL=?, Year=?, Date=?, Authors=?, Place=?, Caption=?, Negscan=?, Nix=?, Publishist=? WHERE ID=?;");
+				$statement = $pdo->prepare("UPDATE Photos SET Photonum=?, OldPhotonum=?, Title=?, Filename=?, URL=?, Year=?, Date=?, Author=?, Place=?, Caption=?, Negscan=?, Nix=?, Publishist=? WHERE ID=?;");
 				
-				$statement->execute(array($photo->Photonum, $photo->OldPhotonum, $photo->Title, $photo->Filename, $photo->URL, $photo->Year, $photo->Date, $photo->Authors, $photo->Place, $photo->Caption, $photo->Negscan, $photo->Nix, $photo->Publishist, $photo->ID));
+				$statement->execute(array($photo->Photonum, $photo->OldPhotonum, $photo->Title, $photo->Filename, $photo->URL, $photo->Year, $photo->Date, $photo->Author, $photo->Place, $photo->Caption, $photo->Negscan, $photo->Nix, $photo->Publishist, $photo->ID));
 				
 				$message = 'Your changes have been saved successfully!';
 			}
@@ -64,9 +64,9 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 				
 			} else {
 				
-				$statement = $pdo->prepare("INSERT INTO Photos (Photonum, OldPhotonum, Title, Filename, URL, Year, Date, Authors, Place, Caption, Negscan, Nix, Publishist) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?);");
+				$statement = $pdo->prepare("INSERT INTO Photos (Photonum, OldPhotonum, Title, Filename, URL, Year, Date, Author, Place, Caption, Negscan, Nix, Publishist) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?);");
 				
-				$statement->execute(array($photo->Photonum, $photo->OldPhotonum, $photo->Title, $photo->Filename, $photo->URL, $photo->Year, $photo->Date, $photo->Authors, $photo->Place, $photo->Caption, $photo->Negscan, $photo->Nix, $photo->Publishist));
+				$statement->execute(array($photo->Photonum, $photo->OldPhotonum, $photo->Title, $photo->Filename, $photo->URL, $photo->Year, $photo->Date, $photo->Author, $photo->Place, $photo->Caption, $photo->Negscan, $photo->Nix, $photo->Publishist));
 				
 				header('Location: edit-photo.php?id=' . $pdo->lastInsertId() . "&m=1");
 			}
@@ -140,8 +140,8 @@ $title = ($update ? 'Update' : 'Add') . ' Photo';
 					<td><input type="text" name="date" size="30" maxlength="8" value="<?php echo $photo->Date;?>" /></td>
 				</tr>
 				<tr>
-					<td>Authors</td>
-					<td colspan="3"><input type="text" name="authors" size="100" maxlength="100" value="<?php echo $photo->Authors;?>" /></td>
+					<td>Author</td>
+					<td colspan="3"><input type="text" name="authors" size="100" maxlength="100" value="<?php echo $photo->Author;?>" /></td>
 				</tr>
 				<tr>
 					<td>Place</td>
