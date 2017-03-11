@@ -24,6 +24,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 		'Year' => $_POST['year'],
 		'Source' => $_POST['source'],
 		'Caption' => $_POST['caption'],
+		'Note' => $_POST['note'],
 		'Publishist' => $_POST['publishist'],
 		'Copyright' => $_POST['copyright'],
 		'Marked' => $_POST['marked'],
@@ -49,9 +50,9 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 			} else {
 
 				try {
-					$statement = $pdo->prepare("UPDATE Images SET Title=?, Filename=?, URL=?, Author=?, Year=?, Source=?, ELibrary=?, Caption=?, Publishist=?, Copyright=?, Marked=? WHERE ID=?;");
+					$statement = $pdo->prepare("UPDATE Images SET Title=?, Filename=?, URL=?, Author=?, Year=?, Source=?, ELibrary=?, Caption=?, Note=?, Publishist=?, Copyright=?, Marked=? WHERE ID=?;");
 				
-					$statement->execute(array($image->Title, $image->Filename, $image->URL, $image->Author, $image->Year, $image->Source, $image->ELibrary, $image->Caption, $image->Publishist, $image->Copyright, $image->Marked, $image->ID));	
+					$statement->execute(array($image->Title, $image->Filename, $image->URL, $image->Author, $image->Year, $image->Source, $image->ELibrary, $image->Caption, $image->Note, $image->Publishist, $image->Copyright, $image->Marked, $image->ID));	
 					
 					$message = 'Your changes have been saved successfully!';
 					
@@ -68,9 +69,9 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 			} else {
 				
 				try {			
-					$statement = $pdo->prepare("INSERT INTO Images (Title, Filename, URL, Author, Year, Source, ELibrary, Caption, Publishist, Copyright, Marked) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?);");
+					$statement = $pdo->prepare("INSERT INTO Images (Title, Filename, URL, Author, Year, Source, ELibrary, Caption, Note, Publishist, Copyright, Marked) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?);");
 			
-					$statement->execute(array($image->Title, $image->Filename, $image->URL, $image->Author, $image->Year, $image->Source, $image->ELibrary, $image->Caption, $image->Publishist, $image->Copyright, $image->Marked));
+					$statement->execute(array($image->Title, $image->Filename, $image->URL, $image->Author, $image->Year, $image->Source, $image->ELibrary, $image->Caption, $image->Note, $image->Publishist, $image->Copyright, $image->Marked));
 					
 					$message = 'Your image has been saved successfully!';
 				
@@ -154,6 +155,10 @@ $title = ($update ? 'Update' : 'Add') . ' Image';
 				<tr>
 					<td>Caption</td>
 					<td><textarea name="caption" rows="5" cols="86"><?php echo $image->Caption;?></textarea></td>
+				</tr>
+				<tr>
+					<td>Note</td>
+					<td><textarea name="note" rows="5" cols="86"><?php echo $image->Note;?></textarea></td>
 				</tr>
 				<tr>
 					<td>Publishist</td>

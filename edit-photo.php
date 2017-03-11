@@ -29,6 +29,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 		'Author' => $_POST['authors'],
 		'Place' => $_POST['place'],
 		'Caption' => $_POST['caption'],
+		'Note' => $_POST['note'],
 		'Negscan' => $_POST['negscan'],
 		'Nix' => $_POST['nix'],
 		'Publishist' => $_POST['publishist']
@@ -50,9 +51,9 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 				
 			} else {
 			
-				$statement = $pdo->prepare("UPDATE Photos SET Photonum=?, OldPhotonum=?, Title=?, Filename=?, URL=?, Year=?, Date=?, Author=?, Place=?, Caption=?, Negscan=?, Nix=?, Publishist=? WHERE ID=?;");
+				$statement = $pdo->prepare("UPDATE Photos SET Photonum=?, OldPhotonum=?, Title=?, Filename=?, URL=?, Year=?, Date=?, Author=?, Place=?, Caption=?, Note=?, Negscan=?, Nix=?, Publishist=? WHERE ID=?;");
 				
-				$statement->execute(array($photo->Photonum, $photo->OldPhotonum, $photo->Title, $photo->Filename, $photo->URL, $photo->Year, $photo->Date, $photo->Author, $photo->Place, $photo->Caption, $photo->Negscan, $photo->Nix, $photo->Publishist, $photo->ID));
+				$statement->execute(array($photo->Photonum, $photo->OldPhotonum, $photo->Title, $photo->Filename, $photo->URL, $photo->Year, $photo->Date, $photo->Author, $photo->Place, $photo->Caption, $photo->Note, $photo->Negscan, $photo->Nix, $photo->Publishist, $photo->ID));
 				
 				$message = 'Your changes have been saved successfully!';
 			}
@@ -64,9 +65,9 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 				
 			} else {
 				
-				$statement = $pdo->prepare("INSERT INTO Photos (Photonum, OldPhotonum, Title, Filename, URL, Year, Date, Author, Place, Caption, Negscan, Nix, Publishist) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?);");
+				$statement = $pdo->prepare("INSERT INTO Photos (Photonum, OldPhotonum, Title, Filename, URL, Year, Date, Author, Place, Caption, Note, Negscan, Nix, Publishist) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?);");
 				
-				$statement->execute(array($photo->Photonum, $photo->OldPhotonum, $photo->Title, $photo->Filename, $photo->URL, $photo->Year, $photo->Date, $photo->Author, $photo->Place, $photo->Caption, $photo->Negscan, $photo->Nix, $photo->Publishist));
+				$statement->execute(array($photo->Photonum, $photo->OldPhotonum, $photo->Title, $photo->Filename, $photo->URL, $photo->Year, $photo->Date, $photo->Author, $photo->Place, $photo->Caption, $photo->Note, $photo->Negscan, $photo->Nix, $photo->Publishist));
 				
 				header('Location: edit-photo.php?id=' . $pdo->lastInsertId() . "&m=1");
 			}
@@ -150,6 +151,10 @@ $title = ($update ? 'Update' : 'Add') . ' Photo';
 				<tr>
 					<td>Caption</td>
 					<td colspan="3"><textarea name="caption" size="100" rows="5" cols="86"><?php echo $photo->Caption;?></textarea></td>
+				</tr>
+				<tr>
+					<td>Note</td>
+					<td colspan="3"><textarea name="note" size="100" rows="5" cols="86"><?php echo $photo->Note;?></textarea></td>
 				</tr>
 				<tr>
 					<td>Publishist</td>
