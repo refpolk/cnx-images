@@ -12,32 +12,50 @@ $(function() {
 	    reader.readAsDataURL(this.files[0]);
 		$("#filename").val(this.files[0].name);
 	});
+	
+	$("#delete-dialog").dialog({
+	    autoOpen: false,
+        resizable: false,
+        width:'auto',
+        modal: true,
+        buttons: {
+          "Delete": function() {
+
+		    $("#thumbnail img").attr("src", "");
+			$("#thumbnail").hide();
+			$("#filename").val("");
+			$("#file").val("");
+			
+			$(this).dialog("close");
+          },
+          Cancel: function() {
+            $(this).dialog("close");
+          }
+        }
+	});
 
 	$("#delete").click(function () {
-	
-	    $("#thumbnail img").attr("src", "");
-		$("#thumbnail").hide();
-		$("#filename").val("");
-		$("#file").val("")
-	
+		
+		$("#delete-dialog").dialog("open");	
 		return false;
 	});
 	
-	$(".zoom").click(function () {
+	$("#zoom-dialog").dialog({
+	    autoOpen: false,
+        resizable: false,
+        width:'auto'
+	});
 	
-  		$("#dialog").dialog({
-        	resizable: false,
-        	width:'auto'
-  		});
-	
+	$(".zoom").click(function (e) {
+		
+	    $("#zoom-dialog").dialog("open");
 		return false;
 	});
 
 	$("input[name='title']").focus();
 	
-	$("#dialog").hide();
-	
 	if ($("#thumbnail img").attr("src") == "") {
+		
 		$("#thumbnail").hide();
 	}
 

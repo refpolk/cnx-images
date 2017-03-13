@@ -183,9 +183,17 @@ $title = ($update ? 'Update' : 'Add') . ' Photo';
 				<tr id="thumbnail">
 					<td>Thumbnail View</td>
 					<td colspan="3">
-						<img src="<?php if ($image->Filename != '') { echo $filelocation . $photo->Filename; } ?>" height="200" alt="Thumbnail View"/>
-						<a id="delete" href="#">Delete</a>
-						<a id="zoom" href="#">Zoom</a>
+						<a class="zoom" title="Zoom" href="#">
+							<img src="<?php if ($photo->Filename != '') { echo $filelocation . $photo->Filename; } ?>" height="150" alt="<?php echo $photo->Title;?>"/>
+						</a>
+						<a class="zoom" title="Zoom" href="#">Zoom</a>
+						<a id="delete" title="Delete" href="#">Delete</a>
+						<div id="zoom-dialog" class="dialog" title="<?php echo $photo->Title;?>">
+						  <p><img src="<?php if ($photo->Filename != '') { echo $filelocation . $photo->Filename; } ?>" height="500" alt="<?php echo $photo->Title;?>"/></p>
+						</div>
+						<div id="delete-dialog" class="dialog" title="Delete the photo?">
+						  <p>Do you really want to delete the photo?</p>
+						</div>
 					</td>
 				</tr>
 				<tr>

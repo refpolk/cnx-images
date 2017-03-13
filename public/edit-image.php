@@ -188,8 +188,11 @@ $title = ($update ? 'Update' : 'Add') . ' Image';
 						</a>
 						<a class="zoom" title="Zoom" href="#">Zoom</a>
 						<a id="delete" title="Delete" href="#">Delete</a>
-						<div id="dialog" title="<?php echo $image->Title;?>">
+						<div id="zoom-dialog" class="dialog" title="<?php echo $image->Title;?>">
 						  <p><img src="<?php if ($image->Filename != '') { echo $filelocation . $image->Filename; } ?>" height="500" alt="<?php echo $image->Title;?>"/></p>
+						</div>
+						<div id="delete-dialog" class="dialog" title="Delete the image?">
+						  <p>Do you really want to delete the image?</p>
 						</div>
 					</td>
 				</tr>
