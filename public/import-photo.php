@@ -1,6 +1,6 @@
 <?php
 
-require 'includes/settings.images.inc.php';
+require 'includes/settings.photos.inc.php';
 
 class Log {
 	public $Row;
@@ -14,75 +14,71 @@ function get_criterion($field) {
 	return is_null($field) ? "IS NULL" : " = '$field'";
 }
 
-function image_exists($pdo, $image) {
+function photo_exists($pdo, $photo) {
 	
 	$statement = $pdo->query(
-		"SELECT * FROM Images WHERE Title " . get_criterion($image->Title) 
-		. " AND Author " . get_criterion($image->Author) 
-		. " AND Filename " . get_criterion($image->Filename) 
-		. " AND URL " . get_criterion($image->URL) . ";");
+		"SELECT * FROM Photos WHERE Title " . get_criterion($photo->Title) 
+		. " AND Author " . get_criterion($photo->Author) 
+		. " AND Filename " . get_criterion($photo->Filename) 
+		. " AND URL " . get_criterion($photo->URL) . ";");
 	
 	if ($statement && $statement->rowCount() > 0) {
 			
-		$image = $statement->fetch(PDO::FETCH_OBJ);
+		$photo = $statement->fetch(PDO::FETCH_OBJ);
 		
-		return $image->ID;
+		return $photo->ID;
 	}
 		
 	return -1;
 }
 
-function build_image($data) {
+function build_photo($data) {
 	return (object) array(	
 		'Title' => $data[0],
 		'Filename' => $data[1],
 		'Author' => $data[2],
 		'Year' => $data[3],
-		'Source' => $data[4],
-		'Caption' => $data[5],
-		'Note' => $data[6],
-		'Publishist' => $data[7],
-		'Copyright' => $data[8],
-		'Marked' => $data[9],
-		'URL' => $data[10],
-		'ELibrary' => $data[11]
+		'Date' => $data[4],
+		'Photonum' => $data[5],
+		'OldPhotonum' => $data[6],
+		'URL' => $data[7],
+		'Place' => $data[8],
+		'Caption' => $data[9],
+		'Note' => $data[10],
+		'Negscan' => $data[11],
+		'Nix' => $data[12],
+		'Publishist' => $data[13]
 	);
 }
 
-function insert_image($pdo, $data, $row) {
+function insert_photo($pdo, $data, $row) {
 	
-	$image = build_image($data);
+	$photo = build_photo($data);
 	
 	$log = new Log();
 	$log->Row = $row + 1;
 	
-	$log->ID = image_exists($pdo, $image);
+	$log->ID = photo_exists($pdo, $photo);
 	
 	if ($log->ID < 0) {
 		
-		if (is_null($image->Title) || $image->Title === "") {
+		if (is_null($photo->Title) || $photo->Title === "") {
 			
-			$log->Message = "Your image cannot be saved: the title must be filled out.";
+			$log->Message = "Your photo cannot be saved: the title must be filled out.";
 			$log->Result = false;
 			
 		} else {
 		
 			try {
-				if ($image->Title === "My Image 8") {
-					throw new Exception("KO!");
-				} else {
 				
-				$statement = $pdo->prepare("INSERT INTO Images (Title, Filename, URL, Author, Year, Source, ELibrary, Caption, Note, Publishist, Copyright, Marked) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?);");
-
-				$statement->execute(array($image->Title, $image->Filename, $image->URL, $image->Author, $image->Year, $image->Source, $image->ELibrary, $image->Caption, $image->Note, $image->Publishist, $image->Copyright, $image->Marked));
+				$statement = $pdo->prepare("INSERT INTO Photos (Photonum, OldPhotonum, Title, Filename, URL, Year, Date, Author, Place, Caption, Note, Negscan, Nix, Publishist) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?);");
+				
+				$statement->execute(array($photo->Photonum, $photo->OldPhotonum, $photo->Title, $photo->Filename, $photo->URL, $photo->Year, $photo->Date, $photo->Author, $photo->Place, $photo->Caption, $photo->Note, $photo->Negscan, $photo->Nix, $photo->Publishist));
 	
 				$log->ID = $pdo->lastInsertId();
-				$log->Message = "Your image has been saved successfully!";
+				$log->Message = "Your photo has been saved successfully!";
 				$log->Result = true;
 				
-				}
-				
-								
 			} catch (Exception $e) {
 				
 				$log->Message = "An exception occured: " . $e->getMessage();
@@ -92,7 +88,7 @@ function insert_image($pdo, $data, $row) {
 		
 	} else {
 		
-		$log->Message = "Your image cannot be saved: an image with the same title, authors, filename and url already exists.";
+		$log->Message = "Your photo cannot be saved: a photo with the same title, authors, filename and url already exists.";
 		$log->Result = false;
 	}
 	
@@ -134,7 +130,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
             while (($data = fgetcsv($handle, 1000, ',')) !== FALSE) {
 
 				if ($row > O) {
-					array_push($logs, insert_image($pdo, $data, $row));
+					array_push($logs, insert_photo($pdo, $data, $row));
 				}
 				
                 $row++;
@@ -142,11 +138,11 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 			
             fclose($handle);
 			
-			$message = "Your images have been imported successfully!";
+			$message = "Your photos have been imported successfully!";
 			
 			foreach($logs as $log) {
 			    if ($log->Result == false) {
-					$warning = "Some images have not been imported!";
+					$warning = "Some photos have not been imported!";
 					$message = "";					
 			        break;
 			    }
@@ -157,7 +153,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     }
 }
 
-$title = 'Import Images';
+$title = 'Import Photos';
 
 ?>
 <html>
@@ -172,11 +168,11 @@ $title = 'Import Images';
 		
 			<h1><?php echo $title; ?></h1>
 			
-			<p>Download the sample CSV file: <a href="/resources/import_images_sample.csv">import_images_sample.csv</a></p>
+			<p>Download the sample CSV file: <a href="/resources/import_photos_sample.csv">import_photos_sample.csv</a></p>
 			
 			<p>The first line contains headers and is not imported. The 'Title' field is mandatory, all the other fields are optional.</p>
 		
-			<form method="POST" enctype="multipart/form-data" action="import-image.php" >
+			<form method="POST" enctype="multipart/form-data" action="import-photo.php" >
 			
 				<?php require 'includes/messages.inc.php'; ?>
 			
@@ -202,7 +198,7 @@ $title = 'Import Images';
 							 <td>
 								<?php echo $log->Message; ?> 
 		 						<?php if ($log->ID > 0) { ?>
-									<a href="<?php echo "/edit-image.php?id=$log->ID"; ?>" target="_blank">See Image</a>
+									<a href="<?php echo "/edit-photo.php?id=$log->ID"; ?>" target="_blank">See Photo</a>
 		 						<?php } ?>
 							 </td>
 						 </tr> 
