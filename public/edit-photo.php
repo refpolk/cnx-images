@@ -210,6 +210,6 @@ $title = ($update ? 'Update' : 'Add') . ' Photo';
 		</div>
 	
 		<?php require 'includes/scripts.inc.php'; ?>
-		<script src="scripts/add.js"></script>
+		<script src="scripts/edit.js"></script>
 	</body>
 </html>
