@@ -84,12 +84,18 @@ $title = 'Search Images';
 
 			<?php require 'includes/messages.inc.php'; ?>
 			
-			<table style="width=100%">
+			<table style="width=100%" class="table table-bordered">
 				<tr>
 					<td></td>	
 					<td>
-						<input type="text" size="115" maxlength="115" name="q" value="<?php echo $query ?>"  placeholder="Title / Author / Caption / Filename" />
-						<input type="submit" value="Search Images" />
+					    <div class="input-group">
+					      <input type="text" class="form-control" size="115" maxlength="115" name="q" value="<?php echo $query ?>"  placeholder="Title / Author / Caption / Filename" />
+					      <span class="input-group-btn">
+					        <button class="btn btn-default" type="submit">Search Images!</button>
+					      </span>
+					    </div>
+						<!--<input type="text" size="115" maxlength="115" name="q" value="<?php echo $query ?>"  placeholder="Title / Author / Caption / Filename" />
+						<input type="submit" value="Search Images" />-->
 					</td>
 				</tr>
 				<tr>
@@ -111,7 +117,7 @@ $title = 'Search Images';
 			
 			<?php require 'includes/pager.inc.php'; ?>
 						
-			<table>
+			<table class="table table-bordered">
 				<?php while ($image = $statement->fetch(PDO::FETCH_OBJ)) { ?>
 				<tr>
 					<td valign="top">
@@ -123,7 +129,7 @@ $title = 'Search Images';
 					<td>
 						<?php if ($image->Filename != '' && file_exists($filelocation . $image->Filename)) { ?>
 						<a class="zoom" data-dialog-id="#dialog-<?php echo $image->ID; ?>" title="Zoom" href="#">
-							<img src="<?php echo $filelocation . $image->Filename; ?>" height="100" alt="<?php echo $image->Title;?>"/>
+							<img src="<?php echo $filelocation . $image->Filename; ?>" height="100px" alt="<?php echo $image->Title;?>"/>
 						</a>
 						<div class="dialog" id="dialog-<?php echo $image->ID; ?>" title="<?php echo $image->Title;?>">
 						  <p><img src="<?php echo $filelocation . $image->Filename; ?>" height="500" alt="<?php echo $image->Title;?>"/></p>

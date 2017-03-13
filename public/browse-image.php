@@ -26,7 +26,7 @@
 	
 			<?php require 'includes/pager.inc.php'; ?>
 
-			<table style="width=100%">
+			<table style="width=100%" class="table table-bordered">
 				<thead>
 					<tr>
 		     		   	<th>ID</th>

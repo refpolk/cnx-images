@@ -58,5 +58,11 @@ $(function() {
 		
 		$("#thumbnail").hide();
 	}
+	
+	/*
+	$('input, textarea').attr('disabled', true);
+	$('input, textarea').attr('style', 'background-color:#ddd;');
+	$('.edit-only').hide();
+	*/
 
 });
