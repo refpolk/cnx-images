@@ -1,17 +1,20 @@
 $(function() {
 	
+	$(".dialog").dialog({
+	    autoOpen: false,
+        resizable: false,
+        width:'auto'
+	});
+	
 	$(".zoom").click(function (e) {
 	
-  		$(e.target).parent('.zoom').next('.dialog').dialog({
-        	resizable: false,
-        	width:'auto'
-  		});
+	    var dialogId = $(this).data('dialog-id');
+		
+	    $(dialogId).dialog("open");
 	
 		return false;
 	});
 		
 	$("input[name='q']").focus();
-	
-	$(".dialog").hide();
 	
 });

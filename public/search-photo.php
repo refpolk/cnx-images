@@ -121,10 +121,10 @@ $title = 'Search Photos';
 					</td>
 					<td>
 						<?php if ($photo->Filename != '' && file_exists($filelocation . $photo->Filename)) { ?>
-						<a class="zoom" title="Zoom" href="#">
+						<a class="zoom" data-dialog-id="#dialog-<?php echo $photo->ID; ?>" title="Zoom" href="#">
 							<img src="<?php echo $filelocation . $photo->Filename; ?>" height="100" alt="<?php echo $photo->Title;?>"/>
 						</a>
-						<div class="dialog" title="<?php echo $photo->Title;?>">
+						<div class="dialog" id="dialog-<?php echo $photo->ID; ?>" title="<?php echo $photo->Title;?>">
 						  <p><img src="<?php echo $filelocation . $photo->Filename; ?>" height="500" alt="<?php echo $photo->Title;?>"/></p>
 						</div>
 						<?php } ?>						
