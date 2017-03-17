@@ -168,14 +168,13 @@ $title = 'Import Photos';
 		
 			<h1><?php echo $title; ?></h1>
 			
+			<?php require 'includes/messages.inc.php'; ?>
+			
 			<p>Download the sample CSV file: <a href="/resources/import_photos_sample.csv">import_photos_sample.csv</a></p>
 			
 			<p>The first line contains headers and is not imported. The 'Title' field is mandatory, all the other fields are optional.</p>
 		
 			<form method="POST" enctype="multipart/form-data" action="import-photo.php" >
-			
-				<?php require 'includes/messages.inc.php'; ?>
-			
 				<input type="file" name="csv" value="" /><br />
 				<input type="submit" name="submit" value="Import" />
 			</form>
