@@ -75,7 +75,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 					
 					$message = 'Your image has been saved successfully!';
 				
-					header('Location: edit-image.php?id=' . $pdo->lastInsertId());
+					header('Location: edit-image.php?id=' . $pdo->lastInsertId() . "&m=1");
 					
 				} catch (Exception $e) {
 					$error = "ERROR: $e";
@@ -86,6 +86,10 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 } else {
 	
 	$update = isset($_GET['id']);
+	
+	if (isset($_GET['m'])) {
+		$message = 'Your image has been saved successfully!';
+	}
 	
 	if ($update) {
 
