@@ -29,6 +29,8 @@ BEGIN
 	ALTER TABLE `Images` ADD UNIQUE `ix_unique` (`Title`, `Author`, `Filename`, `URL`);
 	
 	ALTER TABLE `Images` ADD FULLTEXT `ix_fulltext` (`Title`, `Author`, `Filename`, `Note`, `Caption`);
+	
+	ALTER TABLE `Images` MODIFY `Title` VARCHAR(200);
 END;;
 
 CALL update_table();;

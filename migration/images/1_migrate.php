@@ -53,10 +53,42 @@ $images_filter = function($cols) {
 	);
 };
 
-require '../../Application/includes/settings.inc.php';
+$media_covers_filter = function($cols) {
+	return array(
+		title_formatter($cols[1]),		// Title
+		$cols[2]						// Filename
+	);
+};
+
+$refs_xxx_filter = function($cols) {
+	return array(
+		title_formatter($cols[1] . ' ' . $cols[2]),	// Title
+		$cols[4],									// Filename
+		$cols[3],  									// Author
+		$cols[5]									// Year
+	);
+};
+
+require '../../public/includes/settings.inc.php';
 
 $statement = $pdo->prepare("INSERT INTO Images (ID, Title, Filename, Author, Year, Source, Caption, ELibrary, Marked, Publishist) VALUES (?,?,?,?,?,?,?,?,?,?)");
 
-migrate("./Images.txt", $images_filter, $statement);	
+migrate("./Images.txt", $images_filter, $statement);
+
+$statement = $pdo->prepare("INSERT INTO Images (Title, Filename) VALUES (?,?)");
+
+migrate("./MediaCovers.txt", $media_covers_filter, $statement);
+
+$statement = $pdo->prepare("INSERT INTO Images (Title, Filename, Author, Year) VALUES (?,?,?,?)");
+
+migrate("./RefsAUD.txt", $refs_xxx_filter, $statement);
+migrate("./RefsBooks.txt", $refs_xxx_filter, $statement);
+migrate("./RefsFLM.txt", $refs_xxx_filter, $statement);
+
+/*
+ID	ImageNum	Title	Filename	OriginalFilename	Author	Year1stPub	BildSource	Caption	ELibrary	CXDatabase	SourcesDB	Ullibrary	Nix	Marked	Publishist	Format	SoFRefID	SoFDate
+MEDIAORGID	MEDIAORG	LOGONAME1
+REFID	TITLE	SUBTITLE	AUTHORS	COVER	YEAR1STPUB
+*/
 
 ?>
