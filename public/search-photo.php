@@ -28,17 +28,25 @@ if (isset($_GET['q'])) {
 
 			$query_where = implode( '%\' AND Filename LIKE \'%', $searchField );
 			$query_Filename = ' OR Filename LIKE \'%' . $query_where . '%\'';
+			
+			$query_where = implode( '%\' AND Note LIKE \'%', $searchField );
+			$query_Note = ' OR Note LIKE \'%' . $query_where . '%\'';
+			
+			$query_where = implode( '%\' AND Place LIKE \'%', $searchField );
+			$query_Place = ' OR Place LIKE \'%' . $query_where . '%\'';
 
-			$query_All = $query_Title . $query_Author . $query_Caption . $query_Filename;
+			$query_All = $query_Title . $query_Author . $query_Caption . $query_Filename . $query_Note . $query_Place;
 		}
 		elseif ( $option == 'exact' )
 		{
 			$query_Title = 'Title = \'' . $query. '\'';
-			$query_Author= ' OR Author = \'' . $query. '\'';
-			$query_Caption= ' OR Caption = \'' . $query. '\'';
-			$query_Filename= ' OR Filename = \'' . $query. '\'';
+			$query_Author = ' OR Author = \'' . $query. '\'';
+			$query_Caption = ' OR Caption = \'' . $query. '\'';
+			$query_Filename = ' OR Filename = \'' . $query. '\'';
+			$query_Note = ' OR Note = \'' . $query. '\'';
+			$query_Place = ' OR Place = \'' . $query. '\'';
 
-			$query_All = $query_Title . $query_Author . $query_Caption . $query_Filename;
+			$query_All = $query_Title . $query_Author . $query_Caption . $query_Filename . $query_Note . $query_Place;
 		}
 		elseif ( $option == 'any' )
 		{
@@ -50,8 +58,10 @@ if (isset($_GET['q'])) {
 			$query_Author = ' OR Author REGEXP \'' . $query_where . '\'';
 			$query_Caption = ' OR Caption REGEXP \'' . $query_where . '\'';
 			$query_Filename = ' OR Filename REGEXP \'' . $query_where . '\'';
+			$query_Note = ' OR Note REGEXP \'' . $query_where . '\'';
+			$query_Place = ' OR Place REGEXP \'' . $query_where . '\'';
 
-			$query_All = $query_Title . $query_Author . $query_Caption . $query_Filename;
+			$query_All = $query_Title . $query_Author . $query_Caption . $query_Filename . $query_Note . $query_Place;
 		}
 		
 		$numberOfItems = $pdo->query("SELECT COUNT(*) FROM Photos WHERE $query_All")->fetchColumn();
@@ -87,7 +97,7 @@ $title = 'Search Photos';
 			<table style="width=100%">
 				<tr>	
 					<td>
-						<input type="text" size="115" maxlength="115" name="q" value="<?php echo $query ?>" placeholder="Title / Author / Caption / Filename" />
+						<input type="text" size="115" maxlength="115" name="q" value="<?php echo $query ?>" placeholder="Title / Filename / Author / Caption / Note / Place" />
 						<input type="submit" value="Search Photos" />
 					</td>
 				</tr>
