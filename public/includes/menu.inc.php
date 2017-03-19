@@ -24,7 +24,7 @@
 </ul>
 -->
 
-<nav class="navbar navbar-default navbar-static-top">
+<nav class="navbar navbar-inverse navbar-static-top">
   <div class="container">
     <div id="navbar" class="navbar-collapse collapse">
       <ul class="nav navbar-nav navbar-left">
@@ -33,13 +33,18 @@
 		<li><a href="browse-image.php">Browse</a></li>
 		<li><a href="import-image.php">Import</a></li>
       </ul>
+      <!--
+	  <form class="navbar-form navbar-left" method="GET" action="search-image.php">
+        <div class="form-group">
+          <input type="text" class="form-control" placeholder="Search">
+        </div>
+        <button type="submit" class="btn btn-default">Submit</button>
+      </form>
+	  -->
 	  <ul class="nav navbar-nav navbar-right">
           <li><a href="search-image.php">Images</a></li>
           <li><a href="search-photo.php">Photos</a></li>
 	  </ul>		
-
-
     </div><!--/.nav-collapse -->
   </div>
 </nav>
-

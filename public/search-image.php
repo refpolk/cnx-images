@@ -74,17 +74,19 @@ $title = 'Search Images';
 		<?php require 'includes/styles.inc.php'; ?>
 	</head>
 	<body>
-		<div class="container">
-
 		<?php require 'includes/menu.inc.php'; ?>
 		
-		<h1><?php echo $title; ?></h1>
+		<div class="container">
+		
+			<div class="page-header">
+				<h1><?php echo $title; ?></h1>
+			</div>
 
 		<form id="searchform" name="form" method="GET" action="search-image.php">
 
 			<?php require 'includes/messages.inc.php'; ?>
 			
-			<table style="width=100%" class="table table-bordered">
+			<table class="table table-bordered">
 				<tr>
 					<td></td>	
 					<td>

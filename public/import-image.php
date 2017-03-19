@@ -166,15 +166,18 @@ $title = 'Import Images';
 		<?php require 'includes/styles.inc.php'; ?>
 	</head>
 	<body>
-		<div class="container">
-
-			<?php require 'includes/menu.inc.php'; ?>
+		<?php require 'includes/menu.inc.php'; ?>
 		
-			<h1><?php echo $title; ?></h1>
+		<div class="container">
 			
-			<p>Download the sample CSV file: <a href="/resources/import_images_sample.csv">import_images_sample.csv</a></p>
+			<div class="page-header">
+				<h1><?php echo $title; ?></h1>
+			</div>
 			
-			<p>The first line contains headers and is not imported. The 'Title' field is mandatory, all the other fields are optional.</p>
+			<div class="well well-sm">
+				<p>Download the sample CSV file: <a href="/resources/import_images_sample.csv">import_images_sample.csv</a></p>
+				<p>The first line contains headers and is not imported. The 'Title' field is mandatory, all the other fields are optional.</p>
+			</div>
 		
 			<form method="POST" enctype="multipart/form-data" action="import-image.php" >
 			
@@ -186,7 +189,7 @@ $title = 'Import Images';
 			
 			<?php if (!is_null($logs)) { ?>
 			
-			<table>
+			<table class="table table-bordered">
 				<thead>
 					<tr>
 						<td>Row</td>
