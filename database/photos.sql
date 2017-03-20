@@ -33,6 +33,16 @@ BEGIN
 	ALTER TABLE `Photos` ADD UNIQUE `ix_unique` (`Title`, `Author`, `Filename`, `URL`);
 	
 	ALTER TABLE `Photos` ADD FULLTEXT `ix_fulltext` (`Title`, `Author`, `Filename`, `Note`, `Caption`, `Place`);
+	
+	ALTER TABLE `Photos` MODIFY `Title` VARCHAR(200) NOT NULL;
+	
+	ALTER TABLE `Photos` MODIFY `Filename` VARCHAR(120) DEFAULT NULL;
+	
+	ALTER TABLE `Photos` MODIFY `Caption` VARCHAR(1000) DEFAULT NULL;
+	
+	ALTER TABLE `Photos` MODIFY `Note` VARCHAR(1000) DEFAULT NULL;
+	
+	ALTER TABLE `Photos` MODIFY `Publishist` VARCHAR(200) DEFAULT NULL;
 END;;
 
 CALL update_table();;

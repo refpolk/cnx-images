@@ -121,7 +121,7 @@ $photos_filter = function($cols) {
 		$cols[4],						// Filename
 		$cols[5],						// Year
 		$cols[6],						// Date
-		$cols[7],						// Authors
+		$cols[7],						// Author
 		$cols[8],						// Place
 		$cols[9],						// Caption
 		bool_formatter($cols[12]), 		// NegScan
@@ -138,7 +138,7 @@ $nikon_filter = function($cols) {
 		$cols[4],						// Filename
 		$cols[5],						// Year
 		$cols[6],						// Date
-		$cols[7],						// Authors
+		$cols[7],						// Author
 		$cols[8],						// Place
 		$cols[9],						// Caption
 		null, 							// NegScan
@@ -155,7 +155,7 @@ $canon_filter = function($cols) {
 		$cols[4],						// Filename
 		$cols[5],						// Year
 		$cols[6],						// Date
-		$cols[7],						// Authors
+		$cols[7],						// Author
 		$cols[8],						// Place
 		$cols[9],						// Caption
 		null, 							// NegScan
@@ -163,13 +163,33 @@ $canon_filter = function($cols) {
 	);
 };
 
-require '../../Application/includes/settings.inc.php';
+$new_canon_filter = function($cols) {
+	return array(
+		$cols[1],						// PhotoNum
+		null,							// OldPhotoNum
+		canon_title_formatter($cols[2]),// Title
+		$cols[4],						// Filename
+		$cols[5],						// Year
+		$cols[6],						// Date
+		$cols[7],						// Author
+		$cols[8],						// Place
+		$cols[9],						// Caption
+		null, 							// NegScan
+		bool_formatter($cols[16])		// Nix
+	);
+};
 
-$statement = $pdo->prepare("INSERT INTO Photos (ID, Photonum, Oldphotonum, Title, Filename, Year, Date, Authors, Place, Caption, Negscan, Nix) VALUES (?,?,?,?,?,?,?,?,?,?,?,?)");
+require '../../public/includes/settings.inc.php';
+
+$statement = $pdo->prepare("INSERT INTO Photos (ID, Photonum, Oldphotonum, Title, Filename, Year, Date, Author, Place, Caption, Negscan, Nix) VALUES (?,?,?,?,?,?,?,?,?,?,?,?)");
 
 migrate("./Photos.txt", $photos_filter, $statement);
 migrate("./Nikon.txt", $nikon_filter, $statement);
 migrate("./Canon.txt", $canon_filter, $statement);
+
+$statement = $pdo->prepare("INSERT INTO Photos (Photonum, Oldphotonum, Title, Filename, Year, Date, Author, Place, Caption, Negscan, Nix) VALUES (?,?,?,?,?,?,?,?,?,?,?)");
+
+migrate("./NewCanon.txt", $new_canon_filter, $statement);
 
 echo "[Canon] Modified: $c1\r\n";
 echo "[Canon] Modified Untitled: $c2\r\n";
@@ -181,8 +201,8 @@ echo "[Nikon] Not Modified: $n3\r\n";
 
 /*
 ID	PHOTONUM	OLDPHOTONM	TITLE	FILENAME	YEAR	DATE	AUTHORS	PLACE	CAPTION	CAMERA	TECHNICAL	NEGSCAN	MAINALBUM	ALBUMPLUS	PUBLISHIST	NIX	NACKT
-ID	NikonID	Title	TitleTemp	Filename	Jahr	Date	Authors	Place	Caption	Camera	Nix
-ID	CanonID	Title	TitleTemp	Filename	Jahr	Date	Authors	Place	Caption	Camera	Nix
+ID	NikonID	Title	TitleTemp	Filename	Jahr	Date	Author	Place	Caption	Camera	Nix
+ID	CanonID	Title	TitleTemp	Filename	Jahr	Date	Author	Place	Caption	Camera	Nix
 */
 
 ?>

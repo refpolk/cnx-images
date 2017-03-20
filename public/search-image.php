@@ -28,17 +28,21 @@ if (isset($_GET['q'])) {
 
 			$query_where = implode( '%\' AND Filename LIKE \'%', $searchField );
 			$query_Filename = ' OR Filename LIKE \'%' . $query_where . '%\'';
+			
+			$query_where = implode( '%\' AND Note LIKE \'%', $searchField );
+			$query_Filename = ' OR Note LIKE \'%' . $query_where . '%\'';
 
 			$query_All = $query_Title . $query_Author . $query_Caption . $query_Filename;
 		}
 		elseif ( $option == 'exact' )
 		{
 			$query_Title = 'Title = \'' . $query. '\'';
-			$query_Author= ' OR Author = \'' . $query. '\'';
-			$query_Caption= ' OR Caption = \'' . $query. '\'';
-			$query_Filename= ' OR Filename = \'' . $query. '\'';
+			$query_Author = ' OR Author = \'' . $query. '\'';
+			$query_Caption = ' OR Caption = \'' . $query. '\'';
+			$query_Filename = ' OR Filename = \'' . $query. '\'';
+			$query_Note = ' OR Note = \'' . $query. '\'';
 
-			$query_All = $query_Title . $query_Author . $query_Caption . $query_Filename;
+			$query_All = $query_Title . $query_Author . $query_Caption . $query_Filename . $query_Note;
 		}
 		elseif ( $option == 'any' )
 		{
@@ -50,8 +54,9 @@ if (isset($_GET['q'])) {
 			$query_Author = ' OR Author REGEXP \'' . $query_where . '\'';
 			$query_Caption = ' OR Caption REGEXP \'' . $query_where . '\'';
 			$query_Filename = ' OR Filename REGEXP \'' . $query_where . '\'';
+			$query_Note = ' OR Note REGEXP \'' . $query_where . '\'';
 
-			$query_All = $query_Title . $query_Author . $query_Caption . $query_Filename;
+			$query_All = $query_Title . $query_Author . $query_Caption . $query_Filename . $query_Note;
 		}
 		
 		$numberOfItems = $pdo->query("SELECT COUNT(*) FROM Images WHERE $query_All")->fetchColumn();
@@ -88,7 +93,7 @@ $title = 'Search Images';
 				<tr>
 					<td></td>	
 					<td>
-						<input type="text" size="115" maxlength="115" name="q" value="<?php echo $query ?>"  placeholder="Title / Author / Caption / Filename" />
+						<input type="text" size="115" maxlength="115" name="q" value="<?php echo $query ?>"  placeholder="Title / Filename / Author / Caption / Note" />
 						<input type="submit" value="Search Images" />
 					</td>
 				</tr>

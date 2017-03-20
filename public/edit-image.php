@@ -107,7 +107,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 	}
 }
 
-$title = ($update ? 'Update' : 'Add') . ' Image';
+$title = ($update ? 'Edit' : 'Add') . ' Image';
 
 ?>
 <html>
@@ -115,7 +115,7 @@ $title = ($update ? 'Update' : 'Add') . ' Image';
 		<?php require 'includes/styles.inc.php'; ?>
 		<title><?php echo $title; ?></title>
 	</head>
-	<body>
+	<body data-mode="<?php echo ($update ? 'Edit' : 'Add'); ?>">
 		<div class="container">
 
 		<?php require 'includes/menu.inc.php'; ?>
@@ -134,7 +134,7 @@ $title = ($update ? 'Update' : 'Add') . ' Image';
 				</tr>
 				<?php } ?>			
 				<tr>
-					<td>Title <span class="mandatory">*</span></td>	
+					<td>Title <span class="mandatory edit-only">*</span></td>	
 					<td><input type="text" size="100" maxlength="115" name="title" value="<?php echo $image->Title;?>"></td>
 				</tr>
 				<tr>
@@ -180,7 +180,7 @@ $title = ($update ? 'Update' : 'Add') . ' Image';
 					<td>Filename</td>
 					<td><input type="text" id="filename" size="100" name="filename" value="<?php echo $image->Filename;?>"/></td>
 				</tr>
-				<tr>
+				<tr class="edit-only">
 					<td>Select File</td>
 					<td><input type="file" id="file" name="file" /></td>
 				</tr>
@@ -191,7 +191,7 @@ $title = ($update ? 'Update' : 'Add') . ' Image';
 							<img src="<?php if ($image->Filename != '') { echo $filelocation . $image->Filename; } ?>" height="150" alt="<?php echo $image->Title;?>"/>
 						</a>
 						<a class="zoom" title="Zoom" href="#">Zoom</a>
-						<a id="delete" title="Delete" href="#">Delete</a>
+						<a  class="edit-only" id="delete" title="Delete" href="#">Delete</a>
 						<div id="zoom-dialog" class="dialog" title="<?php echo $image->Title;?>">
 						  <p><img src="<?php if ($image->Filename != '') { echo $filelocation . $image->Filename; } ?>" height="500" alt="<?php echo $image->Title;?>"/></p>
 						</div>
@@ -205,8 +205,11 @@ $title = ($update ? 'Update' : 'Add') . ' Image';
 					<td><input type="text" size="100" maxlength="150" name="url" value="<?php echo $image->URL;?>"></td>
 				</tr>
 				<tr>
-					<td><input type="submit" name="submit" value="<?php echo ($update ? 'Update' : 'Save')?> Image"></td>
-					<td></td>
+					<td colspan="4">
+						<input type="submit" name="edit" value="Edit Image">
+						<input class="edit-only" type="submit" name="submit" value="Save Image">
+						<input type="submit" name="cancel" value="Cancel">
+					</td>
 				</tr>
 			</table>
 		</form>
