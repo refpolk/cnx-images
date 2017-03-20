@@ -58,5 +58,45 @@ $(function() {
 		
 		$("#thumbnail").hide();
 	}
+	
+	// Edit / Readonly mode
+	
+	$('input[name="edit"], input[name="cancel"]').hide();
+			
+	if ($('body').attr('data-mode') === 'Edit') {
 
+		$('.edit-only').hide();
+
+		$('input[type="text"],input[type="radio"],textarea')
+			.attr('disabled', 'disabled')
+			.attr('style', 'background-color:#ddd;');
+			
+		//$('input[type="text"],input[type="radio"],textarea').attr('style', 'background-color:#ddd;');
+
+		$('input[name="edit"]').show();
+	}
+	
+	$('input[name="edit"]').click(function() {
+
+		$('.edit-only').show();
+
+		$('input[type="text"],input[type="radio"],textarea')
+			.attr('disabled', false)
+			.attr('style', 'background-color:#fff;');
+		
+		//$('input[type="text"],input[type="radio"],textarea').attr('style', 'background-color:#fff;');
+
+		$('input[name="edit"]').hide();
+		$('input[name="cancel"]').show();		
+		
+		return false;
+	});
+	
+	$('input[name="cancel"]').click(function() {
+		
+		//window.location.reload();
+		window.location.assign(window.location)
+		
+		return false;
+	});
 });
