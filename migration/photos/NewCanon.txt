@@ -1,0 +1,52 @@
+ID	CanonID	Title	TitleTemp	Filename	Jahr	Date	Authors	Place	Caption	Camera	Nix
+	7390	Miriam - MacGregorPark	2016CG-0047-Miriam-MacGregorPark.JPG	2016CG-0047-Miriam-MacGregorPark.JPG	2016	18/04/2016	Ulli Diemer	MacGregor Provincial Park		Canon G5	
+	7391	Miriam - MacGregorPark	2016CG-0048-Miriam-MacGregorPark.JPG	2016CG-0048-Miriam-MacGregorPark.JPG	2016	18/04/2016	Ulli Diemer	MacGregor Provincial Park		Canon G5	
+	7392	Miriam - MacGregorPark	2016CG-0049-Miriam-MacGregorPark.JPG	2016CG-0049-Miriam-MacGregorPark.JPG	2016	18/04/2016	Ulli Diemer	MacGregor Provincial Park		Canon G5	
+	7393	Bird - Rondeau	2016CG-0050-Bird-Rondeau.JPG	2016CG-0050-Bird-Rondeau.JPG	2016	25/05/2016	Ulli Diemer	Rondeau		Canon G5	
+	7394	Bird - Rondeau	2016CG-0051-Bird-Rondeau.JPG	2016CG-0051-Bird-Rondeau.JPG	2016	25/05/2016	Ulli Diemer	Rondeau		Canon G5	
+	7395	Rondeau	2016CG-0052-Rondeau.JPG	2016CG-0052-Rondeau.JPG	2016	25/05/2016	Ulli Diemer	Rondeau		Canon G5	
+	7396	Rondeau	2016CG-0053-Rondeau.JPG	2016CG-0053-Rondeau.JPG	2016	25/05/2016	Ulli Diemer	Rondeau		Canon G5	
+	7397	Rondeau	2016CG-0054-Rondeau.JPG	2016CG-0054-Rondeau.JPG	2016	25/05/2016	Ulli Diemer	Rondeau		Canon G5	
+	7398	Rondeau	2016CG-0055-Rondeau.JPG	2016CG-0055-Rondeau.JPG	2016	25/05/2016	Ulli Diemer	Rondeau		Canon G5	
+	7399	Rondeau	2016CG-0056-Rondeau.JPG	2016CG-0056-Rondeau.JPG	2016	25/05/2016	Ulli Diemer	Rondeau		Canon G5	
+	7400	Raccoon - Rondeau	2016CG-0057-Raccoon-Rondeau.JPG	2016CG-0057-Raccoon-Rondeau.JPG	2016	25/05/2016	Ulli Diemer	Rondeau		Canon G5	
+	7401	Raccoon - Rondeau	2016CG-0058-Raccoon-Rondeau.JPG	2016CG-0058-Raccoon-Rondeau.JPG	2016	25/05/2016	Ulli Diemer	Rondeau		Canon G5	
+	7402	Rondeau	2016CG-0059-Rondeau.JPG	2016CG-0059-Rondeau.JPG	2016	25/05/2016	Ulli Diemer	Rondeau		Canon G5	
+	7403	Rondeau	2016CG-0060-Rondeau.JPG	2016CG-0060-Rondeau.JPG	2016	25/05/2016	Ulli Diemer	Rondeau		Canon G5	
+	7404	Trees - Rondeau	2016CG-0061-Trees-Rondeau.JPG	2016CG-0061-Trees-Rondeau.JPG	2016	25/05/2016	Ulli Diemer	Rondeau		Canon G5	
+	7405	Trees - Rondeau	2016CG-0062-Trees-Rondeau.JPG	2016CG-0062-Trees-Rondeau.JPG	2016	25/05/2016	Ulli Diemer	Rondeau		Canon G5	
+	7406	Miriam	2016CG-0063-Miriam.JPG	2016CG-0063-Miriam.JPG	2016	1/06/2016	Ulli Diemer	111 Barton Avenue		Canon G5	
+	7407	Miriam	2016CG-0064-Miriam.JPG	2016CG-0064-Miriam.JPG	2016	1/06/2016	Ulli Diemer	111 Barton Avenue		Canon G5	
+	7408	Miriam	2016CG-0065-Miriam.JPG	2016CG-0065-Miriam.JPG	2016	1/06/2016	Ulli Diemer	111 Barton Avenue		Canon G5	
+	7409	Miriam	2016CG-0066-Miriam.JPG	2016CG-0066-Miriam.JPG	2016	1/06/2016	Ulli Diemer	111 Barton Avenue		Canon G5	
+	7410	Ulli's New Computer - Connexions office	2016CG-0067-UllisNewComputer-Connexionsoffice.JPG	2016CG-0067-UllisNewComputer-Connexionsoffice.JPG	2016	18/06/2016	Ulli Diemer	812A Bloor Street West		Canon G5	
+	7411	New Scanner - Connexions Office	2016CG-0068-NewScanner-ConnexionsOffice.JPG	2016CG-0068-NewScanner-ConnexionsOffice.JPG	2016	18/06/2016	Ulli Diemer	812A Bloor Street West		Canon G5	
+	7412	Sources Connexions Office	2016CG-0069-SourcesConnexionsOffice.JPG	2016CG-0069-SourcesConnexionsOffice.JPG	2016	18/06/2016	Ulli Diemer	812A Bloor Street West		Canon G5	
+	7413	AcerLaptop - Sources Connexions Office	2016CG-0070-AcerLaptop-SourcesConnexionsOffice.JPG	2016CG-0070-AcerLaptop-SourcesConnexionsOffice.JPG	2016	18/06/2016	Ulli Diemer	812A Bloor Street West		Canon G5	
+	7414	Compaq Laptop	2016CG-0071-CompaqLaptop.JPG	2016CG-0071-CompaqLaptop.JPG	2016	18/06/2016	Ulli Diemer	812A Bloor Street West		Canon G5	
+	7415	Scanner - Sources Connexions Office	2016CG-0072-Scanner-SourcesConnexionsOffice.JPG	2016CG-0072-Scanner-SourcesConnexionsOffice.JPG	2016	18/06/2016	Ulli Diemer	812A Bloor Street West		Canon G5	
+	7416	Computers - Sources Connexions Office	2016CG-0073-Computers-SourcesConnexionsOffice.JPG	2016CG-0073-Computers-SourcesConnexionsOffice.JPG	2016	18/06/2016	Ulli Diemer	812A Bloor Street West		Canon G5	
+	7417	Computer Sources Connexions Office	2016CG-0074-ComputerSourcesConnexionsOffice.JPG	2016CG-0074-ComputerSourcesConnexionsOffice.JPG	2016	18/06/2016	Ulli Diemer	812A Bloor Street West		Canon G5	
+	7418	Computer - Sources Connexions Office	2016CG-0075-Computer-SourcesConnexionsOffice.JPG	2016CG-0075-Computer-SourcesConnexionsOffice.JPG	2016	18/06/2016	Ulli Diemer	812A Bloor Street West		Canon G5	
+	7419	Servers - Sources Connexions Office	2016CG-0076-Servers-SourcesConnexionsOffice.JPG	2016CG-0076-Servers-SourcesConnexionsOffice.JPG	2016	18/06/2016	Ulli Diemer	812A Bloor Street West		Canon G5	
+	7420	Servers - Sources Connexions Office	2016CG-0077-Servers-SourcesConnexionsOffice.JPG	2016CG-0077-Servers-SourcesConnexionsOffice.JPG	2016	18/06/2016	Ulli Diemer	812A Bloor Street West		Canon G5	
+	7421	Ulli's Desk	2016CG-0078-UllisDesk.JPG	2016CG-0078-UllisDesk.JPG	2016	18/06/2016	Ulli Diemer	812A Bloor Street West		Canon G5	
+	7422	Ulli's Office	2016CG-0079-UllisOffice.JPG	2016CG-0079-UllisOffice.JPG	2016	18/06/2016	Ulli Diemer	812A Bloor Street West		Canon G5	
+	7423	Miriam - Suet Feeder	2016CG-0080-MiriamSuetFeeder.JPG	2016CG-0080-MiriamSuetFeeder.JPG	2016	24/12/2016	Ulli Diemer	111 Barton Avenue		Canon G5	
+	7424	Miriam- Suet Feeder	2016CG-0081-MiriamSuetFeeder.JPG	2016CG-0081-MiriamSuetFeeder.JPG	2016	24/12/2016	Ulli Diemer	111 Barton Avenue		Canon G5	
+	7425	Miriam- Suet Feeder	2016CG-0082-MiriamSuetFeeder.JPG	2016CG-0082-MiriamSuetFeeder.JPG	2016	24/12/2016	Ulli Diemer	111 Barton Avenue		Canon G5	
+	7426	Miriam - Suet Feeder	2016CG-0083-MiriamSuetFeeder.JPG	2016CG-0083-MiriamSuetFeeder.JPG	2016	24/12/2016	Ulli Diemer	111 Barton Avenue		Canon G5	
+	7427	Miriam Skiing in Chrisite Pits	2017CG-0001-MiriamChrisitePits.JPG	2017CG-0001-MiriamChrisitePits.JPG	2017	12/02/2017	Ulli Diemer	Christie Pits		Canon G5	
+	7428	Miriam Skiing in ChristiePits	2017CG-0002-MiriamChristiePits.JPG	2017CG-0002-MiriamChristiePits.JPG	2017	12/02/2017	Ulli Diemer	Christie Pits		Canon G5	
+	7429	Stream Wye Marsh	2017CG-0003-StreamWyeMarsh.JPG	2017CG-0003-StreamWyeMarsh.JPG	2017	16/02/2017	Ulli Diemer	Wye Marsh		Canon G5	
+	7430	Stream Wye Marsh	2017CG-0004-StreamWyeMarsh.JPG	2017CG-0004-StreamWyeMarsh.JPG	2017	16/02/2017	Ulli Diemer	Wye Marsh		Canon G5	
+	7431	Stream Wye Marsh	2017CG-0005-StreamWyeMarsh.JPG	2017CG-0005-StreamWyeMarsh.JPG	2017	16/02/2017	Ulli Diemer	Wye Marsh		Canon G5	
+	7432	Diane David - Wye Marsh	2017CG-0006-DianeDavidWyeMarsh.JPG	2017CG-0006-DianeDavidWyeMarsh.JPG	2017	16/02/2017	Ulli Diemer	Wye Marsh		Canon G5	
+	7433	Miriam - Wye Marsh	2017CG-0007-MiriamWyeMarsh.JPG	2017CG-0007-MiriamWyeMarsh.JPG	2017	16/02/2017	Ulli Diemer	Wye Marsh		Canon G5	
+	7434	Miriam David Diane	2017CG-0008-MiriamDavidDiane.JPG	2017CG-0008-MiriamDavidDiane.JPG	2017	16/02/2017	Ulli Diemer	Wye Marsh		Canon G5	
+	7435	Miriam Diane David	2017CG-0009-MiriamDianeDavid.JPG	2017CG-0009-MiriamDianeDavid.JPG	2017	16/02/2017	Ulli Diemer	Wye Marsh		Canon G5	
+	7436	Diane Miriam	2017CG-0010-DianeMiriam.JPG	2017CG-0010-DianeMiriam.JPG	2017	16/02/2017	Ulli Diemer	Wye Marsh		Canon G5	
+	7437	David Miriam - Wye Marsh	2017CG-0011-DavidMiriam-WyeMarsh.JPG	2017CG-0011-DavidMiriam-WyeMarsh.JPG	2017	16/02/2017	Ulli Diemer	Wye Marsh		Canon G5	
+	7438	David Miriam - Wye Marsh	2017CG-0012-DavidMiriam-WyeMarsh.JPG	2017CG-0012-DavidMiriam-WyeMarsh.JPG	2017	16/02/2017	Ulli Diemer	Wye Marsh		Canon G5	
+	7439	David Miriam - Wye Marsh	2017CG-0013-DavidMiriam-WyeMarsh.JPG	2017CG-0013-DavidMiriam-WyeMarsh.JPG	2017	16/02/2017	Ulli Diemer	Wye Marsh		Canon G5	
+	7440	Miriam	2017CG-0014-Miriam.JPG	2017CG-0014-Miriam.JPG	2017	16/02/2017	Ulli Diemer	Wye Marsh		Canon G5	

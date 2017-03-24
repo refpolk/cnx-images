@@ -1,0 +1,616 @@
+MEDIAORGID	MEDIAORG	LOGONAME1
+398	The Tribune	MC398s-Tribune.jpg
+400	The Hanover Post	MC400s-HanoverPost.jpg
+430	The Manitoulin Expositor	MC430s-ManitoulinExpos.jpg
+459	Nipigon-Red Rock Gazette	MC459s-NipigonRedRock.jpg
+543	The Walkerton Herald-Times	MC543-WalkertonHerald.jpg
+652	L'Acadie Nouvelle	MC652s-LAcadie.jpg
+939	Kaleidoscope	MC939-Kaleidoscope.jpg
+1232	McGill News Alumni Magazine	MC1232s-McGillNews.jpg
+1672	Natural Life Magazine	MC1672-NaturalLifen.jpg
+1888	Imprint	MC1888-Imprint.jpg
+2227	Canadian Dimension	MC2227-CdnDimensionn.jpg
+2231	Border Crossings	MC2231s-BorderCrossings.jpg
+2241	Country Guide	MC2241s-CountryGuide.jpg
+2350	Briarpatch Magazine	MC2350-Briarpatchn.jpg
+2400	Union Farmer	MC2400-UnionFarmern.jpg
+2584	Il Congresso	MC2584s-Congresso.jpg
+2845	Fisherman 1937 (The Fisherman)	MC2845-Fisherman.jpg
+2974	Common Ground Magazine (Vancouver)	MC2974s-CommonGround.jpg
+3130	Guyana Current	MC3130s-GuyanaCurrent.jpg
+3185	Oral Health	MC3185s-OralHealth.jpg
+3196	The Jewish Tribune	MC3196s-JewishTribune.jpg
+3220	The Philippine Reporter	MC3220-PhilippineReporter.jpg
+3221	Taxi News	MC3221s-TaxiNews.jpg
+3307	Catholic New Times	MC3307s-Catholic.jpg
+3313	Saturday Night Magazine	MC3313-SaturdayNightn.jpg
+3319	CAA Magazine	MC3319s-CAAmagazine.jpg
+3369	Vitality Magazine	MC3369s-Vitality.jpg
+3389	The Varsity	MC3389-Varsity.jpg
+3411	Fuse Magazine	MC3411-Fusen.jpg
+3417	The New Canadian	MC3417s-NewCanadian.jpg
+3423	Bottom Line	MC3423s-TheBottomLine.jpg
+3426	Eye Weekly	MC3426-EyeWeeklyn.jpg
+3447	Maclean's	MC3447-Macleansn.jpg
+3462	Xtra!	MC3462s-Xtra.jpg
+3466	Hospital News	MC3466s-HospitalNews.jpg
+3478	El Negocio Redondo	MC3478-NegocioRedondo.jpg
+3492	New Internationalist	MC3492s-NewInt.jpg
+3507	Voice	MC3507-Voice.jpg
+3545	Balita/News	MC3545s-Balita.jpg
+3554	Outdoor Canada	MC3554-OutdoorCanadan.jpg
+3593	Outreach Connection	MC3593-OutreachConnn.jpg
+3715	Broadcaster Magazine	MC3715-Broadcaster.jpg
+3762	Abilities Magazine	MC3762-AbilitiesNum73.jpg
+3851	Auto Atlantic Magazine	MC3851s-AutoAtlantic.jpg
+3922	Canadian Wildlife	MC3922s-CanadianWildlife.jpg
+4188	Adbusters Magazine	MC4188-Adbustersn.jpg
+4268	Sympatico NetLife	MC4268s-Netlife.jpg
+4419	Resource Links	MC4419-ResourceLinks.jpg
+4441	Green Teacher	MC4441s-GreenTeacher.jpg
+4443	Canadian Woman Studies	MC4443-CdnWomanStudien.jpg
+4453	Towards Justice in Health	MC4453-ToJusticeInHealn.jpg
+4470	Compass	MC4470-Compassn.jpg
+4475	The Moment	MC4475-Momentn.jpg
+4479	Our Times	MC4479s-OurTimes.jpg
+4505	INTERculture	MC4505-InterCulturen.jpg
+4516	Electronic Composition and Imaging	MC4516s-ECI.jpg
+4521	Masthead	MC4521-Mastheadn.jpg
+4548	Profit: Your Guide to Business Success	MC4548-Profit.jpg
+4594	Canadian Geographic	MC4594s-CanadianGeographic.jpg
+4595	Nature Canada	MC4595-NatureCanadan.jpg
+4649	Ottawa XPress	MC4649s-OttawaXPress.jpg
+4677	Toronto Gardens	MC4677-TorontoGardensn.jpg
+4731	Fifty-Five Plus	MC4731s-FifyFivePlus.jpg
+4772	Sol Portugues/Portuguese Sun	MC4772s-SOL.jpg
+4783	Exclaim!	MC4783s-Exclaim.jpg
+4876	Profiles	MC4876s-Profiles.jpg
+4897	CIO Canada	MC4897s-CIO.jpg
+4936	GX - Graphic Exchange	MC4936-GraphicExchangen.jpg
+4964	Press Review	MC4964s-PressReview.jpg
+4989	Rehab & Community Care Management	MC4989s-RehabCommunityCare.jpg
+5014	Canadian Telecom	MC5014s-CanadianTelecom.jpg
+5327	Glad Tidings	MC5327s-GladTidings.jpg
+5328	Global Village Voice	MC5328-GlobalVillageVoice.jpg
+5342	Mandate	MC5342-MandateN.jpg
+5360	Quaker Concern	MC5360s-QuakerConcern.jpg
+5401	The Humber Log	MC5401s-HumberLog.jpg
+5419	Sources - www.sources.com	BC1138-SSOHome.jpg
+5432	Crosscurrents: The Journal of Addiction and Mental Health	MC5432s-Journal.jpg
+5757	News Update Communications Inc.	MC5757-NewsupdateN.jpg
+6494	Georgia Straight	MC6494s-GeorgiaStraight.jpg
+6858	Bayview Post	MC6858s-BayviewPost.jpg
+6875	North Toronto Post	MC6875s-NorthTorontoPost.jpg
+6879	People's Voice	MC6879-PeoplesVoice.jpg
+7320	Business in Vancouver	MC7320s-BusinessVancouver.jpg
+7374	Canine Review	MC7374-CanineReviewN.jpg
+7515	Arts Atlantic	MC7515s-ArtsAtlantic.jpg
+7520	Broken Pencil	MC7520-BrokenPenciln.jpg
+7532	EP & T: Electronic Products & Technology	MC7532s-Electronic.jpg
+7564	Fireweed: A Feminist Quarterly	MC7564-Fireweed.jpg
+7652	Education Forum	MC7652s-Forum.jpg
+7868	Scott's Government Index	MC7868-GovernmentIndex.jpg
+7881	The Compleat Mother	MC7881-CompleatMotherN.jpg
+7898	Ontario Industrial Magazine	MC7898-OntarioIndustrialN.jpg
+8014	Canadian Medical Association Journal (CMAJ)	MC8014s-CMAJ.jpg
+8016	Canada's History Magazine	MC8016-Beavern.jpg
+8061	Lethbridge Living	MC8061-LethbridgeLiving.jpg
+8087	Shunpiking - Nova Scotia's Discovery Magazine	MC8087s-Shunpiking.jpg
+8089	Siren	MC8089-Sirenn.jpg
+8279	WholeNote: The Toronto Concert-Goers Guide	MC8279s-WholeNote.jpg
+8311	Peace Magazine	MC8311-PeaceMag.jpg
+8359	The Mustard Seed	MC8359-MustardSeedn.jpg
+8380	Active Life	MC8380s-Active.jpg
+8412	Connexions Directory	BC436-ConnexionsHome.jpg
+8413	Human Rights Tribune/Droits Humain	MC8413-HumanRightsTribune.jpg
+8461	GolfWest	MC8461-GolfWest.jpg
+8466	The Hockey News	MC8466-HockeyNews.jpg
+8511	The Bushwacker	MC8511-Bushwhackern.jpg
+8664	First Nations Drum	MC8664-FirstNationsDrum.jpg
+8686	New Breed Magazine	MC8686-NewBreedn.jpg
+8718	Uprising International	MC8718s-Uprising.jpg
+8758	Filipiniana	MC8758-Filipiniana.jpg
+8790	Tandem	MC8790s-Tandem.jpg
+8859	Refuge	MC8859-Refugen.jpg
+8917	The Muslim Voice	MC8917s-MuslimVoice.jpg
+8958	Humber Et Cetera	MC8958-HumberEtCetera.jpg
+9081	McClung's	MC9081s-McClungs.jpg
+9379	Bruce Peninsula Press	MC9379s-BrucePeninsulaP.jpg
+9380	Bloor-Bay Town Crier	MC9380-TownCrier.jpg
+9381	Etc...News	MC9381-etcNews.jpg
+9383	Kensington Market Drum	MC9383-KensingtonDrum.jpg
+9388	Village Post (Toronto)	MC9388-Post.jpg
+9473	Alliance	MC9473-Alliancen.jpg
+9545	The ATA News	MC9545-AtaNewsVol42Num12.jpg
+9573	REM: The Real Estate Magazine	MC9573s-REM.jpg
+9681	Direct Marketing	MC9681s-DirectMark.jpg
+9688	Playback	MC9688-Playback.jpg
+9803	Outlooks	MC9803s-Outlooks.jpg
+9804	Prairie Dog Magazine	MC9804s-PrairieDogPress.jpg
+9830	Nuvo Magazine	MC9830-Nuvon.jpg
+9893	Prairie Messenger	MC9893-PrairieMessenger.jpg
+9943	SnoRiders West	MC9943-RidersWest.gif
+10080	Ryerson University Magazine	MC10080s-RyersonUniversty.jpg
+10091	UVic Torch	MC10091s-Torch.jpg
+10185	Canadian Jewish News (Ontario)	MC10185-CdnJewish.jpg
+10189	Outlook: Canada's Progressive Jewish Magazine	MC10189-Outlook.jpg
+10204	Polish Canadian Courier	MC10204s-Polish.jpg
+10265	Parliamentary Names & Numbers	MC10265-PNNn.jpg
+10267	Canadian Almanac & Directory	MC10267-CdnAlmanac.jpg
+10269	Graphic Monthly Estimators' & Buyers' Guide	BC16078-EstGuide2004.jpg
+10271	EAC Directory of Editors	MC10271-EACDirectory.jpg
+10276	Writer's Market	BC18418-WritersMarket.jpg
+10277	The Book Trade in Canada	MC10277-BookTrade1999.jpg
+10286	The Canadian Writer's Market	BC14913-CdwriterMw.jpg
+10288	"Yearbook of Experts, Authorities & Spokespersons"	MC10288-YearbookExperts.jpg
+10293	Blue Book:The Directory of Community Services in Toronto	MC10293-BlueBook2002.jpg
+10296	The Pink Pages	MC10296-PinkPages.jpg
+10297	Alternate Sources	BC151-AlternateSources.jpg
+10327	9 To 5 Magazine	MC10327s-9to5.jpg
+10394	Forests West	MC10394-ForestWestVol15Nu1.jpg
+10420	Matriart	MC10420-Matriart.jpg
+10451	The Sources HotLink - www.hotlink.ca	BC1967-HotLinkHome.jpg
+10453	Media Names & Numbers	MNN2001.jpg
+10473	CCLA Newsnotes	MC10473-CCLANewsnotes.jpg
+10474	Conscience Canada	MC10474-ConscienceCanada.jpg
+10477	Canadian Perspectives	MC10477-CanadianPrespect.jpg
+10478	The Activist	MC10478-Activist.jpg
+10501	High Park Quarterly	MC10501-HighParkQ.jpg
+10544	Golf Canada	MC10544s-GolfCanada.jpg
+10546	Commercial Hemp Magazine	MC10546-CommHemp.jpg
+10548	Convergence Magazine	MC10548s-Convergenceb.jpg
+10554	Profit$	MC10554s-Profit$.jpg
+10556	"Labour, Capital and Society"	MC10556-LabourCapital.jpg
+10560	Cannabis Culture	MC10560-CannabisCulture.jpg
+10562	Organize	MC10562-Organizenjpg.jpg
+10576	The Graphic Arts Magazine	MC10576-GraphicArts.jpg
+10586	Contact	MC10586-ContactPWAC.jpg
+10587	CJFE Reporter	MC10587-CJFE.jpg
+10588	INFACT Canada Newsletter	MC10588-Infact.jpg
+10591	Bring Back The Don	MC10591-BringBackDon.jpg
+10629	The CCPA Monitor	MC10629-CCPAMonitor.jpg
+10631	The Upstream Journal	MC10631-UpstreamJournn.jpg
+10632	Empathic Parenting	MC10632-EmpathicParentn.jpg
+10634	Good Work News	MC10634-GoodWork.jpg
+10639	Insight	MC10639-Insightn.jpg
+10641	St. James Deanery Town Crier	MC10641-TownCriern.jpg
+10647	CEP Journal	MC10647s-CEP.jpg
+10663	Go Info	MC10663s-GoInfo.jpg
+10673	PrintAction Buyers' Guide for Graphic Arts Services and Equipment	MC10673-PrintAction.jpg
+10674	The Canadian Writer's Guide	BC14912-CdWriterG.jpg
+10722	Afterword	MC10722s-Afterword.jpg
+10725	HighGrader Magazine	MC10725-HighGrader.jpg
+10735	Faze Magazine	MC10735s-Faze.jpg
+10756	The Weekly Voice	MC10756s-Voice.jpg
+10779	Metro (Toronto Editon)	MC10779s-TorontoMetro.jpg
+10795	Dollars and Sense - What's Left In Economics	MC10795-DollarsSense.jpg
+10810	The Nation	MC10810-Nation.jpg
+10812	Mother Jones	MC10812-MotherJones.jpg
+10815	Against the Current	MC10815-AgainstCurrent.jpg
+10816	Monthly Review Magazine	MC10816-MonthlyReview.jpg
+10823	Taz: Die Tageszeitung	MC10823-Tageszeitung.jpg
+10826	News & Letters	MC10826-News&Letters.jpg
+10859	Jobboom Magazine	MC10859s-MagazineJobboom.jpg
+10978	Canadian Courier	MC10978-CanadianCourier.jpg
+10990	Business Edge	MC10990-BusinessEdge.jpg
+11003	Socialist Action	MC11003-SocialistAction.jpg
+11007	Compra Y Venta	MC11007-CompraYVenta.jpg
+11010	The Badger	MC11010-Badgern.jpg
+11019	Action Speaks Louder	MC11019s-ASL.jpg
+11028	The Costco Connection	MC11028s-Costcon.jpg
+11029	The Business Exchange	MC11029s-BusinessEx.jpg
+11031	Healthy Directions Magazine	MC11031-HealthyDirections.jpg
+11124	The Eyeopener	MC11124s-Eyeopener.jpg
+11135	WellnessOptions	MC11135-Wellnesns.jpg
+11137	Connexions Digest	MC11137-ConnexionsDigest.jpg
+11162	Outdoor Resource Directory	MC11162-OutdoorDirectory.jpg
+11304	Workplace Today	MC11304s-WorkplaceToday.jpg
+11310	The Christian Herald	MC11310-ChristianHerald.jpg
+11331	Censored Alert!	MC11331-CensoredAlert.jpg
+11366	Destinations	MC11366s-Destinations.jpg
+11500	Black Pages Canada	MC11500-BlackPages.jpg
+11503	Wildlife Conservation	MC11503-WildlifeConserv.jpg
+11560	Energy	MC11560s-Energy.jpg
+11598	Contact Management	MC11598s-ContactMan.jpg
+11688	RVWest	MC11688-RVWestVol17.jpg
+11720	Glow Magazine	MC11720-Glow.jpg
+11731	Corporate Knights Magazine	MC11731-CorporateKnightsn.jpg
+11758	ATA Magazine	MC11758-AtaMagazine.jpg
+11818	Click: Smart Living	MC11818s-Click.jpg
+11828	Inside Entertainment	MC11828-InsideEntert.jpg
+11963	Privacy Journal	MC11963-PrivacyJournal.jpg
+11991	"Mohawk Nation Drummer, The"	MC11991s-Mohawk.jpg
+11999	Rain Magazine	MC11999-Rain.jpg
+12007	Canadian Forum	MC12007-CanadianForum.jpg
+12010	The ACTivist Magazine	MC12010-ACTivist.jpg
+12101	Our Canada	MC12101s-OurCanada.jpg
+12104	The Review	MC12104-ImperialOil.jpg
+12119	Correo Canadiense	MC12119s-Correo.jpg
+12168	The Canadian Immigrant	MC12168-CanadianImmigrant.jpg
+12198	The Red Menace	MC12198-RedMenace.jpg
+12199	Seven News	7News-V7No17w.gif
+12357	Rangefinder	MC12357-Rangefinder.jpg
+12392	Northstar Compass	MC12392-NorthstarCompass.jpg
+12405	Canadian Journal of Counselling	MC12405-Counselling.jpg
+12432	Great Canadian Magazines	MC12432-CanadianMagazines.jpg
+12436	Scott's Directory of Canadian Associations	MC12436-CdnAssociations.jpg
+12447	Research Perspectives	MC12447-PrespectivesRecher.jpg
+12450	Socialist Studies: The Journal of the Society for Socialist Studies	MC12450-SocialistStudies.jpg
+12452	Upping the Anti	MC12452-UppingAnti.jpg
+12455	Advance	MC12455-AdvanceVol4Num1.jpg
+12492	CAMESE Compendium of Canadian Mining Suppliers	MC12492-CameseCompendium.jpg
+12493	Canadian Donor's Guide to Fundraising Organizations in Canada	MC12493-DonorsGuide.jpg
+12520	Cancopy News	MC12520-Cancopy.jpg
+12539	City Magazine	MC12539-CityMagazine.jpg
+12540	Cross Cultural Communication Centre Newsletter	MC12540-CrossCulturalComm.jpg
+12547	Last Post	MC12547-LastPost.jpg
+12548	Liberation	MC12548-Liberation.jpg
+12553	New Maritimes	MC12553s-NewMaritimes.jpg
+12561	Ramparts	MC12561-Ramparts.jpg
+12562	Socialist Revolution	MC12562-SocialistRevolutio.jpg
+12567	Cabbagetown-Riverdale News	MC12567-CabbagetownRiv.jpg
+12569	Content	SourcesCover04.jpg
+12578	Kayak	MC12104-ImperialOil.jpg
+12579	Connections	MC12579-Connections.jpg
+12580	Co-opservations	MC12580-Coopservations.jpg
+12581	Earth First!	MC12581-EarthFirstn.jpg
+12582	Ideas & Action	MC12582-IdeasAction.jpg
+12583	Industrial Defense Bulletin	MC12583-IndustrialDefense.jpg
+12584	Lifestyle!	MC12584-Lifestyle.jpg
+12585	Men: A Journal of the re-evaluation counseling community	MC12585-Men.jpg
+12586	Nexus	MC12586-Nexusn.jpg
+12587	Nuclear Free Press	MC12587-NuclearfreePress.jpg
+12588	Press for Conversion	MC12588-PressforConversion.jpg
+12589	Quarterly Review of Doublespeak	MC12589-Doublespeakn.jpg
+12590	The Radical Bookseller	MC12590-RadicalBookseller.jpg
+12591	Socialist Review	MC12591-SrSocialistReview.jpg
+12592	Southern Africa Report	MC12592-SouthernAfrican.jpg
+12593	True North	MC12593-TrueNorth.jpg
+12594	Up From The Ashes	MC12594-UpFromAshesn.jpg
+12595	The Worker	MC12595-Worker.jpg
+12599	Spartacist	MC12599-Spartacistn.jpg
+12602	Open Road	MC12602s-OpenRoad.jpg
+12606	The Jewish Magazine	MC12606-JewishMagn.jpg
+12628	Cognica	MC12628-Cognican.jpg
+12647	Here's How!	MC12647-HeresHown.jpg
+12659	Green Living	MC12659-GreenLivingn.jpg
+12687	Index	MC12687-TorontoGayDirector.jpg
+12688	Shalom Toronto	MC12688-ShalomToronto.jpg
+12694	The Job Guide	MC12694s-TheJobGuide.jpg
+12705	Power Media BlueBook	MC12705-PowerMedia.jpg
+12763	Sway	MC12763s-Sway.jpg
+12825	Snap Bloor West/High Park	MC12825-Snap.jpg
+12833	The Dominion	MC12833s-Dominion.jpg
+12855	Radical Digressions	BC2693-RadicalDigressions.jpg
+12908	Post Milenio	MC12908-PostMilenio.jpg
+12911	30th Century Solution	MC12911-30thCentury.jpg
+12913	Great Lakes News	MC12913-GreatLakesNews.jpg
+12914	Grapevine	MC12914-Grapevine.jpg
+12915	Community Living Leaders	MC12915s-Leaders.jpg
+12917	The West East	MC12917-WestEast.jpg
+12918	Atlantic Seabreeze	MC12918-Seabreeze.jpg
+12924	NECEF Report	MC12924-NECEF.jpg
+12928	Crossing Borders	MC12928-CrossingBorders.jpg
+12929	La Revue Cheminement	MC12929-Cheminement.jpg
+12931	Blackfly Magazine	MC12931-Blackfly.jpg
+12933	Confidence Bound	MC12933-ConfidenceBound.jpg
+12938	Connexions Library	CxFlagLogo1.gif
+12940	International Directory of Little Magazines and Small Presses	BC16476-LittleMagazines.jpg
+12949	Abanico	MC12949-Abanico.jpg
+12950	Canadian Water Treatment	MC12950-CdnWaterTreatn.jpg
+12951	Ethical Consumer	MC12951-EthicalConsumer.jpg
+12956	Anarchy	MC12956-Anarchy.jpg
+12957	ACN Dossier	MC12957-ACNDossier.jpg
+12958	Active Voice	MC12958-ActiveVoicen.jpg
+12959	Alive Guide to Natural Health	MC12959-Alive2008.jpg
+12960	Fortunate 500	MC12960-Fortunaten.jpg
+12961	Annals of Earth	MC12961-AnnalsofEarthn.jpg
+12963	Annals of the Propagation of the Faith	MC12963-AnnalsofPropagn.jpg
+12964	Asian-Pacific Environment	MC12964-AsianPacificn.jpg
+12965	The Atlantic Advocate	MC12965-AtlanticAdvocaten.jpg
+12966	Bimonthly Reports	MC12966-Bimonthly-Reportsn.jpg
+12967	Black Fly	MC12967-BlackFlyn.jpg
+12968	Black Labour	MC12968-BlackLabourn.jpg
+12969	Borealis	MC12969-Borealisn.jpg
+12970	Branching Out	MC12970-BranchingOutn.jpg
+12971	Bulldozer	MC12971-Bulldozern.jpg
+12972	TTU Bulletin	MC12972-TTUBulletin2n.jpg
+12973	Calendher	MC12973-Calendhern.jpg
+12974	Canada Trust Tenant's Union Newsletter	MC12974-CanadaTrustTenn.jpg
+12975	Canadian Revolution	MC12975-CdnRevolutionn.jpg
+12976	Canadian Worker	MC12976-CanadianWorkern.jpg
+12977	Canadian World Federalist	MC12977-CanadianWorldFed.jpg
+12978	CAN Calendar	MC12978-CanCalendar.jpg
+12979	Case Study	MC12979-CaseStudyn.jpg
+12980	Cognition	MC12980-Cognitionn.jpg
+12981	The Great Lakes United	MC12981-GreatLakesUnited.jpg
+12982	Green Revolution	MC12982-GreenRevolution.jpg
+12983	TAB	MC12983-Tab.jpg
+12984	Toronto Bird Observatory	MC12984-TorontoBirdOb.jpg
+12985	Toronto Ornithological Club Newsletter	MC12985-TorontoOrnith.jpg
+12986	Transformation	MC12986-Transformation.jpg
+12987	Typographical Journal	MC12987-TypographicalJour.jpg
+12988	Live It!	MC12988-LiveItMetroland.jpg
+12989	Open Magazine	MC12989-OpenToAll.jpg
+12990	Life Peak	MC12990-LifePeak.jpg
+12992	Tonic Toronto	MC12992-TonicToronto.jpg
+12993	VISTA Magazine	MC12993-Vistaapril07.jpg
+12996	Critique	MC12996-CritiqueSoviet.jpg
+12997	New German Critique	MC12997-NewGermanCritique.jpg
+12998	Radical America	MC12998-RadicalAmerica.jpg
+13000	Edible Toronto	MC13000-EdibleToronto.jpg
+13001	Animal Talk	MC13001-AnimalTalk.jpg
+13002	PreserVision	MC13002-PreserVision.jpg
+13003	Al Wattan	MC13003-AlWatan.jpg
+13004	Argyle	MC13004-Argyle.jpg
+13005	B Magazine/Beauty & Beyond	MC13005-BeautyBeyond.jpg
+13006	Donato the Magazine	MC13006-Donato.jpg
+13007	Evening Out	MC13007-EveningOut.jpg
+13008	Latin Life News	MC13008-LatinLife.jpg
+13009	Lethbridge Home Trends	MC13009-LethbridgeHometrends.g
+13010	MAG Mass Art Guide	MC13010-MassArtGuide.jpg
+13011	New Perspective	MC13011-NewPerspective.jpg
+13012	Mining & Exploration	MC13012-MiningExploration.gif
+13013	M.O.B. Mag	MC13013-MOB.jpg
+13014	SunnyBrook Health Sciences Centre Newsletter	MC13014-Sunnybrook.gif
+13015	Tools For Change	MC13015-ToolsforChange.jpg
+13016	Toronto Golf	MC13016-TorontoGolf.gif
+13017	Wider Horizons	MC13017-WiderHorizons.jpg
+13018	Youth Action Forum	MC13018-YouthAction.jpg
+13067	Die Oase	MC13067-DieOase.jpg
+13068	La Buena Nueva	MC13068-LaBuena.jpg
+13069	Journal of Sexual & Reproductive Medicine	MC13069-SexualMedicine.jpg
+13070	Michael Journal	MC13070-Michael.jpg
+13071	Yeni Hayat	MC13071-YeniHayat.jpg
+13072	Voices Rising	MC13072-VoicesRising.jpg
+13073	Canadian Human Rights Advocate	MC13073-CdnHumanRightsAdv.jpg
+13074	Changing Men	MC13074-ChangingMen.jpg
+13075	Cineaste	MC13075-Cineaste.jpg
+13076	City Hall	MC13076-CityHall.jpg
+13077	Community Economics	MC13077-CommunityEconomics.jpg
+13078	The Compendium Newsletter	MC13078-CompendiumNews.jpg
+13079	Constructive Citizen Participation	MC13079-ConstructiveCitiz.jpg
+13080	CPPNW Quarterly	MC13080-CPPNWQuarterly.jpg
+13081	Critical List	MC13081-CriticalList.jpg
+13082	Random	MC13082-Random.jpg
+13083	Carnets	MC13083-Carnets.jpg
+13089	Downtown Action	MC13089-DowntownAction.jpg
+13094	Health/PAC Bulletin	MC13094-HealthPAC.jpg
+13102	Talking Socialism	MC13102-TalkingSocialism.jpg
+13105	Critical Public Health	MC13105-CriticalPubHealth.jpg
+13106	CTC Bulletin	MC13106-CTCBulletin.jpg
+13107	Cultural Survival Quaterly	MC13107-CulturalSurvival.jpg
+13108	Disarmament Times	MC13108-DisarmamentTimes.jpg
+13109	Earth Keeper	MC13109-Earthkeeper.jpg
+13110	The Education Editor	MC13110-EducationEditor.jpg
+13111	Equinox	MC13111-Equinox.jpg
+13112	Evergreen	MC13112-Evergreen.jpg
+13113	Feminist Teacher	MC13113-FeministTeacher.jpg
+13114	Forward	MC13114-Forward.jpg
+13115	Front Libertaire	MC13115-FrontLibertaire.jpg
+13116	Goodwin's	MC13116-Goodwins.jpg
+13117	Green Synthesis	MC13117-GreenSynthesis.jpg
+13118	The Harder They Fall	MC13118-HarderTheyFall.jpg
+13119	Hysteria	MC13119-Hysteria.jpg
+13120	The Independent	MC13120-Independent.jpg
+13122	The Insurgent Sociologist	MC13122-InsurgentSoc.jpg
+13123	Internationalist Perspective	MC13123-InternationalistP.jpg
+13125	Journal of Community Development	MC13125-JCommunityDev.jpg
+13126	Junior	MC13126-JuniorCatholic.jpg
+13127	Free Press	MC13127-KWFreePress.jpg
+13128	Lies of Our Times	MC13128-LiesofOurTimes.jpg
+13129	The Leader	MC13129-Leader.jpg
+13130	Lemon-Aid	MC13130-LemonAid.jpg
+13131	Love and Rage	MC13131-LoveandRage.jpg
+13132	Lutte Ouvriere	MC13132-LutteOuvriere.jpg
+13133	Masada	MC13133-Masada.jpg
+13134	Native Self-Sufficiency	MC13134-NativeSelfSuff.jpg
+13135	New Canada	MC13135-NewCanada.jpg
+13136	New Directions	MC13136-NewDirections.jpg
+13137	New Pages	MC13137-NewPages.jpg
+13138	Off Our Backs	MC13138-OffOurBacks.jpg
+13139	On the Line	MC13139-OntheLine.jpg
+13140	The Other Woman	MC13140-Otherwoman.jpg
+13141	Overthrow	MC13141-Overthrow.jpg
+13142	Parallelogramme	MC13142-Parallelogramme.jpg
+13143	The Peace Calendar	MC13143-PeaceCalendar.jpg
+13144	Peace Courier	MC13144-PeaceCourier.jpg
+13145	People's Canada Daily News	MC13145-PeoplesCanada.jpg
+13146	Port of Toronto News	MC13146-PortofToronto.jpg
+13147	Probe	MC13147-ProbePost.jpg
+13148	Quill	MC13148-Quill.jpg
+13149	Raise the Stakes	MC13149-RaisetheStakes.jpg
+13150	Red Mole	MC13150-RedMole.jpg
+13151	Red Morning	MC13151-RedMorning.jpg
+13152	Resistance	MC13152-Resistance.jpg
+13153	Regeneration	MC13153-Regeneration.jpg
+13154	Republican News	MC13154-RepublicanNews.jpg
+13155	Rikka	MC13155-Rikka.jpg
+13156	Rising Up Angry	MC13156-RisingUpAngry.jpg
+13157	The Roncesvalles Voice	MC13157-RoncesvallesVoice.jpg
+13158	Rites	MC13158-Rites.jpg
+13159	Science for the People	MC13159-ScienceforPeople.jpg
+13160	SDS New Left Notes	MC13160-SDSNewLeftNotes.jpg
+13161	Seven Days	MC13161-SevenDays.jpg
+13162	Socialist Voice	MC13162-SocialistVoice.jpg
+13163	Strike	MC13163-Strike.jpg
+13164	Woodwomen News	MC13164-WoodswomenNews.jpg
+13165	Community Forum	MC13165-CommunityForum.jpg
+13166	Ecomedia	MC13166-EcomediaBulletin.jpg
+13168	Gatt-Fly Report	MC13168-GATTFlyReport.jpg
+13169	Global Health Project	MC13169-GlobalHealthProj.jpg
+13170	Guatemala Vencera	MC13170-GuatemalaVencera.jpg
+13171	Hapotoc News	MC13171-HapotocNews.jpg
+13172	The Hapotoc Rebel	MC13172-HapotocRebel.jpg
+13173	Heretics Journal	MC13173-HereticsJournal.jpg
+13174	Heritage	MC13174-Heritage.jpg
+13175	Human Rights Digest	MC13175-HumanRights.jpg
+13176	Idera	MC13176-IDERAClippings.jpg
+13177	Junction Newsletter	MC13177-JunctionNewsletter.jpg
+13178	The Junction Signal	MC13178-JunctionSignal.jpg
+13179	Lanka Review	MC13179-LankaReview.jpg
+13180	The Law Union News	MC13180-LawUnionNews.jpg
+13181	Left Green Notes	MC13181-LeftGreenNotes.jpg
+13182	The Libertarian Mutualist	MC13182-LibertarianMutual.jpg
+13183	Lies	MC13183-Lies.jpg
+13184	Links	MC13184-Links.jpg
+13185	The Living Color	MC13185-LivingColor.jpg
+13186	Living Free	MC13186-LivingFree.jpg
+13187	Medicare	MC13187-MedicareMonitor.jpg
+13188	The Monitor	MC13188-Monitor.jpg
+13189	New Options	MC13189-NewOptions.jpg
+13191	Newsletter Hapotoc Collective	MC13191-HapotecCollective.jpg
+13192	A New Vision: The Rittenhouse Newsletter	MC13192-Rittenhouse.jpg
+13193	North York School News	MC13193-NorthYorkSchools.jpg
+13194	One Sky Report	MC13194-OneSkyReport.jpg
+13195	Ontario Green News	MC13195-OntarioGreenNews.jpg
+13196	Ontario Health Coalition  News	MC13196-OntarioHealthCoal.jpg
+13197	Ottawa Report	MC13197-OttawaReport.jpg
+13198	The Patient's Advocate	MC13198-PatientsAdvocate.jpg
+13199	Peace Education News	MC13199-PeaceEducation.jpg
+13200	Peace Times	MC13200-PeaceTimes.jpg
+13201	Planners Network	MC13201-PlannersNetwork.jpg
+13202	PNHP	MC13202-PNHPP.jpg
+13203	The Pragmatist	MC13203-Pragmatist.jpg
+13204	Printer's Devil	MC13204-PrintersDevil.jpg
+13205	The Pro-Canada Dossier	MC13205-ProCanadaDossier.jpg
+13206	QCJJ Newsletter	MC13206-QCJJNewsletter.jpg
+13207	Quaker Committee on Jails and Justice	MC13207-JailsandJustice.jpg
+13208	Racism	MC13208-Racism.jpg
+13209	Reform Metro	MC13209-ReformMetro.jpg
+13210	Reset News on Citizen Computing	MC13210-Reset.jpg
+13211	Resist	MC13211-Resist.jpg
+13212	Robin	MC13212-Robin.jpg
+13213	Rocky Mountain Institure	MC13213-RockyMountainInst.jpg
+13214	Social Justice Committee of Montreal	MC13214-SocialJusticeCtte.jpg
+13215	Solidarity Motor Bulletin 2 U.A.W. Scab Union	MC13215-SolidarityMotor.jpg
+13216	Sunday Brunswick	MC13216-SundayBrunswick.jpg
+13217	Socialism & Health	MC13217-SocialismHealth.jpg
+13218	Long Point Bird Observatory Newsletter	MC13218-LongPoint.jpg
+13219	Newsletter Challenge for Change	MC13219-ChallengeforChange.jpg
+13220	Nurses for Social Responsibility	MC13220-NursesForSocial.jpg
+13221	Nuclear Awareness Project Newsletter	MC13221-NuclearAwarnessP.jpg
+13222	Pagans for Peace	MC13222-PagansforPeace.jpg
+13223	People's Medical Society Newsletter	MC13223-PeoplesMedical.jpg
+13224	Pigeon Hill Peacemaking Centre pour la paix	MC13224-PigeonHillPeace.jpg
+13226	Internationalism	MC13226-Internationalism.jpg
+13227	Newsletter - Community Forum on Shared Responsibility	MC13227-CommunityForum.jpg
+13228	Newsletter - Canadians for a Democratic Workplace	MC13228-DemocraticWork.jpg
+13229	Newsletter - Dying with Dignity	MC13229-DyingwithDignity.jpg
+13230	Industrial Worker	MC13230-IndustrialWorker.jpg
+13231	Internationalisme	MC13231-Internationalisme.jpg
+13232	International Socialist Review	MC13232-IntSocialistReview.jpg
+13233	The Jesuit Bulletin	MC13233-JesuitBulletin.jpg
+13234	Jeune Taupe	MC13234-JeuneTaupe.jpg
+13235	Loompanics	MC13235-Loompanics.jpg
+13236	The New Catalyst	MC13236-NewCatalyst.jpg
+13237	New Democrat	MC13237-NewDemocrat.jpg
+13238	Pluto Press	MC13238-PlutoPress.jpg
+13239	The People	MC13239-People.jpg
+13240	Science for Peace Bulletin	MC13240-ScienceforPeace.jpg
+13241	The Southern Patriot	MC13241-SouthernPatriot.jpg
+13274	Social Anarchism	MC13274-SocialAnarchism.jp
+13275	Switchboard	MC13275-Switchboard.jpg
+13276	Synthesis	MC13276-Synthesis.jpg
+13277	The Public Sector	MC13277-PublicSector.jpg
+13278	Synapse	MC13278-Synapse.jpg
+13279	Synthesis/Regeneration	MC13279-SynthesisRegen.jpg
+13280	Syracuse Naturist Gazette	MC13280B-SyracuseNaturist.jpg
+13281	Syracuse Stroking Community	MC13281-SyracuseStroking.jpg
+13282	Tenants' Bulletin	MC13282-TenantsBulletin.jpg
+13283	Third World Resource Centre	MC13283-ThirdWordRC.jpg
+13284	Thoughts	MC13284-Thoughts.jpg
+13285	Tides of Change	MC13285-Tidesofchange.jpg
+13286	Tightwire	MC13286-Tightwire.jpg
+13287	TimesFax	MC13287-TimesFax.jpg
+13288	Toronto Men's Clearinghouse Newsletter	MC13288-TorontoMens.jpg
+13289	Toronto News	MC13289-TorontoNews.jpg
+13290	Toronto Voice	MC13290-TorontoVoice.jpg
+13291	TRANET	MC13291-Tranet.jpg
+13292	Tricontinental	MC13292-Tricontinental.jpg
+13293	Turning Point Newsletter	MC13293-TurningPoint.jpg
+13294	Undercurrents	MC13294-UnderCurrents.jpg
+13295	United Irishman	MC13295-UnitedIrishman.jpg
+13296	Urban Wilderness Gardeners	MC13296-UrbanWilderness.jpg
+13297	Waffle News	MC13297-WaffleNews.jpg
+13298	Wages for Housework Campaign Bulletin	MC13298-WagesForHousework.jpg
+13299	Was Tun	MC13299-WasTun.jpg
+13300	The Web	MC13300-Web.jpg
+13301	Western Voice	MC13301-WesternVoice.jpg
+13302	Whose City?	MC13302-WhoseCity.jpg
+13303	Women & Environments	MC13303-WomenEnviron.jpg
+13304	Women and Revolution	MC13304-WomenAndRevolution.jpg
+13305	The Workbook	MC13305-Workbook.jpg
+13306	World Revolution	MC13306-WorldRevolution.jpg
+13307	Young Catholic Messenger	MC13307-YoungCatholic.jpg
+13308	Young Socialist	MC13308-YoungSocialist.jpg
+13309	Young Worker	MC13309-YoungWorker.jpg
+13310	Alive	MC13310-Alive.jpg
+13311	Vie Ouvrière	MC13311-VieOuvriere.jpg
+13312	Galbraith's Directory & Buyers Guide	MC13312-Galbraiths.jpg
+13314	Lifestyle	MC13314-Lifestyle.jpg
+13315	Canadian Newcomer Magazine	MC13315-Newcomer.jpg
+13316	Sharp	MC13316-Sharp.jpg
+13318	The American Exile in Canada	MC13318-AmericanExile.jpg
+13319	Community Action	MC13319-CommunityAction.jpg
+13320	Healthsharing	MC13320-Healthsharing.jpg
+13321	Isis - Women's International Bulletin	MC13321-IsisWomensBulletin.jpg
+13322	The Realist	MC13322-Realist.jpg
+13323	Spare Rib	MC13323-SpareRib.jpg
+13324	Banou	MC13324-Banou.jpg
+13325	Bulgarian Canadian Business Directory	MC13325-BulgarianBusiness.jpg
+13337	Toronto Street News	MC13337s-StreetNews.jpg
+13372	Company Magazine	MC13372-Companys.jpg
+13427	t.o.night	MC13427-tonight.jpg
+13438	The Bloor Newspaper	MC13438s-BloorNews.jpg
+13439	My Etobicoke	MC13439s-MyEtob.jpg
+13440	CUPE Counterpoint	MC13440s-CounterP.jpg
+13441	Due North	MC13441s-DueNorth.jpg
+13445	What To Do Where To Go (The Problem Solving Magazine)	MC13445s-WhatWhere.jpg
+13603	RidersWest	MC13603s-Riderswest.jpg
+13611	Connexions Calendar	CxFlagLogo1.gif
+13673	Canadian Korean Times Daily	MC13673s-CanadianKorean.jpg
+13674	The Sisa Hankyoreh News	MC13674s-SisaHankyoreh.jpg
+13676	The Christian Post	MC13676s-ChristianPost.jpg
+13689	Comercio Latino	MC13689s-ComercioLatino.jpg
+13691	Employment Classified	MC13691s-EmploymentClassif.jpg
+13693	IN TORONTO	MC13693s-InToronto.jpg
+13694	Job Classified.ca	MC13694s-JobClassified.ca.jpg
+13695	The Lake Erie Beacon	MC13695s-LakeErieBeacon.jpg
+13696	ON the GO Magazine	MC13696s-OntheGo.jpg
+13697	The Ontario Locksmith	MC13697s-OntarioLocksmith.jpg
+13698	Renters Classified Ca.	MC13698s-RentersClassif.jpg
+13699	South Asian Generation Next	MC13699s-GenerationNext.jpg
+13700	Commercial Investor	MC13700s-Commercialinvest.jpg
+13701	Free Paper	MC13701s-FreePaper.jpg
+13702	El Centro Newspaper	MC13702s-ElCentroamericano.jpg
+13704	Manitoulin's Magazine	MC13702s-ElCentroamerica.jpg
+13708	Oye Magazine	MC13708s-OyeMagazine.jpg
+13712	Jornal North News	MC13712s-NorthNews.jpg
+13715	The Voice of Ontario's Engineering Profession	MC13715s-Voice.jpg
+13734	What Makes You Happy	MC13734s-Happy.jpg
+13735	Photo News	MC13735s-PhotoNews.jpg
+13736	Design Lines	MC13736s-DesignLines.jpg
+13737	Ryerson Free Press	MC13737s-RyersonFree.jpg
+13738	Wiadomosci	MC13738s-Wiadomosci.jpg
+13740	Dandyhorse	MC13740s-Dandyhorse.jpg
+13744	The Event	MC13744s-Event.jpg
+13748	Solidaire	MC13748s-Solidaire.jpg
+13749	Leftward	MC13749s-Leftward.jpg
+13929	The Bi-Monthly	MC13929s-BiMonthly.jpg
+13989	Open Road	MC12602s-OpenRoad.jpg
+14006	Other Voices: The Connexions Newsletter	CxFlagLogo1.gif
+14034	Two Row Times	MC14034s-TwoRowTimes.jpg
+14057	The Australasian & American Naturist	MC14057s-AANaturist.jpg
+14058	Humana	MC14058s-Humana.jpg
+14059	KamaKala	MC14059s-KamaKala.jpg
+14060	New Zealand Naturist	MC14060s-NZNaturist.jpg
+14061	Nude Living	MC14061s-NudeLiving.jpg
+14062	Ottawa Sun	MC14062s-OttawaSun.jpg
+14063	Sunny Day Naturists	MC14063s-SunnyNaturists.jpg
+14064	The Leisure Nudist Life	MC14064s-LeisureNudistLife.jpg
+14082	Thunder Bay Experience	MC14082s-ThunderBayExp.jpg
+14083	Niagara Escarpment Views	MC14083s-NiagaraEscarp.jpg
+14084	Walleye	MC14084s-Walleye.jpg
+14085	The NAN Advocate	MC14085s-NANAdvocate.jpg
+14086	Maamwi Naadamadaa News	MC14086s-Maamwi.jpg

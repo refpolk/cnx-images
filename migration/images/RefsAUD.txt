@@ -1,0 +1,42 @@
+REFID	TITLE	SUBTITLE	AUTHORS	COVER	YEAR1STPUB
+6172	Organizing a Union			BL5733s-Organize.gif	1976
+14586	Bargainville		Moxy Fruvous	CD14586-MoxyFruvous.jpg	
+14631	Beethoven - The Piano Concertos	Disk 1	Beethoven - Chicago Symphony - Vladimir Ashkenazy - Georg Solti	CD14631-Beethoven.jpg	
+14634	Beethoven Piano Sonatas		Beethoven, Ludwig van	CD14634s-BeethovenRoyal.jpg	
+14673	The Best of Leonard Cohen		Cohen, Leonard	CD14673-LeonardCohen.jpg	
+14730	Blow Boys Blow	Songs of the Sea	MacColl, Ewan, Lloyd, A.L.	CD14730s-BlowBoysBlow.jpg	2006
+14840	Canada: A Folksong Portrait	Disk 1		CD14840s-CanadaFolksongs.jpg	
+15017	Classic Blues: Volume 2		Various artists	CD15017-ClassicBlues.jpg	
+15455	Crisis and Disaster Management		Bonner, Allan	BC15455-DisasterMan.jpg	
+15498	Dear Heather		Cohen, Leonard	CD15498s-CohenHeather.jpg	
+15567	Different Kind of Fire		Prairie Oyster	CD15567-PrairieOyster.jpg	
+15675	Eighteen Inches of Rain		Tyson, Ian	CD15675s-IanTysonRain.jpg	
+15742	Essential Blues 3 - House of Blues	Disk 2		CD15742s-HouseofBlues.jpg	
+16116	The Greatest Works of Beethoven		Beethoven, Ludwig van	CD16116s-BeethovenGreatest.jpg	
+16648	Legend: The Best of Bob Marley and the Wailers		Marley, Bob & The Wailers	CD16648s-BobMarley.jpg	
+16818	Man of The Land - Fiddle & Song		Connors, Stompin' Tom	CD16818-StompinTom.jpg	
+16964	Mozart - Disc A	Great Composers	Mozart, Wolfgang Amadeus	CD16964s-Mozart.jpg	
+16967	Mozart Musical Masterpieces		Mozart, W.	CD16967-MozartMasterpieces.jpg	
+17107	Newport Folk Festival 1963		Freedom Singers, Baez, Dylan, Mississippi John Hurt, etc.	CD17107s-GenerationsofFolk.jpg	
+17130	No Mega-CD [no megacity]			CD17130-NoMegaCD.jpg	
+17303	One Man Band		Taylor, James	CD17303s-JamesTaylor.jpg	2007
+17584	Presentation Mastery: Nine Ways to Win Your Audience		Melnychuk, Dan	BC17584s-MakeAMillion.jpg	2004
+17596	John Prine		Prine, John	CD17596s-JohnPrine.jpg	1971
+17744	A Rendez-Vous with Julien Clerc		Clerc, Julien	CD17744s-JulienClerc.jpg	
+18058	The SOCKO System		Bonner, Allan	BC18058-SockoSystem.jpg	2007
+18086	Sounds of Dissent	The Politics of Music	Various artists	CD18086-SoundsofDissent.jpg	2003
+18165	Stringband: The Indispensable 1972 - 2002	Disk 1	Stringband	CD18165-Stringband.jpg	
+18202	Surrender: The Unexpected Songs		Brightman, Sarah; Webber, Andrew Lloyd	CD18202-BrightmanSurrender.jpg	
+18303	Tie Me Down		Hanrahan, Mike	CD18303s-MikeHanrahan.jpg	
+18325	Torn Screen Door		Francey, David	CD18325s-DavidFrancey.jpg	
+18405	Tubular Bells		Oldfield, Mike	CD18405-TubularBells.jpg	
+18406	Tubular Bells		Oldfield, Mike	CD18405-TubularBells.jpg	
+18684	Woody Guthrie in Memoriam		Guthrie, Woody	CD18684s-WoodyGuthrie.jpg	
+18699	Workers Control (Marxist Institute lecture) (master)		Hunnius, Gerry	BC18699s-WorkersControl.jpg	
+27089	Democracy Now!			GR27653s-DemocracyNow.png	
+35995	The First Rays of Protest in the Twentieth Century		Guthrie, Woody; Seeger, Pete	CD35995-GuthrieSeeger.jpg	
+35996	The Liberty Tree	A celebration of the life and writings of Thomas Paine		CD35996-LibertyTree.jpg	
+36174	Hasten Down the Wind		Ronstadt, Linda	CD36174s-Ronstadt-HastenDown.jpg	1976
+36277	Ladysmith Black Mambazo		Ladysmith Black Mambazo	CD36277s-Ladysmith.jpg	1990
+36278	Jane Bunnett and the Spirits of Havana Chamalongo		Bunnett, Jane, and the Spirits of Havana	CD36278s-Bunnett-Chamalongo.jpg	1997
+36279	The Laura Love Collection		Love, Laura	CD36279s-LauraLove.jpg	1995

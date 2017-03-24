@@ -1,5 +1,7 @@
+public/images
+public/photos
 public/images/*
 public/photos/*
 .DS_Store
-*.txt
+.txt
 *.ods

@@ -1,0 +1,13 @@
+REFID	TITLE	SUBTITLE	AUTHORS	COVER	YEAR1STPUB
+7932	Don't Agonize, Organize			BL5733s-Organize.gif	1983
+8842	Guideposts for a Sustainable Future	Tools for Environmental Recovery - videotape	Nickerson, Mike; Mully, George	BC8842-SustainableFuture.jpg	1990
+10399	Manufacturing Consent		Achbar, Mark; Wintonick, Peter (directors)	BC10399s-ManufacturingConsent.jpg	1992
+19559	The Corporation		Achbar, Mark; Abbott Jennifer	BC19559s-Corporationfilm.jpg	2004
+23082	The Future of Food		Garcia, Deborah Koons (director)	BC23082s-FutureofFood.jpg	2004
+30275	Nostalgia de la luz (Nostalgia for the Light)		Guzmﬂn, Patricio (director/writer)	BC30275s-Nostalgia.jpg	2010
+35248	Borland Paradox for Windows Training Video	Relational database power made easy		BC35248-BorlandParadox.jpg	
+41655	Even the Rain (Tambien la Lluvia)		Bollan, Icar	BC41655s-EvenTheRain.jpg	2010
+43074	American Revolutionary	The Evolution of Grace Lee Boggs	Boggs, Grace Lee	BC43074s-BoggsPoster.jpg	2014
+43406	Battleship Potemkin (film)		Eisenstein, Sergei (director)	BL0283s-Potemkin.jpg	1925
+44372	The Price We Pay		Crooks, Harold	BC44372s-PriceWePay.png	2014
+45279	Sir! No Sir!		Zeiger, David (director)	BC45279-SirNoSir.jpg	2005
