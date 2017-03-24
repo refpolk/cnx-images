@@ -122,7 +122,6 @@ $title = ($update ? 'View' : 'Add') . ' Image';
 				<h1>
 					<?php echo $title; ?> 
 					<a href="#" title="Edit image"><span class="glyphicon glyphicon-pencil small" aria-hidden="true"></span></a>
-					<!--<a href="#" title="Edit image"><img height="24" width="24" src="styles/images/edit.png" /></a>-->
 				</h1>
 			</div>
 			
@@ -207,10 +206,8 @@ $title = ($update ? 'View' : 'Add') . ' Image';
 							</div>
 						</div>
 						<div class="form-group edit-only">
-							<!--<label for="file" class="control-label col-xs-2">Select File</label>-->
 							<label class="control-label col-xs-2">Select File</label>
 							<div class="col-xs-10">
-								<!--<input id="file" type="file" class="file" name="file" />-->
 								<label class="btn btn-default" for="file">
 								    <input id="file" class="file" name="file" type="file" style="display:none;">
 								    Browse
@@ -224,11 +221,9 @@ $title = ($update ? 'View' : 'Add') . ' Image';
 									<img src="<?php if ($image->Filename != '') { echo $filelocation . $image->Filename; } ?>" height="150" alt="<?php echo $image->Title;?>"/>
 								</a>
 								<a class="zoom" title="Zoom" href="#">
-									<!--<img height="24" width="24" src="styles/images/zoom.png" />-->	
 									<span class="glyphicon glyphicon-fullscreen" aria-hidden="true"></span>
 								</a>
 								<a id="delete" class="edit-only" title="Remove" href="#">
-									<!--<img height="24" width="24" src="styles/images/delete.png" />-->
 									<span class="glyphicon glyphicon-remove" aria-hidden="true"></span>
 								</a>
 								<div id="zoom-dialog" class="dialog" title="<?php echo $image->Title;?>">
@@ -247,7 +242,6 @@ $title = ($update ? 'View' : 'Add') . ' Image';
 						</div>
 						<div class="form-group edit-only">
 							<div class="col-xs-offset-2 col-xs-10">
-								<!--<input type="submit" name="submit" value="<?php //echo ($update ? 'Update' : 'Save')?> Image">-->
 								<button type="submit" name="submit" class="btn btn-lg btn-primary"><?php echo ($update ? 'Update' : 'Save')?> Image</button>
 							</div>
 						</div>

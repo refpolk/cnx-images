@@ -22,19 +22,19 @@
 	
 	?>
 
-	<!--<div class="col-xs-6">-->
+	<div class="col-xs-6">
 		
 	Total <span class="badge"><?php echo $numberOfItems; ?></span> | Page size: 
 	
-	<select class="page-size form-control col-xs-1" title="Number of results on each page" >
+	<select class="page-size" title="Number of results on each page" >
 		<option value="100" <?php if ($pageSize == 100) echo 'selected="selected"'; ?>>100</option>
 		<option value="500" <?php if ($pageSize == 500) echo 'selected="selected"'; ?>>500</option>
 		<option value="1000" <?php if ($pageSize == 1000) echo 'selected="selected"'; ?>>1000</option>
 	</select>
 	
-	<!--| Page:
+	<!--| Page: -->
 	
-	</div>-->
+	</div>
 	<div class="col-xs-6">
 
 	<ul class="pager pagination-sm nav navbar-nav navbar-right">

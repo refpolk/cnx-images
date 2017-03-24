@@ -10,7 +10,7 @@
 	</div>
 	<?php } ?>
 	<?php if ($error != '') { ?>
-	<div class="alert alert-error" role="alert">	
+	<div class="alert alert-danger" role="alert">	
 		<p><?php echo $error;?></p>
 	</div>
 	<?php } ?>

@@ -81,39 +81,38 @@ $title = 'Search Images';
 			<div class="page-header">
 				<h1><?php echo $title; ?></h1>
 			</div>
+			
+			<div class="row">
 
-		<form id="searchform" name="form" method="GET" action="search-image.php">
+		<form class="form-horizontal" role="form" id="searchform" name="form" method="GET" action="search-image.php">
 
 			<?php require 'includes/messages.inc.php'; ?>
-			
-			<table class="table table-bordered">
-				<tr>
-					<td></td>	
-					<td>
-					    <div class="input-group">
-					      <input type="text" class="form-control" size="115" maxlength="115" name="q" value="<?php echo $query ?>"  placeholder="Title / Author / Caption / Filename" />
-					      <span class="input-group-btn">
-					        <button class="btn btn-default" type="submit">Search Images!</button>
-					      </span>
-					    </div>
-						<!--<input type="text" size="115" maxlength="115" name="q" value="<?php echo $query ?>"  placeholder="Title / Author / Caption / Filename" />
-						<input type="submit" value="Search Images" />-->
-					</td>
-				</tr>
-				<tr>
-					<td colspan="2">
-						<fieldset>
-							<legend>Advanced Options:</legend>
-							<input type="radio" name="o" value="all" <?php if ($option == 'all' || !isset($option)) { echo 'checked'; } ?>>
-							Include all terms in result (default)    
-							<input type="radio" name="o" value="exact" <?php if ($option == 'exact') { echo 'checked'; } ?>>
-							Exact
-							<input type="radio" name="o" value="any" <?php if ($option == 'any') { echo 'checked'; } ?>>
-							Find results with any one of the terms
-						</fieldset>
-					</td>
-				</tr>
-			</table>
+
+		    <div class="form-group">
+				<div class="input-group col-xs-12">
+					<input type="text" class="form-control" size="115" maxlength="115" name="q" value="<?php echo $query ?>" placeholder="Title / Author / Caption / Filename" />
+					<span class="input-group-btn">
+						<button class="btn btn-default" type="submit">Search</button>
+					</span>
+				</div>
+		    </div>
+		    <div class="form-group">
+				<label for="elibrary" class="control-label col-xs-2">Advanced Options</label>
+				<div class="col-xs-10">
+					<label class="radio-inline">
+						<input class="form-control" type="radio" name="o" value="all" <?php if ($option == 'all' || !isset($option)) { echo 'checked'; } ?>>
+						Include all terms in result
+					</label>
+					<label class="radio-inline">
+						<input class="form-control" type="radio" name="o" value="exact" <?php if ($option == 'exact') { echo 'checked'; } ?>>
+						Exact						
+					</label>
+					<label class="radio-inline">
+						<input class="form-control" type="radio" name="o" value="any" <?php if ($option == 'any') { echo 'checked'; } ?>>
+						Find results with any one of the terms					
+					</label>
+				</div>
+			</div>
 		</form>
 		<?php if (isset($statement)) { ?>
 			
@@ -145,6 +144,8 @@ $title = 'Search Images';
 			<?php require 'includes/pager.inc.php'; ?>
 			
 		<?php } ?>
+		
+			</div>			
 
 		</div>
 		
