@@ -69,7 +69,7 @@ $refs_xxx_filter = function($cols) {
 	);
 };
 
-require '../../public/includes/settings.inc.php';
+require '../../public/includes/settings.images.inc.php';
 
 $statement = $pdo->prepare("INSERT INTO Images (ID, Title, Filename, Author, Year, Source, Caption, ELibrary, Marked, Publishist) VALUES (?,?,?,?,?,?,?,?,?,?)");
 

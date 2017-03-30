@@ -2,7 +2,7 @@
 
 <?php
 
-require '../../public/includes/settings.inc.php';
+require '../../public/includes/settings.photos.inc.php';
 
 echo "ID,Old Filename, New Filename\r\n";
 

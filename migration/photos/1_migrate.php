@@ -179,7 +179,7 @@ $new_canon_filter = function($cols) {
 	);
 };
 
-require '../../public/includes/settings.inc.php';
+require '../../public/includes/settings.photos.inc.php';
 
 $statement = $pdo->prepare("INSERT INTO Photos (ID, Photonum, Oldphotonum, Title, Filename, Year, Date, Author, Place, Caption, Negscan, Nix) VALUES (?,?,?,?,?,?,?,?,?,?,?,?)");
 

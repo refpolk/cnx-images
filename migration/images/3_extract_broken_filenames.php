@@ -2,7 +2,7 @@
 
 <?php
 
-require '../../public/includes/settings.inc.php';
+require '../../public/includes/settings.images.inc.php';
 
 echo "'ID','Title','Filename'\r\n";
 
