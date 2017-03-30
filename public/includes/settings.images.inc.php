@@ -1,6 +1,6 @@
 <?php
 
-require 'includes/settings.inc.php';
+require 'settings.inc.php';
 
 $filelocation = "images/";
 
