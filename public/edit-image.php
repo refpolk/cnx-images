@@ -135,7 +135,7 @@ $title = ($update ? 'Edit' : 'Add') . ' Image';
 				<?php } ?>			
 				<tr>
 					<td>Title <span class="mandatory edit-only">*</span></td>	
-					<td><input type="text" size="100" maxlength="115" name="title" value="<?php echo $image->Title;?>"></td>
+					<td><input type="text" size="100" maxlength="200" name="title" value="<?php echo $image->Title;?>"></td>
 				</tr>
 				<tr>
 					<td>Author</td>
@@ -143,11 +143,11 @@ $title = ($update ? 'Edit' : 'Add') . ' Image';
 				</tr>
 				<tr>
 					<td>Year</td>
-					<td><input type="text" name="year" size="100" maxlength="5" value="<?php echo $image->Year;?>"></td>
+					<td><input type="text" name="year" size="100" maxlength="10" value="<?php echo $image->Year;?>"></td>
 				</tr>
 				<tr>
 					<td>Source</td>
-					<td><input type="text" size="100" maxlength="50"  name="source" value="<?php echo $image->Source;?>"></td>
+					<td><input type="text" size="100" maxlength="50" name="source" value="<?php echo $image->Source;?>"></td>
 				</tr>
 				<tr>
 					<td>ELibrary (T/F)</td>
@@ -158,19 +158,19 @@ $title = ($update ? 'Edit' : 'Add') . ' Image';
 				</tr>
 				<tr>
 					<td>Caption</td>
-					<td><textarea name="caption" rows="5" cols="86"><?php echo $image->Caption;?></textarea></td>
+					<td><textarea name="caption" rows="5" cols="86" maxlength="1000" ><?php echo $image->Caption;?></textarea></td>
 				</tr>
 				<tr>
 					<td>Note</td>
-					<td><textarea name="note" rows="5" cols="86"><?php echo $image->Note;?></textarea></td>
+					<td><textarea name="note" rows="5" cols="86" maxlength="1000"><?php echo $image->Note;?></textarea></td>
 				</tr>
 				<tr>
 					<td>Publishist</td>
-					<td><input type="text" size="100" name="publishist" value="<?php echo $image->Publishist;?>"></td>
+					<td><input type="text" size="100"  maxlength="100" name="publishist" value="<?php echo $image->Publishist;?>"></td>
 				</tr>
 				<tr>
 					<td>Copyright</td>
-					<td><input type="text" size=100 name="copyright" value="<?php echo $image->Copyright;?>"></td>
+					<td><input type="text" size="100"  maxlength="1000" name="copyright" value="<?php echo $image->Copyright;?>"></td>
 				</tr>
 				<tr>
 					<td>Marked</td>

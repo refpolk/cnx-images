@@ -126,19 +126,19 @@ $title = ($update ? 'Edit' : 'Add') . ' Photo';
 				<?php } ?>
 				<tr>
 					<td>Title <span class="mandatory edit-only">*</span></td>	
-					<td colspan="3"><input type="text" size="100" maxlength="115" name="title" value="<?php echo $photo->Title;?>" /></td>
+					<td colspan="3"><input type="text" size="100" maxlength="200" name="title" value="<?php echo $photo->Title;?>" /></td>
 				</tr>
 				<tr>
 					<td>Photonum</td>
-					<td><input type="text" name="photonum" size="30" maxlength="13" value="<?php echo $photo->Photonum;?>" /></td>
+					<td><input type="text" name="photonum" size="30" maxlength="10" value="<?php echo $photo->Photonum;?>" /></td>
 					<td>OldPhotonum</td>
-					<td><input type="text" name="oldPhotonum" size="30" maxlength="13" value="<?php echo $photo->OldPhotonum;?>" /></td>
+					<td><input type="text" name="oldPhotonum" size="30" maxlength="12" value="<?php echo $photo->OldPhotonum;?>" /></td>
 				</tr>
 				<tr>
 					<td>Year</td>
 					<td><input type="text" name="year" size="30" maxlength="5" value="<?php echo $photo->Year;?>" /></td>
 					<td>Date</td>
-					<td><input type="text" name="date" size="30" maxlength="8" value="<?php echo $photo->Date;?>" /></td>
+					<td><input type="text" name="date" size="30" maxlength="10" value="<?php echo $photo->Date;?>" /></td>
 				</tr>
 				<tr>
 					<td>Author</td>
@@ -150,15 +150,15 @@ $title = ($update ? 'Edit' : 'Add') . ' Photo';
 				</tr>
 				<tr>
 					<td>Caption</td>
-					<td colspan="3"><textarea name="caption" size="100" rows="5" cols="86"><?php echo $photo->Caption;?></textarea></td>
+					<td colspan="3"><textarea name="caption" size="100" maxlength="1000" rows="5" cols="86"><?php echo $photo->Caption;?></textarea></td>
 				</tr>
 				<tr>
 					<td>Note</td>
-					<td colspan="3"><textarea name="note" size="100" rows="5" cols="86"><?php echo $photo->Note;?></textarea></td>
+					<td colspan="3"><textarea name="note" size="100" maxlength="1000" rows="5" cols="86"><?php echo $photo->Note;?></textarea></td>
 				</tr>
 				<tr>
 					<td>Publishist</td>
-					<td colspan="3"><input type="text" name="publishist" size="100" value="<?php echo $photo->Publishist;?>"></td>
+					<td colspan="3"><input type="text" name="publishist" size="100" maxlength="200" value="<?php echo $photo->Publishist;?>"></td>
 				</tr>
 				<tr>
 					<td>Nix (T/F)</td>
