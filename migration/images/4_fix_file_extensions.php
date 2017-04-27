@@ -12,7 +12,7 @@ $selectStatement = $pdo->query("SELECT ID, Filename FROM Images WHERE Filename <
 
 while ($image = $selectStatement->fetch(PDO::FETCH_OBJ)) {
 	
-	if (file_exists($filelocation . $image->Filename)) {
+//	if (file_exists($filelocation . $image->Filename)) {
 		
 		$path_parts = pathinfo($filelocation . $image->Filename);
 
@@ -21,7 +21,7 @@ while ($image = $selectStatement->fetch(PDO::FETCH_OBJ)) {
 	
 		echo $filename . " => " . $newFilename . "\r\n";
 		$updateStatement->execute(array($newFilename, $image->ID));
-	}
+//	}
 }
 
 ?>
