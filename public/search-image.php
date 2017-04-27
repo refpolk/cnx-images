@@ -126,6 +126,7 @@ $title = 'Search Images';
 						Author: <?php echo $image->Author; ?>
 					</td>
 					<td>
+						<?php echo "FL:" . $filelocation . $image->Filename; ?>
 						<?php if ($image->Filename != '' && file_exists($filelocation . $image->Filename)) { ?>
 						<a class="zoom" data-dialog-id="#dialog-<?php echo $image->ID; ?>" title="Zoom" href="#">
 							<img src="<?php echo $filelocation . $image->Filename; ?>" height="100" alt="<?php echo $image->Title;?>"/>
