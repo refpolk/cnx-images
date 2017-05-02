@@ -59,11 +59,11 @@ $(function() {
 		$("#thumbnail").hide();
 	}
 	
-	// Edit / Readonly mode
-	
-	$('input[name="edit"], input[name="cancel"]').hide();
-			
-	if ($('body').attr('data-mode') === 'Edit') {
+	/*
+	$('input, textarea').attr('disabled', true);
+	$('input, textarea').attr('style', 'background-color:#ddd;');
+	$('.edit-only').hide();
+	*/
 
 		$('.edit-only').hide();
 

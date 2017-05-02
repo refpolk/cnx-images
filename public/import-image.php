@@ -68,10 +68,11 @@ function insert_image($pdo, $data, $row) {
 		} else {
 		
 			try {
+				/*
 				if ($image->Title === "My Image 8") {
 					throw new Exception("KO!");
 				} else {
-				
+				*/
 				$statement = $pdo->prepare("INSERT INTO Images (Title, Filename, URL, Author, Year, Source, ELibrary, Caption, Note, Publishist, Copyright, Marked) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?);");
 
 				$statement->execute(array($image->Title, $image->Filename, $image->URL, $image->Author, $image->Year, $image->Source, $image->ELibrary, $image->Caption, $image->Note, $image->Publishist, $image->Copyright, $image->Marked));
@@ -79,9 +80,9 @@ function insert_image($pdo, $data, $row) {
 				$log->ID = $pdo->lastInsertId();
 				$log->Message = "Your image has been saved successfully!";
 				$log->Result = true;
-				
+				/*
 				}
-				
+				*/
 								
 			} catch (Exception $e) {
 				
@@ -166,48 +167,73 @@ $title = 'Import Images';
 		<?php require 'includes/styles.inc.php'; ?>
 	</head>
 	<body>
+		<?php require 'includes/menu.inc.php'; ?>
+		
 		<div class="container">
+			
+			<div class="page-header">
+				<h1><?php echo $title; ?></h1>
+			</div>
+			
+			<div class="row">
+				
+				<div class="well well-sm">
+					<p>Download the sample CSV file: <a href="/resources/import_images_sample.csv">import_images_sample.csv</a></p>
+					<p>The first line contains headers and is not imported. The 'Title' field is mandatory, all the other fields are optional.</p>
+				</div>
+	
+				<form class="form-horizontal" role="form"  method="POST" enctype="multipart/form-data" action="import-image.php" >
+		
+					<?php require 'includes/messages.inc.php'; ?>
 
-			<?php require 'includes/menu.inc.php'; ?>
+					<div class="form-group edit-only">
+						<label class="control-label col-xs-2">Select File</label>
+						<div class="col-xs-10">
+							<label class="btn btn-default" for="file">
+							    <input id="file" class="file" name="csv" type="file" style="display:none;">
+							    Browse
+							</label>
+						</div>
+					</div>
+						
+					<div class="form-group">
+						<div class="col-xs-offset-2 col-xs-10">
+							<button type="submit" name="submit" class="btn btn-lg btn-primary">Import</button>
+						</div>
+					</div>
+				</form>
 		
-			<h1><?php echo $title; ?></h1>
-			
-			<?php require 'includes/messages.inc.php'; ?>
-			
-			<p>Download the sample CSV file: <a href="/resources/import_images_sample.csv">import_images_sample.csv</a></p>
-			
-			<p>The first line contains headers and is not imported. The 'Title' field is mandatory, all the other fields are optional.</p>
+				<?php if (!is_null($logs)) { ?>
 		
-			<form method="POST" enctype="multipart/form-data" action="import-image.php" >
-				<input type="file" name="csv" value="" /><br />
-				<input type="submit" name="submit" value="Import" />
-			</form>
+				<table class="table table-bordered">
+					<thead>
+						<tr>
+							<td>Row</td>
+							<td>Result</td>
+							<td>Message</td>
+						</tr>
+					</thead>
+					<tbody>
+						<?php foreach ($logs as $log) { ?>
+							 <tr class="<?php echo $log->Result == true ? "message" : "error" ; ?>">
+								 <td><?php echo $log->Row; ?></td>
+								 <td>
+									 <span class="label label-<?php echo $log->Result == true ? "success" : "danger" ; ?>">
+									 	<?php echo $log->Result == true ? "OK" : "KO" ; ?>
+								 	 </span>
+								 </td>
+								 <td>
+									<?php echo $log->Message; ?> 
+			 						<?php if ($log->ID > 0) { ?>
+										<a href="<?php echo "/edit-image.php?id=$log->ID"; ?>" target="_blank">See Image</a>
+			 						<?php } ?>
+								 </td>
+							 </tr> 
+						<?php } ?>
+					</tbody>				
+				</table>
 			
-			<?php if (!is_null($logs)) { ?>
-			
-			<table>
-				<thead>
-					<tr>
-						<td>Row</td>
-						<td>Result</td>
-						<td>Message</td>
-					</tr>
-				</thead>
-				<tbody>
-					<?php foreach ($logs as $log) { ?>
-						 <tr class="<?php echo $log->Result == true ? "message" : "error" ; ?>">
-							 <td><?php echo $log->Row; ?></td>
-							 <td><?php echo $log->Result == true ? "OK" : "KO" ; ?></td>
-							 <td>
-								<?php echo $log->Message; ?> 
-		 						<?php if ($log->ID > 0) { ?>
-									<a href="<?php echo "/edit-image.php?id=$log->ID"; ?>" target="_blank">See Image</a>
-		 						<?php } ?>
-							 </td>
-						 </tr> 
-					<?php } ?>
-				</tbody>				
-			</table>
+			</div>
 			
 			<?php } ?>
 

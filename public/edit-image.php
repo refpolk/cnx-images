@@ -107,11 +107,14 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 	}
 }
 
-$title = ($update ? 'Edit' : 'Add') . ' Image';
+$title = ($update ? 'View' : 'Add') . ' Image';
 
 ?>
-<html>
+<html lang="en">
 	<head>
+		<meta charset="utf-8">
+    	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+    	<meta name="viewport" content="width=device-width, initial-scale=1">	
 		<?php require 'includes/styles.inc.php'; ?>
 		<title><?php echo $title; ?></title>
 	</head>
@@ -119,100 +122,137 @@ $title = ($update ? 'Edit' : 'Add') . ' Image';
 		<div class="container">
 
 		<?php require 'includes/menu.inc.php'; ?>
-	
-		<h1><?php echo $title; ?></h1>
-
-		<form name="form" method="POST" action="edit-image.php<?php if ($update) { echo "?id=$image->ID"; } ?>">
 		
-			<?php require 'includes/messages.inc.php'; ?>
-
-			<table style="width=100%">
-				<?php if ($update) { ?>
-				<tr>
-					<td>ID</td>	
-					<td colspan="3"><?php echo $image->ID;?><input type="hidden" name="id" value="<?php echo $image->ID;?>" /></td>
-				</tr>
-				<?php } ?>			
-				<tr>
-					<td>Title <span class="mandatory edit-only">*</span></td>	
-					<td><input type="text" size="100" maxlength="200" name="title" value="<?php echo $image->Title;?>"></td>
-				</tr>
-				<tr>
-					<td>Author</td>
-					<td><input type="text" size="100" maxlength="100" name="author" value="<?php echo $image->Author;?>"></td>
-				</tr>
-				<tr>
-					<td>Year</td>
-					<td><input type="text" name="year" size="100" maxlength="10" value="<?php echo $image->Year;?>"></td>
-				</tr>
-				<tr>
-					<td>Source</td>
-					<td><input type="text" size="100" maxlength="50" name="source" value="<?php echo $image->Source;?>"></td>
-				</tr>
-				<tr>
-					<td>ELibrary (T/F)</td>
-					<td>
-						<input type="radio" name="elibrary" value="T" <?php if ($image->ELibrary == 'T') echo 'checked';?> /> T<br />
-						<input type="radio" name="elibrary" value="F" <?php if ($image->ELibrary == 'F' || !$update) echo 'checked';?> /> F
-					</td>
-				</tr>
-				<tr>
-					<td>Caption</td>
-					<td><textarea name="caption" rows="5" cols="86" maxlength="1000" ><?php echo $image->Caption;?></textarea></td>
-				</tr>
-				<tr>
-					<td>Note</td>
-					<td><textarea name="note" rows="5" cols="86" maxlength="1000"><?php echo $image->Note;?></textarea></td>
-				</tr>
-				<tr>
-					<td>Publishist</td>
-					<td><input type="text" size="100"  maxlength="100" name="publishist" value="<?php echo $image->Publishist;?>"></td>
-				</tr>
-				<tr>
-					<td>Copyright</td>
-					<td><input type="text" size="100"  maxlength="1000" name="copyright" value="<?php echo $image->Copyright;?>"></td>
-				</tr>
-				<tr>
-					<td>Marked</td>
-					<td><input type="text" size="100" maxlength="2" name="marked" value="<?php echo $image->Marked;?>"></td>
-				</tr>
-				<tr>
-					<td>Filename</td>
-					<td><input type="text" id="filename" size="100" name="filename" value="<?php echo $image->Filename;?>"/></td>
-				</tr>
-				<tr class="edit-only">
-					<td>Select File</td>
-					<td><input type="file" id="file" name="file" /></td>
-				</tr>
-				<tr id="thumbnail">
-					<td>Thumbnail View</td>
-					<td>
-						<a class="zoom" title="Zoom" href="#">
-							<img src="<?php if ($image->Filename != '') { echo $filelocation . $image->Filename; } ?>" height="150" alt="<?php echo $image->Title;?>"/>
-						</a>
-						<a class="zoom" title="Zoom" href="#">Zoom</a>
-						<a  class="edit-only" id="delete" title="Delete" href="#">Delete</a>
-						<div id="zoom-dialog" class="dialog" title="<?php echo $image->Title;?>">
-						  <p><img src="<?php if ($image->Filename != '') { echo $filelocation . $image->Filename; } ?>" height="500" alt="<?php echo $image->Title;?>"/></p>
+		<div class="container">	
+			<div class="page-header">
+				<h1>
+					<?php echo $title; ?> 
+					<a href="#" title="Edit image"><span class="glyphicon glyphicon-pencil small" aria-hidden="true"></span></a>
+				</h1>
+			</div>
+			
+			<div class="row">
+				<form class="form-horizontal" role="form" name="form" method="POST" action="edit-image.php<?php if ($update) { echo "?id=$image->ID"; } ?>">
+	
+						<?php require 'includes/messages.inc.php'; ?>
+						
+						<?php if ($update) { ?>
+						<div class="form-group">
+							<label for="id" class="control-label col-xs-2">ID</label>
+							<div class="col-xs-10">
+								<input id="id" class="form-control" type="hidden" name="id" value="<?php echo $image->ID;?>">
+							</div>
 						</div>
-						<div id="delete-dialog" class="dialog" title="Delete the image?">
-						  <p>Do you really want to delete the image?</p>
+						<?php } ?>			
+						<div class="form-group">
+							<label for="title" class="control-label col-xs-2">Title <span class="mandatory">*</span></label>
+							<div class="col-xs-10">
+								<input id="title" class="form-control" type="text" maxlength="115" name="title" value="<?php echo $image->Title;?>">
+							</div>
 						</div>
-					</td>
-				</tr>
-				<tr>
-					<td>URL</td>
-					<td><input type="text" size="100" maxlength="150" name="url" value="<?php echo $image->URL;?>"></td>
-				</tr>
-				<tr>
-					<td colspan="4">
-						<input type="submit" name="edit" value="Edit Image">
-						<input class="edit-only" type="submit" name="submit" value="Save Image">
-						<input type="submit" name="cancel" value="Cancel">
-					</td>
-				</tr>
-			</table>
-		</form>
+						<div class="form-group">
+							<label for="author" class="control-label col-xs-2">Author</label>
+							<div class="col-xs-10">
+								<input id="author" class="form-control" type="text" maxlength="100" name="author" value="<?php echo $image->Author;?>">
+							</div>
+						</div>
+						<div class="form-group">
+							<label for="year" class="control-label col-xs-2">Year</label>
+							<div class="col-xs-10">
+								<input id="year" class="form-control" type="text" name="year" maxlength="5" value="<?php echo $image->Year;?>">
+							</div>
+						</div>
+						<div class="form-group">
+							<label for="source" class="control-label col-xs-2">Source</label>
+							<div class="col-xs-10">
+								<input id="source" class="form-control" type="text" maxlength="50"  name="source" value="<?php echo $image->Source;?>">
+							</div>
+						</div>
+						<div class="form-group">
+							<label for="elibrary" class="control-label col-xs-2">ELibrary (T/F)</label>
+							<div class="col-xs-10">
+								  <label class="radio-inline"><input type="radio" name="elibrary" value="T" <?php if ($image->ELibrary == 'T') echo 'checked';?>>T</label>
+								  <label  class="radio-inline"><input type="radio" name="elibrary" value="F" <?php if ($image->ELibrary == 'F' || !$update) echo 'checked';?>>F</label>
+							</div>
+						</div>
+						<div class="form-group">
+							<label for="caption" class="control-label col-xs-2">Caption</label>
+							<div class="col-xs-10">
+								<textarea id="caption" class="form-control" name="caption" rows="2"><?php echo $image->Caption;?></textarea>
+							</div>
+						</div>
+						<div class="form-group">
+							<label for="publishist" class="control-label col-xs-2">Note</label>
+							<div class="col-xs-10">
+								<textarea id="publishist" class="form-control" name="note" rows="2"><?php echo $image->Note;?></textarea>
+							</div>
+						</div>
+						<div class="form-group">
+							<label for="author" class="control-label col-xs-2">Publishist</label>
+							<div class="col-xs-10">
+								<input id="" class="form-control" type="text" name="publishist" value="<?php echo $image->Publishist;?>">
+							</div>
+						</div>
+						<div class="form-group">
+							<label for="copyright" class="control-label col-xs-2">Copyright</label>
+							<div class="col-xs-10">
+								<input id="copyright" class="form-control" type="text" size=100 name="copyright" value="<?php echo $image->Copyright;?>">
+							</div>
+						</div>
+						<div class="form-group">
+							<label for="marked" class="control-label col-xs-2">Marked</label>
+							<div class="col-xs-10">
+								<input id="marked" class="form-control" type="text" maxlength="2" name="marked" value="<?php echo $image->Marked;?>">
+							</div>
+						</div>
+						<div class="form-group">
+							<label for="filename" class="control-label col-xs-2">Filename</label>
+							<div class="col-xs-10">
+								<input id="filename" class="form-control" type="text" id="filename" name="filename" value="<?php echo $image->Filename;?>">
+							</div>
+						</div>
+						<div class="form-group edit-only">
+							<label class="control-label col-xs-2">Select File</label>
+							<div class="col-xs-10">
+								<label class="btn btn-default" for="file">
+								    <input id="file" class="file" name="file" type="file" style="display:none;">
+								    Browse
+								</label>
+							</div>
+						</div>
+						<div id="thumbnail" class="form-group">
+							<label class="control-label col-xs-2">Thumbnail View</label>
+							<div class="col-xs-10">
+								<a class="zoom thumbnail" title="Zoom" href="#">
+									<img src="<?php if ($image->Filename != '') { echo $filelocation . $image->Filename; } ?>" height="150" alt="<?php echo $image->Title;?>"/>
+								</a>
+								<a class="zoom" title="Zoom" href="#">
+									<span class="glyphicon glyphicon-fullscreen" aria-hidden="true"></span>
+								</a>
+								<a id="delete" class="edit-only" title="Remove" href="#">
+									<span class="glyphicon glyphicon-remove" aria-hidden="true"></span>
+								</a>
+								<div id="zoom-dialog" class="dialog" title="<?php echo $image->Title;?>">
+								  <p><img src="<?php if ($image->Filename != '') { echo $filelocation . $image->Filename; } ?>" height="500" alt="<?php echo $image->Title;?>"/></p>
+								</div>
+								<div id="delete-dialog" class="dialog" title="Remove the image?">
+								  <p>Do you really want to remove the image?</p>
+								</div>
+							</div>
+						</div>
+						<div class="form-group">
+							<label for="url" class="control-label col-xs-2">URL</label>
+							<div class="col-xs-10">
+								<input id="url" class="form-control" type="text" maxlength="150" name="url" value="<?php echo $image->URL;?>">
+							</div>
+						</div>
+						<div class="form-group edit-only">
+							<div class="col-xs-offset-2 col-xs-10">
+								<button type="submit" name="submit" class="btn btn-lg btn-primary"><?php echo ($update ? 'Update' : 'Save')?> Image</button>
+							</div>
+						</div>
+				</form>
+			</div>
 		</div>
 	
 		<?php require 'includes/scripts.inc.php'; ?>
