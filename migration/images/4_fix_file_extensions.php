@@ -13,7 +13,12 @@ while ($image = $selectStatement->fetch(PDO::FETCH_OBJ)) {
 	$path_parts = pathinfo($filelocation . $image->Filename);
 
 	$filename = $path_parts['filename'] . "." . $path_parts['extension'];
-	$newFilename = $path_parts['filename'] . "." . strtolower($path_parts['extension']);
+	
+	if (strtolower($path_parts['extension']) == 'jpeg') {
+		$newFilename = $path_parts['filename'] . ".jpg";
+	} else {
+		$newFilename = $path_parts['filename'] . "." . strtolower($path_parts['extension']);
+	}
 
 	echo $filename . " => " . $newFilename . "\r\n";
 	
