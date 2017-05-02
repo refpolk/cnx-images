@@ -79,15 +79,20 @@ $title = 'Search Images';
 		<?php require 'includes/styles.inc.php'; ?>
 	</head>
 	<body>
-		<div class="container">
-
 		<?php require 'includes/menu.inc.php'; ?>
 		
-		<h1><?php echo $title; ?></h1>
+		<div class="container">
+		
+			<div class="page-header">
+				<h1><?php echo $title; ?></h1>
+			</div>
+			
+			<div class="row">
 
-		<form id="searchform" name="form" method="GET" action="search-image.php">
+		<form class="form-horizontal" role="form" id="searchform" name="form" method="GET" action="search-image.php">
 
 			<?php require 'includes/messages.inc.php'; ?>
+<<<<<<< HEAD
 			
 			<table style="width=100%">
 				<tr>
@@ -111,12 +116,40 @@ $title = 'Search Images';
 					</td>
 				</tr>
 			</table>
+=======
+
+		    <div class="form-group">
+				<div class="input-group col-xs-12">
+					<input type="text" class="form-control" size="115" maxlength="115" name="q" value="<?php echo $query ?>" placeholder="Title / Author / Caption / Filename" />
+					<span class="input-group-btn">
+						<button class="btn btn-default" type="submit">Search</button>
+					</span>
+				</div>
+		    </div>
+		    <div class="form-group">
+				<label for="elibrary" class="control-label col-xs-2">Advanced Options</label>
+				<div class="col-xs-10">
+					<label class="radio-inline">
+						<input class="form-control" type="radio" name="o" value="all" <?php if ($option == 'all' || !isset($option)) { echo 'checked'; } ?>>
+						Include all terms in result
+					</label>
+					<label class="radio-inline">
+						<input class="form-control" type="radio" name="o" value="exact" <?php if ($option == 'exact') { echo 'checked'; } ?>>
+						Exact						
+					</label>
+					<label class="radio-inline">
+						<input class="form-control" type="radio" name="o" value="any" <?php if ($option == 'any') { echo 'checked'; } ?>>
+						Find results with any one of the terms					
+					</label>
+				</div>
+			</div>
+>>>>>>> dev-ui
 		</form>
 		<?php if (isset($statement)) { ?>
 			
 			<?php require 'includes/pager.inc.php'; ?>
 						
-			<table>
+			<table class="table table-bordered">
 				<?php while ($image = $statement->fetch(PDO::FETCH_OBJ)) { ?>
 				<tr>
 					<td valign="top">
@@ -128,7 +161,7 @@ $title = 'Search Images';
 					<td>
 						<?php if ($image->Filename != '' && file_exists($filelocation . $image->Filename)) { ?>
 						<a class="zoom" data-dialog-id="#dialog-<?php echo $image->ID; ?>" title="Zoom" href="#">
-							<img src="<?php echo $filelocation . $image->Filename; ?>" height="100" alt="<?php echo $image->Title;?>"/>
+							<img src="<?php echo $filelocation . $image->Filename; ?>" height="100px" alt="<?php echo $image->Title;?>"/>
 						</a>
 						<div class="dialog" id="dialog-<?php echo $image->ID; ?>" title="<?php echo $image->Title;?>">
 						  <p><img src="<?php echo $filelocation . $image->Filename; ?>" height="500" alt="<?php echo $image->Title;?>"/></p>
@@ -142,6 +175,8 @@ $title = 'Search Images';
 			<?php require 'includes/pager.inc.php'; ?>
 			
 		<?php } ?>
+		
+			</div>			
 
 		</div>
 		

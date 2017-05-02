@@ -18,15 +18,22 @@
 		<?php require 'includes/styles.inc.php'; ?>
 	</head>
 	<body>
+		<?php require 'includes/menu.inc.php'; ?>
+		
 		<div class="container">
-			
-			<?php require 'includes/menu.inc.php'; ?>
 
-			<h1><?php echo $title; ?></h1>
+			<div class="page-header">
+				<h1>
+					<?php echo $title; ?>
+					<span class="badge"><?php echo $numberOfItems; ?></span>
+				</h1>
+			</div>
+			
+			<div class="row">
 	
 			<?php require 'includes/pager.inc.php'; ?>
 
-			<table style="width=100%">
+			<table class="table table-bordered">
 				<thead>
 					<tr>
 		     		   	<th>ID</th>
@@ -48,6 +55,8 @@
 			</table>
 	
 			<?php require 'includes/pager.inc.php'; ?>
+			
+			</div>
 	
 		</div>
 		

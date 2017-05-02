@@ -1,11 +1,17 @@
 <div class="messages">
 	<?php if ($message != '') { ?>
-	<p class="message"><?php echo $message;?></p>
+	<div class="alert alert-success" role="alert">
+		<p><?php echo $message;?></p>
+	</div>
 	<?php } ?>
 	<?php if ($warning != '') { ?>
-	<p class="warning"><?php echo $warning;?></p>
+	<div class="alert alert-warning" role="alert">
+		<p><?php echo $warning;?></p>
+	</div>
 	<?php } ?>
 	<?php if ($error != '') { ?>
-	<p class="error"><?php echo $error;?></p>
+	<div class="alert alert-danger" role="alert">	
+		<p><?php echo $error;?></p>
+	</div>
 	<?php } ?>
 </div>
