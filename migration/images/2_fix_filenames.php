@@ -2,9 +2,9 @@
 
 <?php
 
-require '../../public/includes/settings.images.inc.php';
+require '../../public/includes/settings.inc.php';
 
-echo "ID,Old Filename, New Filename\r\n";
+echo "ID, Old Filename, New Filename\r\n";
 
 $updateStatement = $pdo->prepare("UPDATE Images SET Filename = ? WHERE ID = ?;");
 
@@ -12,23 +12,22 @@ $selectStatement = $pdo->query("SELECT ID, Filename FROM Images WHERE Filename <
 
 while ($image = $selectStatement->fetch(PDO::FETCH_OBJ)) {
 	
-	$path = $filelocation . $image->Filename;
+	$path = '../../public/images/' . $image->Filename;
 	$newFilename = '';
 	
 	if (!file_exists($path)) {
 		
 		if (file_exists($path . '.jpg')) {
-			$newFilename = $path . '.jpg';
+			$newFilename = $image->Filename . '.jpg';
 		} else if (file_exists($path . '.jpeg')) {
-			$newFilename = $path . '.jpeg';
+			$newFilename = $image->Filename . '.jpeg';
 		} else if (file_exists($path . '.gif')) {
-			$newFilename = $path . '.gif';
+			$newFilename = $image->Filename . '.gif';
 		}
 		
 		if ($newFilename != '') {
-			//$updateStatement->execute(array($newFilename, $image->ID));
-			//  WRONG  :  it will include the pqth on the filename
-			echo "$image->ID,$image->Filename, $newFilename\r\n";
+			$updateStatement->execute(array($newFilename, $image->ID));
+			echo "$image->ID, $image->Filename, $newFilename\r\n";
 		}
 	}
 }
@@ -41,7 +40,7 @@ while ($image = $selectStatement->fetch(PDO::FETCH_OBJ)) {
 	
 	if (file_exists($newFilename)) {
 		$updateStatement->execute(array($newFilename, $image->ID));
-		echo "$image->ID,$image->Filename, $newFilename\r\n";
+		echo "$image->ID, $image->Filename, $newFilename\r\n";
 	}
 }
 
