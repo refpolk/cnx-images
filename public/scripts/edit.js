@@ -6,6 +6,7 @@ $(function() {
 
 	    reader.onload = function (e) {
 	        $("#thumbnail img").attr("src", e.target.result);
+			$("#zoom-dialog img").attr("src", e.target.result);
 			$("#thumbnail").show();
 	    };
 
@@ -19,9 +20,10 @@ $(function() {
         width:'auto',
         modal: true,
         buttons: {
-          "Delete": function() {
+          "Remove": function() {
 
 		    $("#thumbnail img").attr("src", "");
+			$("#zoom-dialog img").attr("src", "");			
 			$("#thumbnail").hide();
 			$("#filename").val("");
 			$("#file").val("");
@@ -51,50 +53,50 @@ $(function() {
 	    $("#zoom-dialog").dialog("open");
 		return false;
 	});
-
-	$("input[name='title']").focus();
 	
-	if ($("#thumbnail img").attr("src") == "") {
+	if ($("#thumbnail img").attr("src") === "") {
 		
 		$("#thumbnail").hide();
 	}
 	
-	/*
-	$('input, textarea').attr('disabled', true);
-	$('input, textarea').attr('style', 'background-color:#ddd;');
-	$('.edit-only').hide();
-	*/
+	// Edit / Readonly mode
+	
+	$('button[name="edit"], button[name="cancel"]').hide();
+
+	if ($('body').attr('data-mode') === 'Add') {
+	
+		$("input[name='title']").focus();
+	}
+				
+	if ($('body').attr('data-mode') === 'Edit') {
 
 		$('.edit-only').hide();
 
 		$('input[type="text"],input[type="radio"],textarea')
 			.attr('disabled', 'disabled')
-			.attr('style', 'background-color:#ddd;');
-			
-		//$('input[type="text"],input[type="radio"],textarea').attr('style', 'background-color:#ddd;');
+			.attr('style', 'background-color:#f2f2f2;');
 
-		$('input[name="edit"]').show();
+		$('button[name="edit"]').show();
 	}
 	
-	$('input[name="edit"]').click(function() {
+	$('button[name="edit"]').click(function() {
 
 		$('.edit-only').show();
 
 		$('input[type="text"],input[type="radio"],textarea')
 			.attr('disabled', false)
 			.attr('style', 'background-color:#fff;');
-		
-		//$('input[type="text"],input[type="radio"],textarea').attr('style', 'background-color:#fff;');
 
-		$('input[name="edit"]').hide();
-		$('input[name="cancel"]').show();		
+		$('button[name="edit"]').hide();
+		$('button[name="cancel"]').show();
+		
+		$("input[name='title']").focus();		
 		
 		return false;
 	});
 	
-	$('input[name="cancel"]').click(function() {
+	$('button[name="cancel"]').click(function() {
 		
-		//window.location.reload();
 		window.location.assign(window.location)
 		
 		return false;

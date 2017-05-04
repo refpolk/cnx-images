@@ -167,72 +167,75 @@ $title = 'Import Images';
 		<?php require 'includes/styles.inc.php'; ?>
 	</head>
 	<body>
-		<?php require 'includes/menu.inc.php'; ?>
+		<?php require 'includes/menu-image.inc.php'; ?>
 		
 		<div class="container">
 			
-			<div class="page-header">
-				<h1><?php echo $title; ?></h1>
+			<div class="row">
+				<div class="col-xs-12">
+					<div class="page-header">
+						<h1>
+							<?php echo $title; ?>
+						</h1>
+					</div>
+				</div>				
 			</div>
 			
-			<div class="row">
-				
-				<div class="well well-sm">
-					<p>Download the sample CSV file: <a href="/resources/import_images_sample.csv">import_images_sample.csv</a></p>
-					<p>The first line contains headers and is not imported. The 'Title' field is mandatory, all the other fields are optional.</p>
+			<div class="row">				
+				<div class="col-xs-12">
+					<div class="alert alert-info">
+						You can download a sample CSV file here: <a href="/resources/import_images_sample.csv" class="alert-link">import_images_sample.csv</a>.
+						The first line contains headers and is not imported. The 'Title' field is mandatory, all the other fields are optional.
+					</div>
 				</div>
-	
-				<form class="form-horizontal" role="form"  method="POST" enctype="multipart/form-data" action="import-image.php" >
-		
-					<?php require 'includes/messages.inc.php'; ?>
+			</div>
 
-					<div class="form-group edit-only">
-						<label class="control-label col-xs-2">Select File</label>
-						<div class="col-xs-10">
-							<label class="btn btn-default" for="file">
-							    <input id="file" class="file" name="csv" type="file" style="display:none;">
-							    Browse
-							</label>
-						</div>
-					</div>
-						
-					<div class="form-group">
-						<div class="col-xs-offset-2 col-xs-10">
-							<button type="submit" name="submit" class="btn btn-lg btn-primary">Import</button>
-						</div>
-					</div>
-				</form>
+			<form role="form"  method="POST" enctype="multipart/form-data" action="import-image.php" >
+
+				<?php require 'includes/messages.inc.php'; ?>
+									
+				<div class="form-group">
+					<label>Select File</label>
+					<input id="file" class="file" name="csv" type="file">
+				</div>
+				
+				<div class="form-group">
+					<button type="submit" name="submit" class="btn btn-lg btn-primary">Import File</button>
+				</div>
+			</form>
 		
-				<?php if (!is_null($logs)) { ?>
-		
-				<table class="table table-bordered">
-					<thead>
-						<tr>
-							<td>Row</td>
-							<td>Result</td>
-							<td>Message</td>
-						</tr>
-					</thead>
-					<tbody>
-						<?php foreach ($logs as $log) { ?>
-							 <tr class="<?php echo $log->Result == true ? "message" : "error" ; ?>">
-								 <td><?php echo $log->Row; ?></td>
-								 <td>
-									 <span class="label label-<?php echo $log->Result == true ? "success" : "danger" ; ?>">
-									 	<?php echo $log->Result == true ? "OK" : "KO" ; ?>
-								 	 </span>
-								 </td>
-								 <td>
-									<?php echo $log->Message; ?> 
-			 						<?php if ($log->ID > 0) { ?>
-										<a href="<?php echo "/edit-image.php?id=$log->ID"; ?>" target="_blank">See Image</a>
-			 						<?php } ?>
-								 </td>
-							 </tr> 
-						<?php } ?>
-					</tbody>				
-				</table>
-			
+			<?php if (!is_null($logs)) { ?>
+					
+			<div class="row">
+				<div class="col-xs-12">							
+					<table class="table table-bordered">
+						<thead>
+							<tr>
+								<th>Row</th>
+								<th>Result</th>
+								<th>Message</th>
+							</tr>
+						</thead>
+						<tbody>
+							<?php foreach ($logs as $log) { ?>
+								 <tr class="<?php echo $log->Result == true ? "message" : "error" ; ?>">
+									 <td><?php echo $log->Row; ?></td>
+									 <td>
+										 <span class="label label-<?php echo $log->Result == true ? "success" : "danger" ; ?>">
+										 	<?php echo $log->Result == true ? "OK" : "KO" ; ?>
+									 	 </span>
+									 </td>
+									 <td>
+										<?php echo $log->Message; ?> 
+				 						<?php if ($log->ID > 0) { ?>
+											<a href="<?php echo "/edit-image.php?id=$log->ID"; ?>" target="_blank">See Image</a>
+				 						<?php } ?>
+									 </td>
+								 </tr> 
+							<?php } ?>
+						</tbody>				
+					</table>
+				</div>			
 			</div>
 			
 			<?php } ?>

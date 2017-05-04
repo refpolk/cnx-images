@@ -1,3 +1,3 @@
 <?php
-	header('Location: edit-image.php');
+	header('Location: search-image.php');
 ?>

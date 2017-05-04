@@ -7,6 +7,8 @@ if (isset($_GET['q'])) {
 	$query = $_GET['q'];
 	$option = $_GET['o'];
 	
+	$numberOfItems = 0;
+	
 	if ($query == '') {
 		
 		$warning = 'Your query cannot be empty!';
@@ -67,6 +69,10 @@ if (isset($_GET['q'])) {
 		$numberOfPages = (int) (($numberOfItems + $pageSize - 1) / $pageSize);
 	
 		$statement = $pdo->query("SELECT * FROM Images WHERE $query_All ORDER BY ID ASC LIMIT $startPage, $pageSize;");
+		
+		if ($numberOfItems == 0){
+			$warning = 'No results found for your query!';
+		}		
 	}
 }
 
@@ -79,104 +85,103 @@ $title = 'Search Images';
 		<?php require 'includes/styles.inc.php'; ?>
 	</head>
 	<body>
-		<?php require 'includes/menu.inc.php'; ?>
+		<?php require 'includes/menu-image.inc.php'; ?>
 		
 		<div class="container">
 		
-			<div class="page-header">
-				<h1><?php echo $title; ?></h1>
+			<div class="row">
+				<div class="col-xs-12">	
+					<div class="page-header">
+						<h1>
+							<?php echo $title; ?>
+							<?php if (isset($statement)) { ?>
+								<span class="badge"><?php echo $numberOfItems; ?></span>
+							<?php } ?>
+						</h1>
+					</div>
+				</div>					
 			</div>
 			
 			<div class="row">
+				<div class="col-xs-12">
+					<form role="form" id="searchform" name="form" method="GET" action="search-image.php">
 
-		<form class="form-horizontal" role="form" id="searchform" name="form" method="GET" action="search-image.php">
-
-			<?php require 'includes/messages.inc.php'; ?>
-<<<<<<< HEAD
-			
-			<table style="width=100%">
-				<tr>
-					<td></td>	
-					<td>
-						<input type="text" size="115" maxlength="115" name="q" value="<?php echo $query ?>"  placeholder="Title / Filename / Author / Caption / Note" />
-						<input type="submit" value="Search Images" />
-					</td>
-				</tr>
-				<tr>
-					<td colspan="2">
-						<fieldset>
-							<legend>Advanced Options:</legend>
-							<input type="radio" name="o" value="all" <?php if ($option == 'all' || !isset($option)) { echo 'checked'; } ?>>
-							Include all terms in result (default)    
-							<input type="radio" name="o" value="exact" <?php if ($option == 'exact') { echo 'checked'; } ?>>
-							Exact
-							<input type="radio" name="o" value="any" <?php if ($option == 'any') { echo 'checked'; } ?>>
-							Find results with any one of the terms
-						</fieldset>
-					</td>
-				</tr>
-			</table>
-=======
-
-		    <div class="form-group">
-				<div class="input-group col-xs-12">
-					<input type="text" class="form-control" size="115" maxlength="115" name="q" value="<?php echo $query ?>" placeholder="Title / Author / Caption / Filename" />
-					<span class="input-group-btn">
-						<button class="btn btn-default" type="submit">Search</button>
-					</span>
-				</div>
-		    </div>
-		    <div class="form-group">
-				<label for="elibrary" class="control-label col-xs-2">Advanced Options</label>
-				<div class="col-xs-10">
-					<label class="radio-inline">
-						<input class="form-control" type="radio" name="o" value="all" <?php if ($option == 'all' || !isset($option)) { echo 'checked'; } ?>>
-						Include all terms in result
-					</label>
-					<label class="radio-inline">
-						<input class="form-control" type="radio" name="o" value="exact" <?php if ($option == 'exact') { echo 'checked'; } ?>>
-						Exact						
-					</label>
-					<label class="radio-inline">
-						<input class="form-control" type="radio" name="o" value="any" <?php if ($option == 'any') { echo 'checked'; } ?>>
-						Find results with any one of the terms					
-					</label>
+						<?php require 'includes/messages.inc.php'; ?>
+					    <div class="form-group">
+							<div class="input-group">
+								<input type="text" class="form-control input-lg" name="q" value="<?php echo $query ?>" placeholder="Title / Author / Caption / Filename / Note" />
+								<span class="input-group-btn">
+									<button class="btn btn-lg btn-primary" type="submit">Search</button>
+								</span>
+							</div>
+					    </div>
+					    <div class="form-group">
+							<div>
+								<label class="radio-inline">
+									<input type="radio" name="o" value="all" <?php if ($option == 'all' || !isset($option)) { echo 'checked'; } ?>>
+									Include all terms in result
+								</label>
+								<label class="radio-inline">
+									<input type="radio" name="o" value="exact" <?php if ($option == 'exact') { echo 'checked'; } ?>>
+									Exact						
+								</label>
+								<label class="radio-inline">
+									<input type="radio" name="o" value="any" <?php if ($option == 'any') { echo 'checked'; } ?>>
+									Find results with any one of the terms					
+								</label>
+							</div>
+						</div>
+					</form>
 				</div>
 			</div>
->>>>>>> dev-ui
-		</form>
-		<?php if (isset($statement)) { ?>
-			
-			<?php require 'includes/pager.inc.php'; ?>
 						
-			<table class="table table-bordered">
-				<?php while ($image = $statement->fetch(PDO::FETCH_OBJ)) { ?>
-				<tr>
-					<td valign="top">
-						ID: <?php echo $image->ID; ?><br />
-						Title: <a href="/edit-image.php?id=<?php echo $image->ID; ?>"><?php echo $image->Title; ?></a><br />
-						Filename: <?php echo $image->Filename; ?><br />
-						Author: <?php echo $image->Author; ?>
-					</td>
-					<td>
-						<?php if ($image->Filename != '') { ?>
-						<a class="zoom" data-dialog-id="#dialog-<?php echo $image->ID; ?>" title="Zoom" href="#">
-							<img src="<?php echo $filelocation . $image->Filename; ?>" height="100px" alt="<?php echo $image->Title;?>"/>
-						</a>
-						<div class="dialog" id="dialog-<?php echo $image->ID; ?>" title="<?php echo $image->Title;?>">
-						  <p><img src="<?php echo $filelocation . $image->Filename; ?>" height="500" alt="<?php echo $image->Title;?>"/></p>
-						</div>
-						<?php } ?>
-					</td>
-				</tr>
-				<?php } ?>
-			</table>
-			
-			<?php require 'includes/pager.inc.php'; ?>
-			
-		<?php } ?>
-		
-			</div>			
+			<?php if (isset($statement) && $statement->rowCount() > 0) { ?>
+					
+				<div class="row">
+					<?php require 'includes/pager.inc.php'; ?>
+				</div>
+
+				<div class="row">
+					<div class="col-xs-12">					
+						<table class="table table-bordered">
+							<thead>
+								<tr>
+					     		   	<th>ID</th>
+					     		   	<th>Title</th>
+					     		   	<th>Filename</th>
+					     		   	<th>Author</th>																
+					     		  	<th>Thumbnail</th>
+					  			</tr>
+					 	   	</thead>
+							<tbody>						
+								<?php while ($image = $statement->fetch(PDO::FETCH_OBJ)) { ?>
+								<tr>
+									<td><?php echo $image->ID; ?></td>
+									<td><a href="/edit-image.php?id=<?php echo $photo->ID; ?>"><?php echo $image->Title; ?></a></td>
+									<td><?php echo $image->Filename; ?></td>
+									<td><?php echo $image->Author; ?></td>																
+									<td>
+										<?php if ($image->Filename != '') { ?>
+										<a class="zoom" data-dialog-id="#dialog-<?php echo $image->ID; ?>" title="Zoom" href="#">
+											<img src="<?php echo $filelocation . $image->Filename; ?>" height="100" alt="<?php echo $image->Title;?>"/>
+										</a>
+										<div class="dialog" id="dialog-<?php echo $image->ID; ?>" title="<?php echo $image->Title;?>">
+											<p><img src="<?php echo $filelocation . $image->Filename; ?>" height="500" alt="<?php echo $image->Title;?>"/></p>
+										</div>
+										<?php } ?>						
+									</td>
+								</tr>
+								<?php } ?>
+							</tbody>						
+						</table>
+					</div>
+				</div>
+						
+				<div class="row">
+					<?php require 'includes/pager.inc.php'; ?>
+				</div>
+
+			<?php } ?>			
 
 		</div>
 		
