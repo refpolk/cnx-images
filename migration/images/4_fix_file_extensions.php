@@ -26,7 +26,7 @@ while ($image = $selectStatement->fetch(PDO::FETCH_OBJ)) {
 	
 	$pathParts = pathinfo('../../public/images/' . $image->Filename);
 
-	if (array_key_exists($pathParts['extension'])) {
+	if (array_key_exists('extension', $pathParts)) {
 		if (strtolower($pathParts['extension']) == 'jpeg') {
 			$newFilename = $pathParts['filename'] . ".jpg";
 		} else  {
