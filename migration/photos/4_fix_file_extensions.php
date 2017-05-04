@@ -34,7 +34,7 @@ while ($photo = $selectStatement->fetch(PDO::FETCH_OBJ)) {
 
 	if ($newFilename != '' && file_exists('../../public/photos/' . $newFilename)) {
 		$updateStatement->execute(array($newFilename, $photo->ID));
-		echo "$image->Filename, $newFilename\r\n";	
+		echo "$photo->Filename, $newFilename\r\n";	
 	}
 }
 
