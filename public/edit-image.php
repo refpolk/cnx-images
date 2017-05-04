@@ -107,7 +107,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 	}
 }
 
-$title = ($update ? 'View' : 'Add') . ' Image';
+$title = ($update ? 'Edit' : 'Add') . ' Image';
 
 ?>
 <html lang="en">
