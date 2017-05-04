@@ -26,10 +26,12 @@ while ($image = $selectStatement->fetch(PDO::FETCH_OBJ)) {
 	
 	$pathParts = pathinfo('../../public/images/' . $image->Filename);
 
-	if (strtolower($pathParts['extension']) == 'jpeg') {
-		$newFilename = $pathParts['filename'] . ".jpg";
-	} else if (strtolower($pathParts['extension']) != '') {
-		$newFilename = $pathParts['filename'] . "." . strtolower($pathParts['extension']);
+	if (array_key_exists($pathParts['extension'])) {
+		if (strtolower($pathParts['extension']) == 'jpeg') {
+			$newFilename = $pathParts['filename'] . ".jpg";
+		} else  {
+			$newFilename = $pathParts['filename'] . "." . strtolower($pathParts['extension']);
+		}
 	}
 
 	if ($newFilename != '' && file_exists('../../public/images/' . $newFilename)) {
