@@ -157,7 +157,7 @@ $title = 'Search Images';
 								<?php while ($image = $statement->fetch(PDO::FETCH_OBJ)) { ?>
 								<tr>
 									<td><?php echo $image->ID; ?></td>
-									<td><a href="/edit-image.php?id=<?php echo $photo->ID; ?>"><?php echo $image->Title; ?></a></td>
+									<td><a href="/edit-image.php?id=<?php echo $image->ID; ?>"><?php echo $image->Title; ?></a></td>
 									<td><?php echo $image->Filename; ?></td>
 									<td><?php echo $image->Author; ?></td>																
 									<td>
