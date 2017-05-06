@@ -132,7 +132,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
             $row = 0;
 
-            while (($data = fgetcsv($handle, 1000, ',')) !== FALSE) {
+            while (($data = fgetcsv($handle, 1000, ',', '"')) !== FALSE) {
 
 				if ($row > O) {
 					array_push($logs, insert_image($pdo, $data, $row));
@@ -184,8 +184,8 @@ $title = 'Import Images';
 			<div class="row">				
 				<div class="col-xs-12">
 					<div class="alert alert-info">
-						You can download a sample CSV file here: <a href="/resources/import_images_sample.csv" class="alert-link">import_images_sample.csv</a>.
-						The first line contains headers and is not imported. The 'Title' field is mandatory, all the other fields are optional.
+						You can download a sample <acronym title="Comma-separated values">CSV</acronym> file here: <a href="/resources/import_images_sample.csv" title="Download the sample file" class="alert-link">import_images_sample.csv</a>.
+						The first line contains headers and is not imported. The fields are separated by commas and delimited by double quotes. The 'Title' field is mandatory, all the other fields are optional.
 					</div>
 				</div>
 			</div>
@@ -228,7 +228,7 @@ $title = 'Import Images';
 									 <td>
 										<?php echo $log->Message; ?> 
 				 						<?php if ($log->ID > 0) { ?>
-											<a href="<?php echo "/edit-image.php?id=$log->ID"; ?>" target="_blank">See Image</a>
+											<a href="<?php echo "/edit-image.php?id=$log->ID"; ?>" title="See Image" target="_blank">See Image</a>
 				 						<?php } ?>
 									 </td>
 								 </tr> 
