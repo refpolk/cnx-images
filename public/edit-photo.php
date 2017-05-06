@@ -107,111 +107,171 @@ $title = ($update ? 'Edit' : 'Add') . ' Photo';
 		<?php require 'includes/styles.inc.php'; ?>
 	</head>
 	<body data-mode="<?php echo ($update ? 'Edit' : 'Add'); ?>">
-		<div class="container">
-
-		<?php require 'includes/menu.inc.php'; ?>
-	
-		<h1><?php echo $title; ?></h1>
-
-		<form name="form" method="POST" action="edit-photo.php<?php if ($update) { echo "?id=$photo->ID"; } ?>">
+		<?php require 'includes/menu-photo.inc.php'; ?>
 		
-			<?php require 'includes/messages.inc.php'; ?>
+		<div class="container">	
+			
+			<div class="row">
+				<div class="col-xs-12">
+					<div class="page-header">
+						<h1><?php echo $title; ?></h1>
+					</div>
+				</div>				
+			</div>
 
-			<table style="width=100%">
+			<form class="form-horizontal" role="form" name="form" method="POST" action="edit-photo.php<?php if ($update) { echo "?id=$photo->ID"; } ?>">
+		
+				<?php require 'includes/messages.inc.php'; ?>
+
+				
 				<?php if ($update) { ?>
-				<tr>
-					<td>ID</td>	
-					<td colspan="3"><?php echo $photo->ID;?><input type="hidden" name="id" value="<?php echo $photo->ID;?>" /></td>
-				</tr>
+				<div class="form-group">
+					<label for="id" class="control-label col-xs-2">ID</label>
+					<div class="col-xs-10">
+						<td colspan="3"><?php echo $photo->ID;?><input type="hidden" class="form-control" name="id" value="<?php echo $photo->ID;?>" /></td>
+					</div>						
+				</div>
 				<?php } ?>
-				<tr>
-					<td>Title <span class="mandatory edit-only">*</span></td>	
-					<td colspan="3"><input type="text" size="100" maxlength="200" name="title" value="<?php echo $photo->Title;?>" /></td>
-				</tr>
-				<tr>
-					<td>Photonum</td>
-					<td><input type="text" name="photonum" size="30" maxlength="10" value="<?php echo $photo->Photonum;?>" /></td>
-					<td>OldPhotonum</td>
-					<td><input type="text" name="oldPhotonum" size="30" maxlength="12" value="<?php echo $photo->OldPhotonum;?>" /></td>
-				</tr>
-				<tr>
-					<td>Year</td>
-					<td><input type="text" name="year" size="30" maxlength="5" value="<?php echo $photo->Year;?>" /></td>
-					<td>Date</td>
-					<td><input type="text" name="date" size="30" maxlength="10" value="<?php echo $photo->Date;?>" /></td>
-				</tr>
-				<tr>
-					<td>Author</td>
-					<td colspan="3"><input type="text" name="authors" size="100" maxlength="100" value="<?php echo $photo->Author;?>" /></td>
-				</tr>
-				<tr>
-					<td>Place</td>
-					<td colspan="3"><input type="text" name="place" size="100" maxlength="60" value="<?php echo $photo->Place;?>" /></td>
-				</tr>
-				<tr>
-					<td>Caption</td>
-					<td colspan="3"><textarea name="caption" size="100" maxlength="1000" rows="5" cols="86"><?php echo $photo->Caption;?></textarea></td>
-				</tr>
-				<tr>
-					<td>Note</td>
-					<td colspan="3"><textarea name="note" size="100" maxlength="1000" rows="5" cols="86"><?php echo $photo->Note;?></textarea></td>
-				</tr>
-				<tr>
-					<td>Publishist</td>
-					<td colspan="3"><input type="text" name="publishist" size="100" maxlength="200" value="<?php echo $photo->Publishist;?>"></td>
-				</tr>
-				<tr>
-					<td>Nix (T/F)</td>
-					<td>
-						<input type="radio" name="nix" value="T" <?php if ($photo->Nix == 'T') echo 'checked';?> /> T<br />
-					    <input type="radio" name="nix" value="F" <?php if ($photo->Nix == 'F' || !$update) echo 'checked';?> /> F
-					</td>
-					<td>Negscan (T/F)</td>
-					<td>
-						<input type="radio" name="negscan" value="T" <?php if ($photo->Negscan == 'T') echo 'checked';?> /> T<br />
-						<input type="radio" name="negscan" value="F" <?php if ($photo->Negscan == 'F' || !$update) echo 'checked';?> /> F
-					</td>
-				</tr>
-				<tr>
-					<td>Filename</td>
-					<td colspan="3"><input id="filename"  type="text" size="100" name="filename" value="<?php echo $photo->Filename;?>"/></td>
-				</tr>
-				<tr class="edit-only">
-					<td>Select File</td>
-					<td colspan="3"><input id="file" type="file" name="file" /></td>
-				</tr>
-				<tr id="thumbnail">
-					<td>Thumbnail View</td>
-					<td colspan="3">
-						<a class="zoom" title="Zoom" href="#">
-							<img src="<?php if ($photo->Filename != '') { echo $filelocation . $photo->Filename; } ?>" height="150" alt="<?php echo $photo->Title;?>"/>
+				<div class="form-group">
+					<label for="id" class="control-label col-xs-2">Title <span class="mandatory edit-only">*</span></label>
+					<div class="col-xs-10">
+						<td colspan="3"><input type="text"maxlength="200" class="form-control" name="title" value="<?php echo $photo->Title;?>" /></td>
+					</div>						
+				</div>
+				<div class="form-group">
+					<label for="id" class="control-label col-xs-2">Photonum</label>
+					<div class="col-xs-4">					
+						<td><input type="text" name="photonum" maxlength="10" class="form-control" value="<?php echo $photo->Photonum;?>" /></td>
+					</div>						
+					<label for="id" class="control-label col-xs-2">OldPhotonum</label>
+					<div class="col-xs-4">											
+						<td><input type="text" name="oldPhotonum" maxlength="12" class="form-control" value="<?php echo $photo->OldPhotonum;?>" /></td>
+					</div>						
+				</div>
+				<div class="form-group">
+					<label for="id" class="control-label col-xs-2">Year</label>
+					<div class="col-xs-4">									
+						<td><input type="text" name="year" maxlength="5" class="form-control" value="<?php echo $photo->Year;?>" /></td>
+					</div>						
+					<label for="id" class="control-label col-xs-2">Date</label>
+					<div class="col-xs-4">							
+						<td><input type="text" name="date" maxlength="10" class="form-control" value="<?php echo $photo->Date;?>" /></td>
+					</div>						
+				</div>
+				<div class="form-group">
+					<label for="id" class="control-label col-xs-2">Author</label>
+					<div class="col-xs-10">							
+						<td colspan="3"><input type="text" name="authors" maxlength="100" class="form-control" value="<?php echo $photo->Author;?>" /></td>
+					</div>						
+				</div>
+				<div class="form-group">
+					<label for="id" class="control-label col-xs-2">Place</label>
+					<div class="col-xs-10">							
+						<td colspan="3"><input type="text" name="place" maxlength="60" class="form-control" value="<?php echo $photo->Place;?>" /></td>
+					</div>						
+				</div>
+				<div class="form-group">
+					<label for="id" class="control-label col-xs-2">Caption</label>
+					<div class="col-xs-10">							
+						<td colspan="3"><textarea name="caption" maxlength="1000" class="form-control" rows="2"><?php echo $photo->Caption;?></textarea></td>
+					</div>						
+				</div>
+				<div class="form-group">
+					<label for="id" class="control-label col-xs-2">Note</label>
+					<div class="col-xs-10">							
+						<td colspan="3"><textarea name="note" maxlength="1000" class="form-control" rows="2"><?php echo $photo->Note;?></textarea></td>
+					</div>						
+				</div>
+				<div class="form-group">
+					<label for="id" class="control-label col-xs-2">Publishist</label>
+					<div class="col-xs-10">							
+						<td colspan="3"><input type="text" name="publishist" maxlength="200" class="form-control" value="<?php echo $photo->Publishist;?>"></td>
+					</div>						
+				</div>
+				<div class="form-group">
+					<label for="id" class="control-label col-xs-2">Nix (T/F)</label>
+					<div class="col-xs-10">							
+						<label class="radio-inline"><input type="radio" name="nix" value="T" <?php if ($photo->Nix == 'T') echo 'checked';?>>T</label>						
+						<label class="radio-inline"><input type="radio" name="nix" value="F" <?php if ($photo->Nix == 'F' || !$update) echo 'checked';?>>F</label>						
+					</div>							
+					<label for="id" class="control-label col-xs-2">Negscan (T/F)</label>
+					<div class="col-xs-10">							
+						<label class="radio-inline"><input type="radio" name="negscan" value="T" <?php if ($photo->Negscan == 'T') echo 'checked';?>>T</label>						
+						<label class="radio-inline"><input type="radio" name="negscan" value="F" <?php if ($photo->Negscan == 'F' || !$update) echo 'checked';?>>F</label>												
+					</div>
+				</div>
+				<div class="form-group">
+					<label for="id" class="control-label col-xs-2">Filename</label>
+					<div class="col-xs-10">							
+						<td colspan="3"><input id="filename" type="text" name="filename" class="form-control" value="<?php echo $photo->Filename;?>"/></td>
+					</div>						
+				</div>
+				<div class="form-group edit-only">
+					<label class="control-label col-xs-2">Select File</label>
+					<div class="col-xs-10">
+						<input id="file" class="file" name="file" type="file">						
+					</div>
+				</div>
+				<div id="thumbnail" class="form-group">
+					<label class="control-label col-xs-2">Thumbnail View</label>
+					<div class="col-xs-3">
+						<a class="zoom thumbnail" title="Zoom" href="#">
+							<img src="<?php if ($photo->Filename != '') { echo $filelocation . $photo->Filename; } ?>" alt="<?php echo $photo->Title;?>"/>
 						</a>
-						<a class="zoom" title="Zoom" href="#">Zoom</a>
-						<a class="edit-only" id="delete" title="Delete" href="#">Delete</a>
-						<div id="zoom-dialog" class="dialog" title="<?php echo $photo->Title;?>">
-						  <p><img src="<?php if ($photo->Filename != '') { echo $filelocation . $photo->Filename; } ?>" height="500" alt="<?php echo $photo->Title;?>"/></p>
-						</div>
-						<div id="delete-dialog" class="dialog" title="Delete the photo?">
-						  <p>Do you really want to delete the photo?</p>
-						</div>
-					</td>
-				</tr>
-				<tr>
-					<td>URL</td>
-					<td colspan="3">
-						<input type="text" name="url" size="100" maxlength="150" value="<?php echo $photo->URL;?>" />
-					</td>
-				</tr>
-				<tr>
-					<td colspan="4">
-						<input type="submit" name="edit" value="Edit Photo">						
-						<input class="edit-only" type="submit" name="submit" value="Save Photo">
-						<input type="submit" name="cancel" value="Cancel">
-					</td>
-				</tr>
-			</table>
-		</form>
+						<button type="button" class="btn btn-sm btn-default zoom">Zoom</button>
+						<button type="button" class="btn btn-sm btn-default remove edit-only">Remove</button>
+					</div>
+				</div>
+				<div class="form-group">
+					<label for="id" class="control-label col-xs-2">URL</label>
+					<div class="col-xs-10">	
+						<input type="text" name="url" maxlength="150" class="form-control" value="<?php echo $photo->URL;?>" />
+					</div>
+				</div>
+				<div class="form-group">
+					<div class="col-xs-offset-2 col-xs-10">
+						<button type="submit" name="edit" class="btn btn-lg btn-primary">Edit Photo</button>
+						<button type="submit" name="submit" class="btn btn-lg btn-primary edit-only">Save Photo</button>
+						<button type="submit" name="cancel" class="btn btn-lg btn-default">Cancel</button>
+					</div>
+				</div>
+			</form>
 		</div>
+		
+		<div id="zoom-dialog" class="modal fade" role="dialog">
+		  <div class="modal-dialog">
+		    <div class="modal-content">
+		      <div class="modal-header">
+		        <button type="button" class="close" data-dismiss="modal">&times;</button>
+		        <h4 class="modal-title"><?php echo $photo->Title;?></h4>
+		      </div>
+		      <div class="modal-body">
+		        <p><img src="<?php if ($photo->Filename != '') { echo $filelocation . $photo->Filename; } ?>" alt="<?php echo $photo->Title;?>" style="width:100%;"/></p>
+		      </div>
+		      <div class="modal-footer">
+		        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+		      </div>
+		    </div>
+		  </div>
+		</div>
+		
+		<div id="remove-dialog" class="modal fade" role="dialog">
+		  <div class="modal-dialog">
+		    <div class="modal-content">
+		      <div class="modal-header">
+		        <button type="button" class="close" data-dismiss="modal">&times;</button>
+		        <h4 class="modal-title">Remove</h4>
+		      </div>
+		      <div class="modal-body">
+		        <p>Do you really want to remove the photo?</p>
+		      </div>
+		      <div class="modal-footer">
+		        <button type="button" class="btn btn-primary" data-dismiss="modal" id="remove">Remove</button>
+				<button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
+		      </div>
+		    </div>
+		  </div>
+		</div>		
 	
 		<?php require 'includes/scripts.inc.php'; ?>
 		<script src="scripts/edit.js"></script>

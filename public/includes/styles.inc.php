@@ -1,2 +1,8 @@
-<link href="styles/jquery-ui.min.css" rel="stylesheet">
-<link href="styles/style.css" rel="stylesheet">
+<link rel="stylesheet" href="styles/bootstrap.min.css">
+<link rel="stylesheet" href="styles/bootstrap-theme.min.css">
+
+<style>	
+	table .thumbnail {
+		margin-bottom: 0;
+	}
+</style>

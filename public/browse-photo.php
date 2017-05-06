@@ -18,40 +18,82 @@
 		<?php require 'includes/styles.inc.php'; ?>
 	</head>
 	<body>
+		<?php require 'includes/menu-photo.inc.php'; ?>
+			
 		<div class="container">
-		
-			<?php require 'includes/menu.inc.php'; ?>
 
-			<h1><?php echo $title; ?></h1>
+			<div class="row">
+				<div class="col-xs-12">
+					<div class="page-header">
+						<h1>
+							<?php echo $title; ?>
+							<span class="badge"><?php echo $numberOfItems; ?></span>
+						</h1>
+					</div>
+				</div>					
+			</div>
 	
-			<?php require 'includes/pager.inc.php'; ?>
+			<div class="row">				
+				<?php require 'includes/pager.inc.php'; ?>
+			</div>
 
-			<table style="width=100%">
-				<thead>
-					<tr>
-		     		   	<th>ID</th>
-		     		  	<th>Title</th>
-						<th>Filename</th>
-						<th>Author</th>
-		  			</tr>
-		 	   	</thead>
-		 	  	<tfoot>
-					<?php while ($photo = $statement->fetch(PDO::FETCH_OBJ)) { ?>
-		  			<tr>
-		     		   	<td><?php echo $photo->ID; ?></td>
-		     		   	<td><a href="/edit-photo.php?id=<?php echo $photo->ID; ?>"><?php echo $photo->Title; ?></a></td>
-						<td><?php echo $photo->Filename; ?></td>
-						<td><?php echo $photo->Author; ?></td>
-		  			</tr>
-					<?php } ?>
-		 		</tbody>
-			</table>
-	
-			<?php require 'includes/pager.inc.php'; ?>
+			<div class="row">
+				<div class="col-xs-12">			
+					<table class="table table-bordered table-hover">
+						<thead>
+							<tr>
+				     		   	<th>ID</th>
+				     		  	<th>Title</th>
+								<th>Filename</th>
+								<th>Author</th>
+					     		<th>Thumbnail</th>							
+				  			</tr>
+				 	   	</thead>
+				 	  	<tbody>
+							<?php while ($photo = $statement->fetch(PDO::FETCH_OBJ)) { ?>
+				  			<tr>
+				     		   	<td><?php echo $photo->ID; ?></td>
+				     		   	<td><a href="/edit-photo.php?id=<?php echo $photo->ID; ?>"><?php echo $photo->Title; ?></a></td>
+								<td><?php echo $photo->Filename; ?></td>
+								<td><?php echo $photo->Author; ?></td>
+								<td class="col-xs-2">
+									<?php if ($photo->Filename != '') { ?>
+									<a class="zoom thumbnail" data-dialog-id="#dialog-<?php echo $photo->ID; ?>" title="Zoom" href="#">
+										<img src="<?php echo $filelocation . $photo->Filename; ?>" height="100" alt="<?php echo $photo->Title;?>"/>
+									</a>
+										<div id="dialog-<?php echo $photo->ID; ?>" class="modal fade" role="dialog">
+										  <div class="modal-dialog">
+										    <div class="modal-content">
+										      <div class="modal-header">
+										        <button type="button" class="close" data-dismiss="modal">&times;</button>
+										        <h4 class="modal-title"><?php echo $photo->Title;?></h4>
+										      </div>
+										      <div class="modal-body">
+										        <p><img src="<?php if ($photo->Filename != '') { echo $filelocation . $photo->Filename; } ?>" alt="<?php echo $photo->Title;?>" style="width:100%;"/></p>
+										      </div>
+										      <div class="modal-footer">
+										        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+										      </div>
+										    </div>
+										  </div>
+										</div>
+									<?php } ?>						
+								</td>							
+				  			</tr>
+							<?php } ?>
+				 		</tbody>
+					</table>
+				</div>				
+			</div>
+			
+			<div class="row">				
+				<?php require 'includes/pager.inc.php'; ?>
+			</div>
 	
 		</div>
 		
 		<?php require 'includes/scripts.inc.php'; ?>
+		<script src="scripts/search.js"></script>		
 		<script src="scripts/pager.js"></script>
 		
 	</body>

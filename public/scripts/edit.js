@@ -6,6 +6,7 @@ $(function() {
 
 	    reader.onload = function (e) {
 	        $("#thumbnail img").attr("src", e.target.result);
+			$("#zoom-dialog img").attr("src", e.target.result);
 			$("#thumbnail").show();
 	    };
 
@@ -13,88 +14,68 @@ $(function() {
 		$("#filename").val(this.files[0].name);
 	});
 	
-	$("#delete-dialog").dialog({
-	    autoOpen: false,
-        resizable: false,
-        width:'auto',
-        modal: true,
-        buttons: {
-          "Delete": function() {
-
-		    $("#thumbnail img").attr("src", "");
-			$("#thumbnail").hide();
-			$("#filename").val("");
-			$("#file").val("");
-			
-			$(this).dialog("close");
-          },
-          Cancel: function() {
-            $(this).dialog("close");
-          }
-        }
-	});
-
-	$("#delete").click(function () {
-		
-		$("#delete-dialog").dialog("open");	
-		return false;
-	});
-	
-	$("#zoom-dialog").dialog({
-	    autoOpen: false,
-        resizable: false,
-        width:'auto'
-	});
-	
 	$(".zoom").click(function (e) {
 		
-	    $("#zoom-dialog").dialog("open");
+	    $('#zoom-dialog').modal('show');
 		return false;
 	});
-
-	$("input[name='title']").focus();
 	
-	if ($("#thumbnail img").attr("src") == "") {
+	$(".remove").click(function (e) {
+
+    	$('#remove-dialog')
+        	.modal({ backdrop: 'static', keyboard: false })
+        	.one('click', '#remove', function (e) {
+				$("#thumbnail img").attr("src", "");
+				$("#zoom-dialog img").attr("src", "");			
+				$("#thumbnail").hide();
+				$("#filename").val("");
+				$("#file").val("");
+        	});
+
+		return false;
+	});
+		
+	if ($("#thumbnail img").attr("src") === "") {
 		
 		$("#thumbnail").hide();
 	}
 	
-	// Edit / Readonly mode
+	$('button[name="edit"], button[name="cancel"]').hide();
+
+	if ($('body').attr('data-mode') === 'Add') {
 	
-	$('input[name="edit"], input[name="cancel"]').hide();
-			
+		$("input[name='title']").focus();
+	}
+				
 	if ($('body').attr('data-mode') === 'Edit') {
 
 		$('.edit-only').hide();
 
 		$('input[type="text"],input[type="radio"],textarea')
 			.attr('disabled', 'disabled')
-			.attr('style', 'background-color:#ddd;');
-			
-		//$('input[type="text"],input[type="radio"],textarea').attr('style', 'background-color:#ddd;');
+			.attr('style', 'background-color:#f2f2f2;');
 
-		$('input[name="edit"]').show();
+		$('button[name="edit"]').show();
 	}
 	
-	$('input[name="edit"]').click(function() {
+	$('button[name="edit"]').click(function() {
 
 		$('.edit-only').show();
 
 		$('input[type="text"],input[type="radio"],textarea')
 			.attr('disabled', false)
 			.attr('style', 'background-color:#fff;');
-		
-		//$('input[type="text"],input[type="radio"],textarea').attr('style', 'background-color:#fff;');
 
-		$('input[name="edit"]').hide();
-		$('input[name="cancel"]').show();		
+		$('button[name="edit"]').hide();
+		$('button[name="cancel"]').show();
+		
+		$("input[name='title']").focus();		
 		
 		return false;
 	});
 	
-	$('input[name="cancel"]').click(function() {
+	$('button[name="cancel"]').click(function() {
 		
-		//window.location.reload();
 		window.location.assign(window.location)
 		
 		return false;

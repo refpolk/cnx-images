@@ -7,6 +7,8 @@ if (isset($_GET['q'])) {
 	$query = $_GET['q'];
 	$option = $_GET['o'];
 	
+	$numberOfItems = 0;
+	
 	if ($query == '') {
 		
 		$warning = 'Your query cannot be empty!';
@@ -72,6 +74,10 @@ if (isset($_GET['q'])) {
 		$numberOfPages = (int) (($numberOfItems + $pageSize - 1) / $pageSize);
 	
 		$statement = $pdo->query("SELECT * FROM Photos WHERE $query_All ORDER BY ID ASC LIMIT $startPage, $pageSize;");
+		
+		if ($numberOfItems == 0){
+			$warning = 'No results found for your query!';
+		}
 	}
 }
 
@@ -83,69 +89,116 @@ $title = 'Search Photos';
 		<title><?php echo $title; ?></title>
 		<?php require 'includes/styles.inc.php'; ?>
 	</head>
-	<body>
+	<body>		
+		<?php require 'includes/menu-photo.inc.php'; ?>
+		
 		<div class="container">
-		
-		<?php require 'includes/menu.inc.php'; ?>
 	
-		<h1><?php echo $title; ?></h1>
-
-		<form id="searchform" name="form" method="GET" action="search-photo.php">
-			
-			<?php require 'includes/messages.inc.php'; ?>
-						
-			<table style="width=100%">
-				<tr>	
-					<td>
-						<input type="text" size="115" maxlength="115" name="q" value="<?php echo $query ?>" placeholder="Title / Filename / Author / Caption / Note / Place" />
-						<input type="submit" value="Search Photos" />
-					</td>
-				</tr>
-				<tr>
-					<td>
-						<fieldset>
-							<legend>Advanced Options:</legend>
-							<input type="radio" name="o" value="all" <?php if ($option == 'all' || !isset($option)) { echo 'checked'; } ?>>
-							Include all terms in result (default)    
-							<input type="radio" name="o" value="exact" <?php if ($option == 'exact') { echo 'checked'; } ?>>
-							Exact
-							<input type="radio" name="o" value="any" <?php if ($option == 'any') { echo 'checked'; } ?>>
-							Find results with any one of the terms
-						</fieldset>
-					</td>
-				</tr>
-			</table>
-		</form>
-		<?php if (isset($statement)) { ?>
-		
-			<?php require 'includes/pager.inc.php'; ?>
-		
-			<table>
-				<?php while ($photo = $statement->fetch(PDO::FETCH_OBJ)) { ?>
-				<tr>
-					<td valign="top">
-						ID: <?php echo $photo->ID; ?><br />
-						Title: <a href="/edit-photo.php?id=<?php echo $photo->ID; ?>"><?php echo $photo->Title; ?></a><br />
-						Filename: <?php echo $photo->Filename; ?><br />
-						Author: <?php echo $photo->Author; ?>
-					</td>
-					<td>
-						<?php if ($photo->Filename != '') { ?>
-						<a class="zoom" data-dialog-id="#dialog-<?php echo $photo->ID; ?>" title="Zoom" href="#">
-							<img src="<?php echo $filelocation . $photo->Filename; ?>" height="100" alt="<?php echo $photo->Title;?>"/>
-						</a>
-						<div class="dialog" id="dialog-<?php echo $photo->ID; ?>" title="<?php echo $photo->Title;?>">
-						  <p><img src="<?php echo $filelocation . $photo->Filename; ?>" height="500" alt="<?php echo $photo->Title;?>"/></p>
+			<div class="row">
+				<div class="col-xs-12">	
+					<div class="page-header">
+						<h1>
+							<?php echo $title; ?>
+							<?php if (isset($statement)) { ?>
+								<span class="badge"><?php echo $numberOfItems; ?></span>
+							<?php } ?>
+						</h1>
+					</div>
+				</div>					
+			</div>
+								
+			<div class="row">
+				<div class="col-xs-12">
+					<form role="form" id="searchform" name="form" method="GET" action="search-photo.php">			
+						<?php require 'includes/messages.inc.php'; ?>
+					    <div class="form-group">
+							<div class="input-group">
+								<input type="text" class="input-lg form-control" name="q" value="<?php echo $query ?>" placeholder="Title / Author / Caption / Filename / Note / Place" />
+								<span class="input-group-btn">
+									<button class="btn btn-lg btn-primary" type="submit">Search</button>
+								</span>
+							</div>
+					    </div>
+					    <div class="form-group">
+							<div>
+								<label class="radio-inline">
+									<input type="radio" name="o" value="all" <?php if ($option == 'all' || !isset($option)) { echo 'checked'; } ?>>
+									Include all terms in result
+								</label>
+								<label class="radio-inline">
+									<input type="radio" name="o" value="exact" <?php if ($option == 'exact') { echo 'checked'; } ?>>
+									Exact						
+								</label>
+								<label class="radio-inline">
+									<input type="radio" name="o" value="any" <?php if ($option == 'any') { echo 'checked'; } ?>>
+									Find results with any one of the terms					
+								</label>
+							</div>
 						</div>
-						<?php } ?>						
-					</td>
-				</tr>
-				<?php } ?>
-			</table>
-		
-			<?php require 'includes/pager.inc.php'; ?>
-		
-		<?php } ?>
+					</form>
+				</div>
+			</div>
+						
+			<?php if (isset($statement) && $statement->rowCount() > 0) { ?>
+					
+				<div class="row">
+					<?php require 'includes/pager.inc.php'; ?>
+				</div>
+
+				<div class="row">
+					<div class="col-xs-12">					
+						<table class="table table-bordered table-hover">
+							<thead>
+								<tr>
+					     		   	<th>ID</th>
+					     		   	<th>Title</th>
+					     		   	<th>Filename</th>
+					     		   	<th>Author</th>																
+					     		  	<th>Thumbnail</th>
+					  			</tr>
+					 	   	</thead>
+							<tbody>						
+								<?php while ($photo = $statement->fetch(PDO::FETCH_OBJ)) { ?>
+								<tr>
+									<td><?php echo $photo->ID; ?></td>
+									<td><a href="/edit-photo.php?id=<?php echo $photo->ID; ?>"><?php echo $photo->Title; ?></a></td>
+									<td><?php echo $photo->Filename; ?></td>
+									<td><?php echo $photo->Author; ?></td>																
+									<td class="col-xs-2">
+										<?php if ($photo->Filename != '') { ?>
+										<a class="zoom thumbnail" data-dialog-id="#dialog-<?php echo $photo->ID; ?>" title="Zoom" href="#">
+											<img src="<?php echo $filelocation . $photo->Filename; ?>" height="100" alt="<?php echo $photo->Title;?>"/>
+										</a>
+										<div id="dialog-<?php echo $photo->ID; ?>" class="modal fade" role="dialog">
+										  <div class="modal-dialog">
+										    <div class="modal-content">
+										      <div class="modal-header">
+										        <button type="button" class="close" data-dismiss="modal">&times;</button>
+										        <h4 class="modal-title"><?php echo $photo->Title;?></h4>
+										      </div>
+										      <div class="modal-body">
+										        <p><img src="<?php if ($photo->Filename != '') { echo $filelocation . $photo->Filename; } ?>" alt="<?php echo $photo->Title;?>" style="width:100%;"/></p>
+										      </div>
+										      <div class="modal-footer">
+										        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+										      </div>
+										    </div>
+										  </div>
+										</div>
+										<?php } ?>						
+									</td>
+								</tr>
+								<?php } ?>
+							</tbody>						
+						</table>
+					</div>
+				</div>
+						
+				<div class="row">
+					<?php require 'includes/pager.inc.php'; ?>
+				</div>
+
+			<?php } ?>
 
 		</div>
 		
