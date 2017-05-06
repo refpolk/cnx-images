@@ -216,16 +216,10 @@ $title = ($update ? 'Edit' : 'Add') . ' Photo';
 					<label class="control-label col-xs-2">Thumbnail View</label>
 					<div class="col-xs-3">
 						<a class="zoom thumbnail" title="Zoom" href="#">
-							<img src="<?php if ($photo->Filename != '') { echo $filelocation . $photo->Filename; } ?>" style="height:150px" alt="<?php echo $photo->Title;?>"/>
+							<img src="<?php if ($photo->Filename != '') { echo $filelocation . $photo->Filename; } ?>" alt="<?php echo $photo->Title;?>"/>
 						</a>
-						<a class="zoom btn btn-sm btn-default" role="button" title="Zoom" href="#">Zoom</a>
-						<a id="delete" class="edit-only btn btn-sm btn-default" role="button" title="Remove" href="#">Remove</a>
-						<div id="zoom-dialog" class="dialog" title="<?php echo $photo->Title;?>">
-						  <p><img src="<?php if ($photo->Filename != '') { echo $filelocation . $photo->Filename; } ?>" style="height:500px" alt="<?php echo $photo->Title;?>"/></p>
-						</div>
-						<div id="delete-dialog" class="dialog" title="Remove the photo?">
-						  <p>Do you really want to remove the photo?</p>
-						</div>
+						<button type="button" class="btn btn-sm btn-default zoom">Zoom</button>
+						<button type="button" class="btn btn-sm btn-default remove edit-only">Remove</button>
 					</div>
 				</div>
 				<div class="form-group">
@@ -243,6 +237,41 @@ $title = ($update ? 'Edit' : 'Add') . ' Photo';
 				</div>
 			</form>
 		</div>
+		
+		<div id="zoom-dialog" class="modal fade" role="dialog">
+		  <div class="modal-dialog">
+		    <div class="modal-content">
+		      <div class="modal-header">
+		        <button type="button" class="close" data-dismiss="modal">&times;</button>
+		        <h4 class="modal-title"><?php echo $photo->Title;?></h4>
+		      </div>
+		      <div class="modal-body">
+		        <p><img src="<?php if ($photo->Filename != '') { echo $filelocation . $photo->Filename; } ?>" alt="<?php echo $photo->Title;?>" style="width:100%;"/></p>
+		      </div>
+		      <div class="modal-footer">
+		        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+		      </div>
+		    </div>
+		  </div>
+		</div>
+		
+		<div id="remove-dialog" class="modal fade" role="dialog">
+		  <div class="modal-dialog">
+		    <div class="modal-content">
+		      <div class="modal-header">
+		        <button type="button" class="close" data-dismiss="modal">&times;</button>
+		        <h4 class="modal-title">Remove</h4>
+		      </div>
+		      <div class="modal-body">
+		        <p>Do you really want to remove the photo?</p>
+		      </div>
+		      <div class="modal-footer">
+		        <button type="button" class="btn btn-primary" data-dismiss="modal" id="remove">Remove</button>
+				<button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
+		      </div>
+		    </div>
+		  </div>
+		</div>		
 	
 		<?php require 'includes/scripts.inc.php'; ?>
 		<script src="scripts/edit.js"></script>

@@ -160,13 +160,26 @@ $title = 'Search Images';
 									<td><a href="/edit-image.php?id=<?php echo $image->ID; ?>"><?php echo $image->Title; ?></a></td>
 									<td><?php echo $image->Filename; ?></td>
 									<td><?php echo $image->Author; ?></td>																
-									<td>
+									<td class="col-xs-2">
 										<?php if ($image->Filename != '') { ?>
-										<a class="zoom" data-dialog-id="#dialog-<?php echo $image->ID; ?>" title="Zoom" href="#">
+										<a class="zoom thumbnail" data-dialog-id="#dialog-<?php echo $image->ID; ?>" title="Zoom" href="#">
 											<img src="<?php echo $filelocation . $image->Filename; ?>" height="100" alt="<?php echo $image->Title;?>"/>
 										</a>
-										<div class="dialog" id="dialog-<?php echo $image->ID; ?>" title="<?php echo $image->Title;?>">
-											<p><img src="<?php echo $filelocation . $image->Filename; ?>" height="500" alt="<?php echo $image->Title;?>"/></p>
+										<div id="dialog-<?php echo $image->ID; ?>" class="modal fade" role="dialog">
+										  <div class="modal-dialog">
+										    <div class="modal-content">
+										      <div class="modal-header">
+										        <button type="button" class="close" data-dismiss="modal">&times;</button>
+										        <h4 class="modal-title"><?php echo $image->Title;?></h4>
+										      </div>
+										      <div class="modal-body">
+										        <p><img src="<?php if ($image->Filename != '') { echo $filelocation . $image->Filename; } ?>" alt="<?php echo $image->Title;?>" style="width:100%;"/></p>
+										      </div>
+										      <div class="modal-footer">
+										        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+										      </div>
+										    </div>
+										  </div>
 										</div>
 										<?php } ?>						
 									</td>

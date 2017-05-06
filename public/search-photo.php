@@ -164,13 +164,26 @@ $title = 'Search Photos';
 									<td><a href="/edit-photo.php?id=<?php echo $photo->ID; ?>"><?php echo $photo->Title; ?></a></td>
 									<td><?php echo $photo->Filename; ?></td>
 									<td><?php echo $photo->Author; ?></td>																
-									<td>
+									<td class="col-xs-2">
 										<?php if ($photo->Filename != '') { ?>
-										<a class="zoom" data-dialog-id="#dialog-<?php echo $photo->ID; ?>" title="Zoom" href="#">
+										<a class="zoom thumbnail" data-dialog-id="#dialog-<?php echo $photo->ID; ?>" title="Zoom" href="#">
 											<img src="<?php echo $filelocation . $photo->Filename; ?>" height="100" alt="<?php echo $photo->Title;?>"/>
 										</a>
-										<div class="dialog" id="dialog-<?php echo $photo->ID; ?>" title="<?php echo $photo->Title;?>">
-											<p><img src="<?php echo $filelocation . $photo->Filename; ?>" height="500" alt="<?php echo $photo->Title;?>"/></p>
+										<div id="dialog-<?php echo $photo->ID; ?>" class="modal fade" role="dialog">
+										  <div class="modal-dialog">
+										    <div class="modal-content">
+										      <div class="modal-header">
+										        <button type="button" class="close" data-dismiss="modal">&times;</button>
+										        <h4 class="modal-title"><?php echo $photo->Title;?></h4>
+										      </div>
+										      <div class="modal-body">
+										        <p><img src="<?php if ($photo->Filename != '') { echo $filelocation . $photo->Filename; } ?>" alt="<?php echo $photo->Title;?>" style="width:100%;"/></p>
+										      </div>
+										      <div class="modal-footer">
+										        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+										      </div>
+										    </div>
+										  </div>
 										</div>
 										<?php } ?>						
 									</td>

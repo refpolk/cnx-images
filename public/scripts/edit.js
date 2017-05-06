@@ -14,52 +14,31 @@ $(function() {
 		$("#filename").val(this.files[0].name);
 	});
 	
-	$("#delete-dialog").dialog({
-	    autoOpen: false,
-        resizable: false,
-        width:'auto',
-        modal: true,
-        buttons: {
-          "Remove": function() {
-
-		    $("#thumbnail img").attr("src", "");
-			$("#zoom-dialog img").attr("src", "");			
-			$("#thumbnail").hide();
-			$("#filename").val("");
-			$("#file").val("");
-			
-			$(this).dialog("close");
-          },
-          Cancel: function() {
-            $(this).dialog("close");
-          }
-        }
-	});
-
-	$("#delete").click(function () {
-		
-		$("#delete-dialog").dialog("open");	
-		return false;
-	});
-	
-	$("#zoom-dialog").dialog({
-	    autoOpen: false,
-        resizable: false,
-        width:'auto'
-	});
-	
 	$(".zoom").click(function (e) {
 		
-	    $("#zoom-dialog").dialog("open");
+	    $('#zoom-dialog').modal('show');
 		return false;
 	});
 	
+	$(".remove").click(function (e) {
+
+    	$('#remove-dialog')
+        	.modal({ backdrop: 'static', keyboard: false })
+        	.one('click', '#remove', function (e) {
+				$("#thumbnail img").attr("src", "");
+				$("#zoom-dialog img").attr("src", "");			
+				$("#thumbnail").hide();
+				$("#filename").val("");
+				$("#file").val("");
+        	});
+
+		return false;
+	});
+		
 	if ($("#thumbnail img").attr("src") === "") {
 		
 		$("#thumbnail").hide();
 	}
-	
-	// Edit / Readonly mode
 	
 	$('button[name="edit"], button[name="cancel"]').hide();
 
