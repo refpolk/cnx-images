@@ -27,20 +27,9 @@ $(function() {
 		return newQuery;
 	}
 	
-	$('.page-size').on('change', function() { 
+	$('.page-size').on('click', function() { 
 		
-		window.location.replace(window.location.pathname + getQuery() + "p=1&s=" + this.value);
-	});
-	
-	$('.page-number').on('change', function() { 
-		
-		pageNumber = parseInt(this.value);
-		numberOfPages = parseInt($('.number-of-pages').eq(0).text());
-		
-		if (pageNumber < 1) pageNumber = 1;
-		if (pageNumber > numberOfPages) pageNumber = numberOfPages;
-				
-		window.location.replace(window.location.pathname + getQuery() + "p=" + pageNumber + "&s=" + $('.page-size').eq(0).val());
+		window.location.replace(window.location.pathname + getQuery() + "p=1&s=" + $(this).text());
 	});
 	
 });
