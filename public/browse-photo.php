@@ -39,7 +39,7 @@
 
 			<div class="row">
 				<div class="col-xs-12">			
-					<table class="table table-bordered">
+					<table class="table table-bordered table-hover">
 						<thead>
 							<tr>
 				     		   	<th>ID</th>
