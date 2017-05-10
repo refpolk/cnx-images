@@ -9,18 +9,18 @@ class Log {
 	public $ID;
 }
 
-function get_criterion($field) {
+function get_criterion($pdo, $field) {
 		
-	return is_null($field) ? "IS NULL" : " = '$field'";
+	return is_null($field) ? "IS NULL" : " = " . $pdo->quote($field);
 }
 
 function image_exists($pdo, $image) {
 	
 	$statement = $pdo->query(
-		"SELECT * FROM Images WHERE Title " . get_criterion($image->Title) 
-		. " AND Author " . get_criterion($image->Author) 
-		. " AND Filename " . get_criterion($image->Filename) 
-		. " AND URL " . get_criterion($image->URL) . ";");
+		"SELECT * FROM Images WHERE Title " . get_criterion($pdo, $image->Title) 
+		. " AND Author " . get_criterion($pdo, $image->Author) 
+		. " AND Filename " . get_criterion($pdo, $image->Filename) 
+		. " AND URL " . get_criterion($pdo, $image->URL) . ";");
 	
 	if ($statement && $statement->rowCount() > 0) {
 			
@@ -55,8 +55,17 @@ function insert_image($pdo, $data, $row) {
 	
 	$log = new Log();
 	$log->Row = $row + 1;
-	
-	$log->ID = image_exists($pdo, $image);
+
+	try {
+		
+		$log->ID = image_exists($pdo, $image);
+		
+	} catch (Exception $e) {
+		
+		$log->Message = "An exception occured: " . $e->getMessage();
+		$log->Result = false;
+		return $log;
+	}
 	
 	if ($log->ID < 0) {
 		
@@ -68,11 +77,7 @@ function insert_image($pdo, $data, $row) {
 		} else {
 		
 			try {
-				/*
-				if ($image->Title === "My Image 8") {
-					throw new Exception("KO!");
-				} else {
-				*/
+				
 				$statement = $pdo->prepare("INSERT INTO Images (Title, Filename, URL, Author, Year, Source, ELibrary, Caption, Note, Publishist, Copyright, Marked) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?);");
 
 				$statement->execute(array($image->Title, $image->Filename, $image->URL, $image->Author, $image->Year, $image->Source, $image->ELibrary, $image->Caption, $image->Note, $image->Publishist, $image->Copyright, $image->Marked));
@@ -80,9 +85,6 @@ function insert_image($pdo, $data, $row) {
 				$log->ID = $pdo->lastInsertId();
 				$log->Message = "Your image has been saved successfully!";
 				$log->Result = true;
-				/*
-				}
-				*/
 								
 			} catch (Exception $e) {
 				

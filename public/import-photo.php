@@ -9,22 +9,22 @@ class Log {
 	public $ID;
 }
 
-function get_criterion($field) {
+function get_criterion($pdo, $field) {
 		
-	return is_null($field) ? "IS NULL" : " = '$field'";
+	return is_null($field) ? "IS NULL" : " = " . $pdo->quote($field);
 }
 
-function photo_exists($pdo, $photo) {
+function photo_exists($pdo, $image) {
 	
 	$statement = $pdo->query(
-		"SELECT * FROM Photos WHERE Title " . get_criterion($photo->Title) 
-		. " AND Author " . get_criterion($photo->Author) 
-		. " AND Filename " . get_criterion($photo->Filename) 
-		. " AND URL " . get_criterion($photo->URL) . ";");
+		"SELECT * FROM Photos WHERE Title " . get_criterion($pdo, $photo->Title) 
+		. " AND Author " . get_criterion($pdo, $photo->Author) 
+		. " AND Filename " . get_criterion($pdo, $photo->Filename) 
+		. " AND URL " . get_criterion($pdo, $photo->URL) . ";");
 	
 	if ($statement && $statement->rowCount() > 0) {
 			
-		$photo = $statement->fetch(PDO::FETCH_OBJ);
+		$image = $statement->fetch(PDO::FETCH_OBJ);
 		
 		return $photo->ID;
 	}
@@ -58,7 +58,16 @@ function insert_photo($pdo, $data, $row) {
 	$log = new Log();
 	$log->Row = $row + 1;
 	
-	$log->ID = photo_exists($pdo, $photo);
+	try {
+		
+		$log->ID = photo_exists($pdo, $photo);
+		
+	} catch (Exception $e) {
+		
+		$log->Message = "An exception occured 1: " . $e->getMessage();
+		$log->Result = false;
+		return $log;
+	}
 	
 	if ($log->ID < 0) {
 		

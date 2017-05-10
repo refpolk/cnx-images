@@ -2,17 +2,29 @@
 
 require 'includes/settings.images.inc.php';
 
+function get_criterion($pdo, $field) {
+		
+	return is_null($field) ? "IS NULL" : " = " . $pdo->quote($field);
+}
+
 function image_exists($pdo, $image) {
 	
 	if ($image->ID != '') {
-		$statement = $pdo->prepare("SELECT * FROM Images WHERE Title=? AND Author=? AND Filename=? AND URL=? AND ID<>?;");
-		$statement->execute(array($image->Title, $image->Author, $image->Filename, $image->URL, $image->ID));
+		$statement = $pdo->query(
+			"SELECT * FROM Images WHERE Title " . get_criterion($pdo, $image->Title) 
+			. " AND Author " . get_criterion($pdo, $image->Author) 
+			. " AND Filename " . get_criterion($pdo, $image->Filename) 
+			. " AND URL " . get_criterion($pdo, $image->URL)
+			. " AND ID = " . $pdo->quote($image->ID) . ";");			
 	} else {
-		$statement = $pdo->prepare("SELECT * FROM Images WHERE Title=? AND Author=? AND Filename=? AND URL=?;");
-		$statement->execute(array($image->Title, $image->Author, $image->Filename, $image->URL));
+		$statement = $pdo->query(
+			"SELECT * FROM Images WHERE Title " . get_criterion($pdo, $image->Title) 
+			. " AND Author " . get_criterion($pdo, $image->Author) 
+			. " AND Filename " . get_criterion($pdo, $image->Filename) 
+			. " AND URL " . get_criterion($pdo, $image->URL) . ";");		
 	}
-	
-	return ($statement->rowCount() > 0);
+
+	return ($statement && $statement->rowCount() > 0);
 }
 
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
@@ -35,7 +47,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 	
 	$update = isset($_POST['id']);
 	
-	if ($image->Title == '') {
+	if (is_null($image->Title) || $image->Title === '') {
 		
 		$warning = 'Your image cannot be saved: the title must be filled out.';
 		
@@ -57,7 +69,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 					$message = 'Your changes have been saved successfully!';
 					
 				} catch (Exception $e) {
-					$error = "ERROR: $e";
+					$error = "An exception occured: $e->getMessage()";
 				}
 			}
 		} else {
@@ -72,13 +84,11 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 					$statement = $pdo->prepare("INSERT INTO Images (Title, Filename, URL, Author, Year, Source, ELibrary, Caption, Note, Publishist, Copyright, Marked) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?);");
 			
 					$statement->execute(array($image->Title, $image->Filename, $image->URL, $image->Author, $image->Year, $image->Source, $image->ELibrary, $image->Caption, $image->Note, $image->Publishist, $image->Copyright, $image->Marked));
-					
-					$message = 'Your image has been saved successfully!';
 				
 					header('Location: edit-image.php?id=' . $pdo->lastInsertId() . "&m=1");
 					
 				} catch (Exception $e) {
-					$error = "ERROR: $e";
+					$error = "An exception occured: $e->getMessage()";
 				}
 			}
 		}

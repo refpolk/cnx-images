@@ -2,17 +2,29 @@
 
 require 'includes/settings.photos.inc.php';
 
-function photo_exists($pdo, $photo) {
+function get_criterion($pdo, $field) {
 		
-	if ($photo->ID != '') {
-		$statement = $pdo->prepare("SELECT * FROM Photos WHERE Title=? AND Author=? AND Filename=? AND URL=? AND ID<>?;");
-		$statement->execute(array($photo->Title, $photo->Author, $photo->Filename, $photo->URL, $photo->ID));
-	} else {		
-		$statement = $pdo->prepare("SELECT * FROM Photos WHERE Title=? AND Author=? AND Filename=? AND URL=?;");
-		$statement->execute(array($photo->Title, $photo->Author, $photo->Filename, $photo->URL));
-	}	
+	return is_null($field) ? "IS NULL" : " = " . $pdo->quote($field);
+}
+
+function photo_exists($pdo, $image) {
 	
-	return ($statement->rowCount() > 0);
+	if ($photo->ID != '') {
+		$statement = $pdo->query(
+			"SELECT * FROM Photos WHERE Title " . get_criterion($pdo, $photo->Title) 
+			. " AND Author " . get_criterion($pdo, $photo->Author) 
+			. " AND Filename " . get_criterion($pdo, $photo->Filename) 
+			. " AND URL " . get_criterion($pdo, $photo->URL)
+			. " AND ID = " . $pdo->quote($photo->ID) . ";");			
+	} else {
+		$statement = $pdo->query(
+			"SELECT * FROM Images WHERE Title " . get_criterion($pdo, $photo->Title) 
+			. " AND Author " . get_criterion($pdo, $photo->Author) 
+			. " AND Filename " . get_criterion($pdo, $photo->Filename) 
+			. " AND URL " . get_criterion($pdo, $photo->URL) . ";");		
+	}
+
+	return ($statement && $statement->rowCount() > 0);
 }
 
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
@@ -50,12 +62,17 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 				$warning = 'Your changes cannot be saved: a photo with the same title, authors, filename and url already exists.';
 				
 			} else {
-			
-				$statement = $pdo->prepare("UPDATE Photos SET Photonum=?, OldPhotonum=?, Title=?, Filename=?, URL=?, Year=?, Date=?, Author=?, Place=?, Caption=?, Note=?, Negscan=?, Nix=?, Publishist=? WHERE ID=?;");
 				
-				$statement->execute(array($photo->Photonum, $photo->OldPhotonum, $photo->Title, $photo->Filename, $photo->URL, $photo->Year, $photo->Date, $photo->Author, $photo->Place, $photo->Caption, $photo->Note, $photo->Negscan, $photo->Nix, $photo->Publishist, $photo->ID));
+				try {
+					$statement = $pdo->prepare("UPDATE Photos SET Photonum=?, OldPhotonum=?, Title=?, Filename=?, URL=?, Year=?, Date=?, Author=?, Place=?, Caption=?, Note=?, Negscan=?, Nix=?, Publishist=? WHERE ID=?;");
 				
-				$message = 'Your changes have been saved successfully!';
+					$statement->execute(array($photo->Photonum, $photo->OldPhotonum, $photo->Title, $photo->Filename, $photo->URL, $photo->Year, $photo->Date, $photo->Author, $photo->Place, $photo->Caption, $photo->Note, $photo->Negscan, $photo->Nix, $photo->Publishist, $photo->ID));
+				
+					$message = 'Your changes have been saved successfully!';
+					
+				} catch (Exception $e) {
+					$error = "An exception occured: $e->getMessage()";
+				}				
 			}
 		} else {
 		
@@ -65,11 +82,16 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 				
 			} else {
 				
-				$statement = $pdo->prepare("INSERT INTO Photos (Photonum, OldPhotonum, Title, Filename, URL, Year, Date, Author, Place, Caption, Note, Negscan, Nix, Publishist) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?);");
+				try {				
+					$statement = $pdo->prepare("INSERT INTO Photos (Photonum, OldPhotonum, Title, Filename, URL, Year, Date, Author, Place, Caption, Note, Negscan, Nix, Publishist) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?);");
 				
-				$statement->execute(array($photo->Photonum, $photo->OldPhotonum, $photo->Title, $photo->Filename, $photo->URL, $photo->Year, $photo->Date, $photo->Author, $photo->Place, $photo->Caption, $photo->Note, $photo->Negscan, $photo->Nix, $photo->Publishist));
+					$statement->execute(array($photo->Photonum, $photo->OldPhotonum, $photo->Title, $photo->Filename, $photo->URL, $photo->Year, $photo->Date, $photo->Author, $photo->Place, $photo->Caption, $photo->Note, $photo->Negscan, $photo->Nix, $photo->Publishist));
 				
-				header('Location: edit-photo.php?id=' . $pdo->lastInsertId() . "&m=1");
+					header('Location: edit-photo.php?id=' . $pdo->lastInsertId() . "&m=1");
+					
+				} catch (Exception $e) {
+					$error = "An exception occured: $e->getMessage()";
+				}		
 			}
 		}
 	}
