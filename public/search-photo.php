@@ -84,8 +84,10 @@ if (isset($_GET['q'])) {
 $title = 'Search Photos';
 
 ?>
-<html>
+<!DOCTYPE html>
+<html lang="en">
 	<head>
+		<meta charset="utf-8">		
 		<title><?php echo $title; ?></title>
 		<?php require 'includes/styles.inc.php'; ?>
 	</head>
@@ -109,7 +111,7 @@ $title = 'Search Photos';
 								
 			<div class="row">
 				<div class="col-xs-12">
-					<form role="form" id="searchform" name="form" method="GET" action="search-photo.php">			
+					<form  id="searchform" name="form" method="GET" action="search-photo.php">			
 						<?php require 'includes/messages.inc.php'; ?>
 					    <div class="form-group">
 							<div class="input-group">

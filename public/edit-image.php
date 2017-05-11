@@ -120,6 +120,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 $title = ($update ? 'Edit' : 'Add') . ' Image';
 
 ?>
+<!DOCTYPE html>
 <html lang="en">
 	<head>
 		<meta charset="utf-8">
@@ -141,13 +142,13 @@ $title = ($update ? 'Edit' : 'Add') . ' Image';
 				</div>				
 			</div>
 			
-			<form class="form-horizontal" role="form" name="form" method="POST" action="edit-image.php<?php if ($update) { echo "?id=$image->ID"; } ?>">
+			<form class="form-horizontal" name="form" method="POST" action="edit-image.php<?php if ($update) { echo "?id=$image->ID"; } ?>">
 	
 				<?php require 'includes/messages.inc.php'; ?>
 			
 				<?php if ($update) { ?>
 				<div class="form-group">
-					<label for="id" class="control-label col-xs-2">ID</label>
+					<label class="control-label col-xs-2">ID</label>
 					<div class="col-xs-10">
 						<p class="form-control-static"><?php echo $image->ID;?></p>
 						<input type="hidden" id="id" class="form-control" name="id" value="<?php echo $image->ID;?>">
@@ -179,10 +180,10 @@ $title = ($update ? 'Edit' : 'Add') . ' Image';
 					</div>
 				</div>
 				<div class="form-group">
-					<label for="elibrary" class="control-label col-xs-2">ELibrary (T/F)</label>
+					<label class="control-label col-xs-2">ELibrary (T/F)</label>
 					<div class="col-xs-10">
-						  <label class="radio-inline"><input type="radio" name="elibrary" value="T" <?php if ($image->ELibrary == 'T') echo 'checked';?>>T</label>
-						  <label class="radio-inline"><input type="radio" name="elibrary" value="F" <?php if ($image->ELibrary == 'F' || !$update) echo 'checked';?>>F</label>
+						  <label for="elibrary-true" class="radio-inline"><input type="radio" id="elibrary-true" name="elibrary" value="T" <?php if ($image->ELibrary == 'T') echo 'checked';?>>T</label>
+						  <label for="elibrary-false" class="radio-inline"><input type="radio" id="elibrary-false" name="elibrary" value="F" <?php if ($image->ELibrary == 'F' || !$update) echo 'checked';?>>F</label>
 					</div>
 				</div>
 				<div class="form-group">
@@ -192,15 +193,15 @@ $title = ($update ? 'Edit' : 'Add') . ' Image';
 					</div>
 				</div>
 				<div class="form-group">
-					<label for="publishist" class="control-label col-xs-2">Note</label>
+					<label for="note" class="control-label col-xs-2">Note</label>
 					<div class="col-xs-10">
-						<textarea id="publishist" class="form-control" name="note" rows="2"><?php echo $image->Note;?></textarea>
+						<textarea id="note" class="form-control" name="note" rows="2"><?php echo $image->Note;?></textarea>
 					</div>
 				</div>
 				<div class="form-group">
-					<label for="author" class="control-label col-xs-2">Publishist</label>
+					<label for="publishist" class="control-label col-xs-2">Publishist</label>
 					<div class="col-xs-10">
-						<input id="" class="form-control" type="text" name="publishist" value="<?php echo $image->Publishist;?>">
+						<input id="publishist" class="form-control" type="text" name="publishist" value="<?php echo $image->Publishist;?>">
 					</div>
 				</div>
 				<div class="form-group">
@@ -218,7 +219,7 @@ $title = ($update ? 'Edit' : 'Add') . ' Image';
 				<div class="form-group">
 					<label for="filename" class="control-label col-xs-2">Filename</label>
 					<div class="col-xs-10">
-						<input id="filename" class="form-control" type="text" id="filename" name="filename" value="<?php echo $image->Filename;?>">
+						<input id="filename" class="form-control" type="text" name="filename" value="<?php echo $image->Filename;?>">
 					</div>
 				</div>
 				<div class="form-group edit-only">
@@ -230,11 +231,13 @@ $title = ($update ? 'Edit' : 'Add') . ' Image';
 				<div id="thumbnail" class="form-group">
 					<label class="control-label col-xs-2">Thumbnail View</label>
 					<div class="col-xs-3">
+						<?php if ($image->Filename != '') { ?>
 						<a class="zoom thumbnail" title="Zoom" href="#">
 							<img src="<?php if ($image->Filename != '') { echo $filelocation . $image->Filename; } ?>" alt="<?php echo $image->Title;?>"/>
 						</a>
 						<button type="button" class="btn btn-sm btn-default zoom">Zoom</button>
 						<button type="button" class="btn btn-sm btn-default remove edit-only">Remove</button>
+						<?php } ?>
 					</div>
 				</div>				
 				<div class="form-group">
@@ -258,10 +261,14 @@ $title = ($update ? 'Edit' : 'Add') . ' Image';
 		    <div class="modal-content">
 		      <div class="modal-header">
 		        <button type="button" class="close" data-dismiss="modal">&times;</button>
+				<?php if ($image->Title != '') { ?>
 		        <h4 class="modal-title"><?php echo $image->Title;?></h4>
+				<?php } ?>
 		      </div>
 		      <div class="modal-body">
-		        <p><img src="<?php if ($image->Filename != '') { echo $filelocation . $image->Filename; } ?>" alt="<?php echo $image->Title;?>" style="width:100%;"/></p>
+				<?php if ($image->Filename != '') { ?>
+		        <p><img src="<?php echo $filelocation . $image->Filename; ?>" alt="<?php echo $image->Title;?>" style="width:100%;"/></p>
+				<?php } ?>
 		      </div>
 		      <div class="modal-footer">
 		        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>

@@ -163,7 +163,8 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 $title = 'Import Images';
 
 ?>
-<html>
+<!DOCTYPE html>
+<html lang="en">
 	<head>
 		<title><?php echo $title; ?></title>
 		<?php require 'includes/styles.inc.php'; ?>
@@ -186,13 +187,13 @@ $title = 'Import Images';
 			<div class="row">				
 				<div class="col-xs-12">
 					<div class="alert alert-info">
-						You can download a sample <acronym title="Comma-separated values">CSV</acronym> file here: <a href="/resources/import_images_sample.csv" title="Download the sample file" class="alert-link">import_images_sample.csv</a>.
+						You can download a sample <abbr title="Comma-separated values">CSV</abbr> file here: <a href="/resources/import_images_sample.csv" title="Download the sample file" class="alert-link">import_images_sample.csv</a>.
 						The first line contains headers and is not imported. The fields are separated by commas and delimited by double quotes. The 'Title' field is mandatory, all the other fields are optional.
 					</div>
 				</div>
 			</div>
 
-			<form role="form"  method="POST" enctype="multipart/form-data" action="import-image.php" >
+			<form   method="POST" enctype="multipart/form-data" action="import-image.php" >
 
 				<?php require 'includes/messages.inc.php'; ?>
 									

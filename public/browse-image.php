@@ -12,8 +12,10 @@
 	
 	$title = 'Browse Images';
 ?>
-<html>
+<!DOCTYPE html>
+<html lang="en">
 	<head>
+		<meta charset="utf-8">		
 		<title><?php echo $title; ?></title>
 		<?php require 'includes/styles.inc.php'; ?>
 	</head>
