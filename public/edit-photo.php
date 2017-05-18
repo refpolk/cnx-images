@@ -7,7 +7,7 @@ function get_criterion($pdo, $field) {
 	return is_null($field) ? "IS NULL" : " = " . $pdo->quote($field);
 }
 
-function photo_exists($pdo, $image) {
+function photo_exists($pdo, $photo) {
 	
 	if ($photo->ID != '') {
 		$statement = $pdo->query(

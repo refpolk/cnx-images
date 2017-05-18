@@ -184,18 +184,21 @@ $title = 'Import Images';
 				</div>				
 			</div>
 			
+			<?php require 'includes/messages.inc.php'; ?>			
+			
+			<?php if (is_null($logs)) { ?>
+				
 			<div class="row">				
 				<div class="col-xs-12">
 					<div class="alert alert-info">
-						You can download a sample <abbr title="Comma-separated values">CSV</abbr> file here: <a href="/resources/import_images_sample.csv" title="Download the sample file" class="alert-link">import_images_sample.csv</a>.
-						The first line contains headers and is not imported. The fields are separated by commas and delimited by double quotes. The 'Title' field is mandatory, all the other fields are optional.
+						<h4>File format</h4>
+						<p>A sample <abbr title="Comma-Separated Values">CSV</abbr> file can be downloaded here: <a href="/resources/import_images_sample.csv" title="Download the sample file" class="alert-link">import_images_sample.csv</a>.</p>
+						<p>The first line is not imported and must contain the column names. The column names are not controlled, however the order of the columns matters and must be strictly followed. The only mandatory column is the first one, which contains the title, all the other columns are optional. The values of the columns must be separated by commas and delimited by double quotes. The only forbidden character in a value is the double quote.</p>
 					</div>
 				</div>
 			</div>
 
-			<form   method="POST" enctype="multipart/form-data" action="import-image.php" >
-
-				<?php require 'includes/messages.inc.php'; ?>
+			<form method="POST" enctype="multipart/form-data" action="import-image.php" >
 									
 				<div class="form-group">
 					<label>Select File</label>
@@ -207,7 +210,15 @@ $title = 'Import Images';
 				</div>
 			</form>
 		
-			<?php if (!is_null($logs)) { ?>
+			<?php } else { ?>
+			
+			<div class="row">				
+				<div class="col-xs-12">
+					<div class="form-group">
+						<a class="btn btn-default" href="import-photo.php">Import a new file</a>
+					</div>
+				</div>
+			</div>				
 					
 			<div class="row">
 				<div class="col-xs-12">							
