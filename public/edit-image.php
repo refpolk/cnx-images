@@ -15,7 +15,7 @@ function image_exists($pdo, $image) {
 			. " AND Author " . get_criterion($pdo, $image->Author) 
 			. " AND Filename " . get_criterion($pdo, $image->Filename) 
 			. " AND URL " . get_criterion($pdo, $image->URL)
-			. " AND ID = " . $pdo->quote($image->ID) . ";");			
+			. " AND ID <> " . $pdo->quote($image->ID) . ";");			
 	} else {
 		$statement = $pdo->query(
 			"SELECT * FROM Images WHERE Title " . get_criterion($pdo, $image->Title) 
@@ -69,7 +69,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 					$message = 'Your changes have been saved successfully!';
 					
 				} catch (Exception $e) {
-					$error = "An exception occured: $e->getMessage()";
+					$error = "An exception occured: {$e->getMessage()}";
 				}
 			}
 		} else {
@@ -88,7 +88,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 					header('Location: edit-image.php?id=' . $pdo->lastInsertId() . "&m=1");
 					
 				} catch (Exception $e) {
-					$error = "An exception occured: $e->getMessage()";
+					$error = "An exception occured: {$e->getMessage()}";
 				}
 			}
 		}
